@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Noche del Señor — Meditación sobre la Pasión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06040a;--bg2:#0e0a14;--bg3:#120d18;--card:#1a1224;
+  --gold:#c9a84c;--gold2:#e8c97a;--gold3:#f5e9c8;
+  --cream:#f0e6d3;--dim:#c8b89a;
+  --red:#8b2222;--gb:rgba(201,168,76,.3);--gs:rgba(201,168,76,.6);
+  --tx:#e8dcc8;--td:#a89880;--tq:#d4c4a8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.85;overflow-x:hidden}
+#pb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--gold2));width:0%;z-index:9999;box-shadow:0 0 8px var(--gold)}
+
+/* DOWNLOAD NOTICE */
+#notice{background:linear-gradient(135deg,rgba(139,34,34,.25),rgba(201,168,76,.12));border-bottom:1px solid var(--gb);padding:14px 24px;text-align:center;position:sticky;top:0;z-index:200;backdrop-filter:blur(8px)}
+#notice p{font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.15em;color:var(--gold2)}
+#notice span{color:var(--tx);font-family:'Lora',serif;font-size:12px;letter-spacing:0;font-style:italic}
+#notice button{background:rgba(201,168,76,.15);border:1px solid var(--gb);color:var(--gold);font-family:'Cinzel',serif;font-size:9px;letter-spacing:.2em;padding:4px 12px;cursor:pointer;margin-left:16px;transition:all .2s;text-transform:uppercase}
+#notice button:hover{background:rgba(201,168,76,.25)}
+
+/* TOC */
+#toc{position:fixed;right:0;top:50%;transform:translateY(-50%);width:185px;z-index:100;padding:10px 0;display:flex;flex-direction:column;gap:3px;pointer-events:none}
+.ti{pointer-events:all;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.07em;color:var(--td);padding:4px 12px 4px 8px;border-right:1px solid var(--gb);text-decoration:none;transition:all .3s;text-align:right;line-height:1.3}
+.ti:hover,.ti.active{color:var(--gold2);border-right-color:var(--gold);border-right-width:2px}
+@media(max-width:1100px){#toc{display:none}}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(92,26,26,.4) 0%,transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(30,14,46,.55) 0%,transparent 60%),var(--bg);padding:60px 24px;text-align:center;overflow:hidden}
+.cg{position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:320px;height:420px;background:radial-gradient(ellipse at 50% 80%,rgba(201,168,76,.1) 0%,transparent 70%);animation:flk 3s ease-in-out infinite alternate;pointer-events:none}
+@keyframes flk{0%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:.9;transform:translateX(-50%) scale(1.05)}100%{opacity:.65;transform:translateX(-50%) scale(.97)}}
+.htop{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fi 1s .4s both}
+.htitle{font-family:'Cinzel Decorative',serif;font-size:clamp(28px,5.5vw,64px);font-weight:700;color:var(--gold3);line-height:1.1;margin-bottom:14px;text-shadow:0 0 60px rgba(201,168,76,.3);opacity:0;animation:fi 1s .8s both}
+.htitle span{display:block;font-size:.52em;color:var(--gold);letter-spacing:.1em;margin-top:6px}
+.hsub{font-family:'Cinzel',serif;font-size:clamp(10px,1.6vw,14px);letter-spacing:.14em;color:var(--dim);max-width:560px;margin:0 auto 32px;opacity:0;animation:fi 1s 1.1s both}
+.hdiv{display:flex;align-items:center;gap:14px;width:280px;margin:0 auto 28px;opacity:0;animation:fi 1s 1.3s both}
+.hdl{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hlat{font-style:italic;color:var(--td);font-size:14px;opacity:0;animation:fi 1s 1.5s both;line-height:1.7}
+.shint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--td);font-family:'Cinzel',serif;font-size:8px;letter-spacing:.3em;text-transform:uppercase;opacity:0;animation:fi 1s 2.2s both}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+
+/* CONTENT */
+.content{max-width:820px;margin:0 auto;padding:0 24px}
+.chapter{padding:70px 0 50px;opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.chapter.visible{opacity:1;transform:translateY(0)}
+.tbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.07);border:1px solid var(--gb);border-radius:2px;padding:5px 14px;margin-bottom:18px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.cnum{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.4em;color:var(--td);text-transform:uppercase;margin-bottom:6px}
+.ctitle{font-family:'Cinzel',serif;font-size:clamp(18px,3vw,29px);font-weight:700;color:var(--gold3);line-height:1.2;margin-bottom:6px}
+.csub{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:.1em;margin-bottom:22px}
+.cdiv{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.cdl{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.chapter p{margin-bottom:20px;text-align:justify;hyphens:auto}
+.chapter p:first-of-type::first-letter{float:left;font-family:'Cinzel Decorative',serif;font-size:4em;line-height:.76;margin:8px 10px 0 0;color:var(--gold);text-shadow:0 0 28px rgba(201,168,76,.4)}
+
+/* ═══ PAINTING FRAME — the centerpiece ═══ */
+.pframe{margin:40px 0;position:relative}
+.pframe-wrap{position:relative;border:1px solid var(--gs);background:var(--bg3)}
+/* Ornamental corners */
+.co{position:absolute;width:24px;height:24px;z-index:3;pointer-events:none}
+.co.tl{top:-2px;left:-2px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.co.tr{top:-2px;right:-2px;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
+.co.bl{bottom:-2px;left:-2px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold)}
+.co.br{bottom:-2px;right:-2px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+/* Outer glow border */
+.pframe-wrap::before{content:'';position:absolute;inset:-6px;border:1px solid rgba(201,168,76,.12);pointer-events:none;z-index:0}
+/* The image */
+.pframe-wrap img{
+  width:100%;height:auto;max-height:520px;object-fit:contain;object-position:center center;display:block;
+  filter:sepia(.12) brightness(.88) contrast(1.05) saturate(.95);
+  transition:filter .5s ease,transform .6s ease;
+  cursor:zoom-in;position:relative;z-index:1;
+}
+.pframe-wrap img:hover{filter:sepia(0) brightness(1) contrast(1.04) saturate(1);transform:scale(1.012)}
+/* Fallback when image doesn't load */
+.pframe-wrap .fallback{
+  display:none;width:100%;height:520px;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;background:linear-gradient(135deg,var(--bg3),var(--card));
+  border-top:1px dashed var(--gb);
+}
+.pframe-wrap .fallback.show{display:flex}
+.fallback-icon{font-size:36px;opacity:.3}
+.fallback-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.12em;text-align:center;padding:0 40px}
+.fallback-hint{font-family:'Lora',serif;font-style:italic;font-size:12px;color:var(--td);text-align:center;padding:0 40px}
+/* Gradient overlay at bottom for caption */
+.pframe-overlay{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,rgba(6,4,10,.96));z-index:2;pointer-events:none}
+/* Caption */
+.pcap{position:absolute;bottom:0;left:0;right:0;padding:18px 22px 16px;z-index:3;pointer-events:none}
+.pcap-work{display:block;font-family:'Cinzel',serif;font-size:13px;color:var(--gold3);letter-spacing:.06em;margin-bottom:3px}
+.pcap-artist{display:block;font-family:'Lora',serif;font-style:italic;font-size:12.5px;color:var(--dim);margin-bottom:2px}
+.pcap-loc{display:block;font-family:'Cinzel',serif;font-size:9px;color:var(--td);letter-spacing:.15em;text-transform:uppercase}
+
+/* SCRIPTURE */
+.sc{margin:30px 0;padding:20px 24px 20px 28px;border-left:3px solid var(--gold);background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border-radius:0 4px 4px 0;position:relative}
+.sc::before{content:'❝';position:absolute;top:-10px;left:16px;font-size:32px;color:var(--gold);opacity:.4;font-family:Georgia,serif}
+.sc p{font-style:italic;color:var(--tq);font-size:15.5px;line-height:1.75;margin-bottom:8px!important;text-align:left!important}
+.sc p:first-of-type::first-letter{all:unset}
+.sc-ref{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.23em;color:var(--gold);text-transform:uppercase}
+
+/* FATHER QUOTE */
+.fq{margin:30px 0;padding:24px 28px;background:var(--card);border:1px solid var(--gb);border-top:3px solid var(--red)}
+.fn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.fn::before{content:'✦';font-size:7px;color:var(--red)}
+.fq p{font-style:italic;color:var(--tq);font-size:15px;line-height:1.8;margin-bottom:0!important;text-align:left!important}
+.fq p:first-of-type::first-letter{all:unset}
+
+/* THEOLOGY BOX */
+.tb{margin:30px 0;padding:24px 28px;background:linear-gradient(135deg,rgba(30,14,46,.8),rgba(14,10,20,.8));border:1px solid rgba(139,34,34,.4);border-radius:4px;position:relative}
+.tb::before{content:'✝';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--bg2);padding:0 10px;color:var(--red);font-size:14px}
+.tbt{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.28em;color:var(--dim);text-transform:uppercase;margin-bottom:12px}
+.tb p{color:var(--tq);font-size:15px;margin-bottom:10px!important;text-align:left!important}
+.tb p:first-of-type::first-letter{all:unset}
+.tb p:last-child{margin-bottom:0!important}
+
+/* GRID */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+@media(max-width:600px){.cgrid{grid-template-columns:1fr}}
+.ci{padding:16px 18px;background:var(--card);border:1px solid var(--gb);border-top:2px solid var(--gold)}
+.cit{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.ci p{font-size:13px;color:var(--td);line-height:1.65;margin-bottom:0!important;text-align:left!important}
+.ci p:first-of-type::first-letter{all:unset}
+
+/* PROPHECY CHAIN */
+.pchain{margin:30px 0}
+.pitem{display:flex}
+.ptl{display:flex;flex-direction:column;align-items:center;width:42px;flex-shrink:0}
+.pdot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:4px;box-shadow:0 0 6px rgba(201,168,76,.5)}
+.pln{flex:1;width:1px;background:var(--gb);margin-top:3px}
+.pitem:last-child .pln{display:none}
+.pc{padding:2px 0 24px 12px;flex:1}
+.pref{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:5px}
+.ptxt{font-style:italic;color:var(--tq);font-size:14px;line-height:1.7;margin-bottom:6px}
+.pful{font-size:13px;color:var(--td);line-height:1.6}
+
+/* ICON */
+.sicon{display:flex;justify-content:center;margin:16px 0 24px;opacity:.65}
+
+/* PRAYER */
+.prayer{margin:44px 0;padding:34px;background:linear-gradient(135deg,rgba(92,26,26,.15),rgba(30,14,46,.4));border:1px solid var(--gb);border-top:2px solid var(--gold);text-align:center;position:relative}
+.prayer::before{content:'✦ ORACIÓN ✦';position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 14px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.38em;color:var(--gold);text-transform:uppercase}
+.prayer p{font-style:italic;color:var(--tq);font-size:15px;line-height:1.85;max-width:580px;margin:0 auto 14px!important;text-align:center!important}
+.prayer p:first-of-type::first-letter{all:unset}
+.prayer p:last-child{margin-bottom:0!important}
+
+/* WRAPPERS */
+.sw{padding:0}.alt{background:linear-gradient(180deg,var(--bg3),var(--bg2))}
+.ib{background:linear-gradient(180deg,var(--bg2),var(--bg3));padding:65px 0;border-top:1px solid var(--gb)}
+em.gold{color:var(--gold);font-style:normal}
+em.verse{font-style:italic;color:var(--gold3)}
+.lead{font-size:18px;color:var(--dim);line-height:1.9;margin-bottom:26px}
+.lead:first-of-type::first-letter{all:unset}
+
+/* COLOPHON */
+.col{background:var(--bg2);border-top:1px solid var(--gb);padding:55px 24px;text-align:center}
+.col-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.col-text{font-style:italic;color:var(--td);font-size:14px;max-width:460px;margin:0 auto 16px;line-height:1.8}
+.col-lat{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;opacity:.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gs);border-radius:3px}
+</style>
+</head>
+<body>
+<div id="pb"></div>
+
+<!-- ══ DOWNLOAD NOTICE ══ -->
+<div id="notice">
+  <p>✝ &nbsp;<span>Las pinturas clásicas se ven al abrir este archivo en tu navegador (Chrome, Firefox, Safari). Descargalo y abrí el .html desde tu computadora.</span>
+  <button onclick="document.getElementById('notice').style.display='none'">Cerrar ✕</button></p>
+</div>
+
+<!-- TOC -->
+<nav id="toc">
+  <a class="ti" href="#preludio">Preludio</a>
+  <a class="ti" href="#escenario">Escenario histórico</a>
+  <a class="ti" href="#huerto">Getsemaní · 1:00</a>
+  <a class="ti" href="#arresto">El Arresto · 1:30</a>
+  <a class="ti" href="#anas">Ante Anás · 2:00</a>
+  <a class="ti" href="#caifas">Ante Caifás · 3:00</a>
+  <a class="ti" href="#pedro">Negaciones de Pedro</a>
+  <a class="ti" href="#sanedrín">Sanedrín · Aurora</a>
+  <a class="ti" href="#pilato1">Pilato · 6:00 am</a>
+  <a class="ti" href="#herodes">Herodes · 7:00 am</a>
+  <a class="ti" href="#barrabas">Barrabás · 7:30 am</a>
+  <a class="ti" href="#flagelacion">Flagelación · 8:30 am</a>
+  <a class="ti" href="#corona">Corona de Espinas</a>
+  <a class="ti" href="#eccehomo">Ecce Homo</a>
+  <a class="ti" href="#via">Vía Dolorosa</a>
+  <a class="ti" href="#calvario">La Crucifixión</a>
+  <a class="ti" href="#teologia">Teología de la Cruz</a>
+  <a class="ti" href="#oracion">Oración Final</a>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="cg"></div>
+  <div style="opacity:0;animation:fi 1.5s .2s both">
+    <svg width="110" height="38" viewBox="0 0 110 38"><line x1="0" y1="19" x2="40" y2="19" stroke="#c9a84c" stroke-width=".8" opacity=".5"/><line x1="70" y1="19" x2="110" y2="19" stroke="#c9a84c" stroke-width=".8" opacity=".5"/><circle cx="55" cy="19" r="15" stroke="#c9a84c" stroke-width=".6" opacity=".35"/><text x="55" y="25" text-anchor="middle" font-family="serif" font-size="20" fill="#c9a84c">✝</text></svg>
+  </div>
+  <p class="htop" style="margin-top:20px">Meditación Católica · Semana Santa</p>
+  <h1 class="htitle">La Noche del Señor<span>Jueves Santo — Viernes Santo</span></h1>
+  <p class="hsub">Desde la primera hora de la madrugada hasta la Crucifixión de Nuestro Señor Jesucristo</p>
+  <div class="hdiv"><div class="hdl"></div><span style="color:var(--gold);font-size:10px">✦</span><div class="hdl"></div></div>
+  <p class="hlat"><em>Sub umbra alarum tuarum protege nos.</em><br><em>A facie impiorum qui me afflixerunt.</em></p>
+  <div class="shint"><span>Contemplar</span><span>▼</span></div>
+</section>
+
+<!-- ══════════ PRELUDIO ══════════ -->
+<div class="ib" id="preludio"><div class="content"><div class="chapter visible">
+  <div class="cnum">Preludio</div>
+  <h2 class="ctitle">El Mundo en la Hora en que Dios Sufre</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p class="lead">Hay horas en la historia del mundo que no se parecen a ninguna otra. Hay momentos que condensan en su latido todo el peso de los siglos, toda la acumulación de la culpa humana, toda la extensión del amor divino.</p>
+  <p>La noche del Jueves al Viernes Santo es la hora por excelencia —la hora hacia la cual toda la historia anterior apuntaba como flechas hacia una diana invisible, y desde la cual toda historia posterior extrae su sentido más profundo. No hay otra noche semejante. Los más grandes teólogos de la Iglesia bebieron de esas aguas toda su vida y confesaron al final que apenas habían mojado los labios.</p>
+  <div class="fq"><div class="fn">San Agustín de Hipona</div><p>La paciencia de Cristo ante los acusadores falsos no es debilidad ni impotencia; es la forma más alta de la fortaleza, la fortaleza que no necesita defenderse porque su verdad no depende de ninguna vindicación humana.</p></div>
+  <p>Toda oración que arranca del Misterio Pascual se eleva más alto. Todo amor que aprende su medida en la Cruz no vuelve a ser el mismo. Comencemos, pues. Pero comencemos de rodillas.</p>
+</div></div></div>
+
+<!-- ══════════ ESCENARIO ══════════ -->
+<div class="sw alt" id="escenario"><div class="content"><div class="chapter">
+  <div class="tbadge">🕯 Contexto Histórico</div>
+  <div class="cnum">I</div>
+  <h2 class="ctitle">El Escenario: Jerusalén en la Noche de Pascua</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p>Jerusalén, en los días de la Pascua judía, era una ciudad desbordada. Los peregrinos llegaban de toda la diáspora, y los historiadores hablan de entre cien y doscientas mil personas en una ciudad cuya población permanente no superaba los setenta mil. El Templo era el corazón palpitante de todo. Bajo la fachada religiosa, la ciudad hervía de tensiones políticas de una gravedad extrema.</p>
+  <div class="cgrid">
+    <div class="ci"><div class="cit">El Sanedrín</div><p>Consejo de 71 miembros presidido por el sumo sacerdote. Su capacidad de dictar penas capitales estaba restringida por Roma. Por eso necesitaban a Pilato para obtener la crucifixión.</p></div>
+    <div class="ci"><div class="cit">Poncio Pilato</div><p>Prefecto romano de Judea. Solo él podía ordenar la crucifixión: pena romana reservada para esclavos rebeldes y agitadores políticos de la peor condición.</p></div>
+    <div class="ci"><div class="cit">Caifás y Anás</div><p>Élite saducea: conservadores en doctrina, pragmáticos en política. La acusación contra Jesús debía pasar del plano religioso —blasfemia— al político —pretensión real— para obtener la sentencia.</p></div>
+    <div class="ci"><div class="cit">Herodes Antipas</div><p>Tetrarca de Galilea, en Jerusalén para la Pascua. Había decapitado a Juan el Bautista. Su papel en la Pasión revelará la frivolidad de quien busca lo sobrenatural como espectáculo.</p></div>
+  </div>
+  <div class="sc"><p>Conviene que un hombre muera por el pueblo, y no que perezca toda la nación.</p><div class="sc-ref">Juan 11, 50 — Profecía involuntaria de Caifás</div></div>
+  <p>El verdadero director de cuanto ocurre es el Hijo de Dios, que avanza con paso libre y soberano hacia el cumplimiento de lo que desde toda la eternidad fue decidido en el consejo de la Trinidad Santísima. Lo que va a ocurrir no es un accidente ni el triunfo del mal: es la irrupción decisiva del amor redentor de Dios en la historia rota de los hombres.</p>
+</div></div></div>
+
+<!-- ══════════ GETSEMANÍ ══════════ -->
+<div class="sw" id="huerto"><div class="content"><div class="chapter">
+  <div class="tbadge">🌙 Circa la 1:00 de la madrugada</div>
+  <div class="cnum">II</div>
+  <h2 class="ctitle">Las Sombras del Huerto</h2>
+  <p class="csub">Getsemaní — La Prensa de Aceite</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img id="img-huerto"
+        src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Mantegna%2C_Andrea_-_Agony_in_the_Garden_-_National_Gallery%2C_London.jpg"
+        alt="Mantegna — La Agonía en el Huerto"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">La Agonía en el Huerto de Getsemaní<br>Andrea Mantegna · c. 1455</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">La Agonía en el Huerto</span>
+        <span class="pcap-artist">Andrea Mantegna · c. 1455–1456</span>
+        <span class="pcap-loc">National Gallery · Londres</span>
+      </div>
+    </div>
+  </div>
+
+  <p>La cena ha terminado. El himno de acción de gracias ha sido cantado. Jesús cruza el torrente Cedrón y entra en el huerto de Getsemaní, cuyo nombre arameo <em class="gold">gat shemane</em> significa, con una precisión que escalofría, <em class="gold">prensa de aceite</em>. En ese huerto, en esa hora de la noche cuando el aceite se extrae aplastando el fruto hasta partirlo, el Señor va a ser prensado por un dolor que ningún otro ser humano ha conocido en su plena extensión.</p>
+  <div class="sc"><p>Padre mío, si es posible, que pase de mí este cáliz; pero no como yo quiero, sino como Tú quieres.</p><div class="sc-ref">Mateo 26, 39</div></div>
+  <p>El cáliz era el peso del pecado de la humanidad entera. El cuerpo del Señor comenzó a sufrir antes del primer golpe: San Lucas anota que su sudor era como gotas de sangre que caían sobre la tierra (Lucas 22, 44). La hematidrosis está documentada en medicina como resultado de una angustia de intensidad extraordinaria.</p>
+  <div class="fq"><div class="fn">San Agustín — Sobre la oración de Getsemaní</div><p>Él no dice «pase de mí este cáliz» como si no quisiera beberlo, sino para enseñarnos que también la infirmidad de la carne puede orar de este modo, siempre que añada: «No mi voluntad, sino la tuya». La oración de Getsemaní es la oración más perfecta que labios humanos han pronunciado jamás.</p></div>
+  <div class="tb"><div class="tbt">La Recapitulación — San Ireneo de Lyon</div><p>Adán desobedeció en un huerto; Cristo obedece en un huerto. La historia que comenzó mal en el Paraíso comienza a corregirse en Getsemaní. En cada gesto del Señor se opera una inversión redentora del gesto adánico original.</p></div>
+</div></div></div>
+
+<!-- ══════════ ARRESTO ══════════ -->
+<div class="sw alt" id="arresto"><div class="content"><div class="chapter">
+  <div class="tbadge">🔦 Circa la 1:00–1:30 de la madrugada</div>
+  <div class="cnum">III</div>
+  <h2 class="ctitle">El Arresto: La Noche Muestra su Rostro</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/The_Taking_of_Christ-Caravaggio_%28c.1602%29.jpg"
+        alt="Caravaggio — La Toma de Cristo"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">La Toma de Cristo · Il Bacio di Giuda<br>Caravaggio · 1602</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">La Toma de Cristo · Il Bacio di Giuda</span>
+        <span class="pcap-artist">Michelangelo Merisi da Caravaggio · 1602</span>
+        <span class="pcap-loc">National Gallery of Ireland · Dublín</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Judas llega con una cohorte romana y la guardia del templo. El Evangelio de Juan precisa que traía <em class="verse">«linternas, antorchas y armas»</em>: vienen con antorchas a buscar a la Luz del mundo. Vienen armados a detener al que, con una sola palabra, puede hacerlos caer. Y de hecho los hace caer.</p>
+  <div class="sc"><p>Al decirles «Yo soy», retrocedieron y cayeron en tierra.</p><div class="sc-ref">Juan 18, 6 — El Ego eimi divino</div></div>
+  <p>El <em class="gold">Ego eimi</em> es el nombre divino revelado a Moisés en la zarza ardiente. Al pronunciarlo, toda la multitud armada cae en tierra. No es la caída de quien tropieza: es la postración involuntaria ante la presencia de Dios. Y luego, inmediatamente, el Señor se entrega. Pedro hiere a Malco. Y Jesús, en el momento de su arresto, sana al servidor de quien viene a apresarle. Último milagro físico antes de la Cruz. El amor que no espera condiciones.</p>
+  <div class="sc"><p>Mete tu espada en la vaina. ¿O piensas que no puedo invocar a mi Padre, que me enviaría más de doce legiones de ángeles?</p><div class="sc-ref">Mateo 26, 52-53</div></div>
+</div></div></div>
+
+<!-- ══════════ ANÁS ══════════ -->
+<div class="sw" id="anas"><div class="content"><div class="chapter">
+  <div class="tbadge">🕯 Circa la 1:30–2:30 de la madrugada</div>
+  <div class="cnum">IV</div>
+  <h2 class="ctitle">Ante Anás: El Primer Interrogatorio</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p>A Jesús lo llevan atado ante Anás: un examen preliminar sin carácter jurídico oficial. Le pregunta sobre sus discípulos y su doctrina. La respuesta es de una dignidad tranquila y soberana:</p>
+  <div class="sc"><p>Yo he hablado abiertamente al mundo; siempre he enseñado en la sinagoga y en el Templo, y no he dicho nada en secreto. ¿Por qué me interrogas a mí?</p><div class="sc-ref">Juan 18, 20-21</div></div>
+  <p>Un guardia le abofetea. Es el <em class="gold">primer golpe físico</em> que recibe Jesús en su Pasión propiamente dicha. La respuesta del Señor es admirable: <em class="verse">«Si he hablado mal, demuéstralo; pero si he hablado bien, ¿por qué me pegas?»</em> No hay ira ni debilidad: hay una serenidad de quien sabe exactamente quién es. El golpe no puede alcanzar lo que es más profundo en Él.</p>
+  <div class="tb"><div class="tbt">La Geometría Espiritual del Alejamiento</div><p>Pedro seguía al Señor «de lejos». San Juan Crisóstomo observa que el error comenzó antes de la negación: en esa distancia de seguridad. Quien sigue a Cristo de lejos, quien mantiene una distancia prudente con las exigencias del Evangelio, está ya en el camino de la negación. La tibieza es el antecedente de la apostasía.</p></div>
+</div></div></div>
+
+<!-- ══════════ CAIFÁS ══════════ -->
+<div class="sw alt" id="caifas"><div class="content"><div class="chapter">
+  <div class="tbadge">🌑 Circa la 2:30–4:30 de la madrugada</div>
+  <div class="cnum">V</div>
+  <h2 class="ctitle">Ante Caifás y el Sanedrín: El Proceso Nocturno</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p>Los jefes de los sacerdotes y todo el Sanedrín buscaban un testimonio contra Jesús para poder condenarlo a muerte, pero no lo encontraban. La sentencia estaba decidida de antemano. En términos del derecho procesal, era un proceso nulo de nulidad absoluta. Ante los testigos falsos, Jesús permanece en silencio.</p>
+  <div class="sc"><p>Maltratado, se sometió; no abrió la boca. Como un cordero llevado al matadero, como oveja que ante los esquiladores está muda, tampoco Él abrió la boca.</p><div class="sc-ref">Isaías 53, 7 — Profetizado siete siglos antes</div></div>
+  <p>Caifás lo conjura por el nombre del Dios vivo: <em class="verse">«¿Eres tú el Cristo, el Hijo de Dios?»</em> Y aquí el silencio termina:</p>
+  <div class="sc"><p>Yo soy. Y veréis al Hijo del hombre sentado a la derecha del Poder y venir sobre las nubes del cielo.</p><div class="sc-ref">Marcos 14, 62 — El Ego eimi ante el Sanedrín</div></div>
+  <p>Caifás rasga sus vestiduras y todos lo condenan a muerte. La ironía sagrada de la historia alcanza su cénit: el único inocente es condenado a muerte por decir la verdad. El guardián de la revelación divina condena como blasfemia la afirmación más verdadera que jamás se pronunció en Israel. Y comenzaron las vejaciones: le escupieron, le vendaron los ojos, le abofetearon, gritaban: <em class="verse">«¡Profetiza! ¿Quién te ha golpeado?»</em></p>
+  <div class="fq"><div class="fn">San Cirilo de Jerusalén — Catequesis Mistagógicas</div><p>El rostro ultrajado de Cristo es el espejo en que se refleja el pecado humano en toda su desnudez. El pecado es siempre un escupitajo sobre el rostro del Señor. Cuando comprendemos esto con el corazón, la contrición que nace en el alma no es ya el miedo al castigo: es el dolor de haber golpeado el rostro más hermoso que haya existido.</p></div>
+</div></div></div>
+
+<!-- ══════════ PEDRO ══════════ -->
+<div class="sw" id="pedro"><div class="content"><div class="chapter">
+  <div class="tbadge">🐓 Circa las 2:30–4:00 de la madrugada</div>
+  <div class="cnum">VI</div>
+  <h2 class="ctitle">Las Negaciones de Pedro: El Corazón Fracturado</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Rembrandt_-_Peter_Denying_Christ_-_WGA19121.jpg"
+        alt="Rembrandt — Pedro Negando a Cristo"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">Pedro Negando a Cristo<br>Rembrandt van Rijn · 1660</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">Pedro Negando a Cristo</span>
+        <span class="pcap-artist">Rembrandt van Rijn · 1660</span>
+        <span class="pcap-loc">Rijksmuseum · Ámsterdam</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cgrid">
+    <div class="ci"><div class="cit">Primera Negación</div><p>La portera: «Tú también estabas con Jesús el galileo». Pedro: <em>«No sé de qué hablas»</em>. Se retira al vestíbulo.</p></div>
+    <div class="ci"><div class="cit">Segunda Negación</div><p>Otra criada: «Este estaba con Jesús de Nazaret». Pedro niega con juramento: <em>«No conozco a ese hombre»</em>.</p></div>
+    <div class="ci"><div class="cit">Tercera Negación</div><p>«Tu manera de hablar te delata». Pedro niega con maldición y juramento: <em>«¡No conozco a ese hombre!»</em></p></div>
+    <div class="ci"><div class="cit">El Gallo y la Mirada</div><p>Cantó el gallo. <em>El Señor, volviéndose, miró a Pedro.</em> Pedro salió fuera y lloró amargamente.</p></div>
+  </div>
+  <div class="fq"><div class="fn">San Agustín — Sermón 285</div><p>La mirada de Jesús a Pedro es la mirada misericordiosa de quien sabe que su siervo ha caído pero no lo abandona, sino que lo llama de vuelta con el silencio de sus ojos. No es la mirada del juez airado; es la mirada del pastor que busca a la oveja perdida incluso en el momento de su propio dolor.</p></div>
+  <div class="tb"><div class="tbt">Pedro y Judas: Dos Caminos ante el Mismo Pecado</div><p>El pecado de Judas no fue mayor que el de Pedro en calidad moral: ambos traicionaron al Señor. La diferencia estuvo en la dirección del dolor que siguió al pecado: Pedro miró hacia Cristo y encontró misericordia; Judas se volvió sobre sí mismo y se destruyó.</p></div>
+</div></div></div>
+
+<!-- ══════════ SANEDRÍN / AURORA ══════════ -->
+<div class="sw alt" id="sanedrín"><div class="content"><div class="chapter">
+  <div class="tbadge">🌅 Circa las 5:00–6:00 de la mañana</div>
+  <div class="cnum">VII</div>
+  <h2 class="ctitle">El Amanecer: La Sesión Formal</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p>A medida que la noche cede, el proceso entra en una nueva fase. La sesión nocturna era técnicamente irregular según el derecho judío. Para darle apariencia de regularidad, se celebra una sesión formal al amanecer que confirma la decisión de entregar a Jesús a Pilato. Le atan de nuevo y lo llevan.</p>
+  <p>El Hijo de Dios hecho hombre, el Señor de los señores, es conducido atado ante un gobernador romano pagano por los líderes de su propio pueblo elegido. El contraste entre lo que Él es y la manera en que es tratado es tan abismal que ningún lenguaje humano puede expresarlo adecuadamente.</p>
+</div></div></div>
+
+<!-- ══════════ PILATO ══════════ -->
+<div class="sw" id="pilato1"><div class="content"><div class="chapter">
+  <div class="tbadge">⚖️ Circa las 6:00–7:00 de la mañana</div>
+  <div class="cnum">VIII</div>
+  <h2 class="ctitle">Ante Pilato: El Primer Encuentro</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Munkacsy_-_Christ_in_front_of_Pilate.jpg"
+        alt="Munkácsy — Cristo ante Pilato"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">Cristo ante Pilato<br>Mihály Munkácsy · 1881</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">Cristo ante Pilato</span>
+        <span class="pcap-artist">Mihály Munkácsy · 1881</span>
+        <span class="pcap-loc">Déri Museum · Debrecen, Hungría</span>
+      </div>
+    </div>
+  </div>
+
+  <p><em class="verse">«Era de mañana»</em> —precisa Juan (18, 28). Los líderes judíos no entran en el Pretorio para no contaminarse ritualmente y poder comer la Pascua. Una ironía que el evangelista anota: quienes se cuidan de la pureza ritual están entregando a la muerte al verdadero Cordero Pascual.</p>
+  <div class="sc"><p>Mi reino no es de este mundo. Si mi reino fuera de este mundo, mis servidores habrían combatido. Pero mi reino no es de aquí.</p><div class="sc-ref">Juan 18, 36</div></div>
+  <div class="sc"><p>¿Qué es la verdad?</p><div class="sc-ref">Juan 18, 38 — La pregunta que resuena en todos los siglos</div></div>
+  <div class="fq"><div class="fn">San Agustín — Comentario al Evangelio de Juan</div><p>Pilato está a un paso de la Verdad —literalmente, la Verdad en persona está delante de él— pero el pragmatismo de su posición le impide sostener ese encuentro. Sale inmediatamente, como si el encuentro con la Verdad fuera demasiado incómodo. Primera declaración de inocencia: «Yo no hallo en Él ningún delito».</p></div>
+</div></div></div>
+
+<!-- ══════════ HERODES + BARRABÁS ══════════ -->
+<div class="sw alt" id="herodes"><div class="content"><div class="chapter">
+  <div class="tbadge">👑 Circa las 7:00–8:30 de la mañana</div>
+  <div class="cnum">IX–X</div>
+  <h2 class="ctitle">Herodes y Barrabás</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <div class="sc"><p>Hacía mucho tiempo que deseaba verlo, porque esperaba verle realizar algún milagro.</p><div class="sc-ref">Lucas 23, 8 — La curiosidad sin conversión</div></div>
+  <p>Ante Herodes, Jesús guarda un silencio absoluto. Es el silencio más elocuente de toda la Pasión. El Señor habla a quienes buscan la verdad con sinceridad. Pero a quien busca simplemente el espectáculo, no ofrece nada. El silencio divino ante Herodes es ya una forma de juicio. Herodes lo vistió con una vestidura brillante —ridiculizándolo como rey de farsa— y lo remitió de vuelta a Pilato.</p>
+  <div class="tb"><div class="tbt">Barrabás: Bar Abbá — El Admirabile Commercium</div><p>El nombre de Barrabás es hebreo: <em>bar Abbá</em>, hijo del padre. Con una ironía que solo la providencia puede tejer, el hombre culpable puesto en libertad en lugar del inocente se llama «hijo del padre». El verdadero Hijo del Padre celestial es condenado para que el hombre culpable sea libre. Todos somos Barrabás. La sustitución que se opera en ese episodio es el icono perfecto de toda la soteriología cristiana.</p></div>
+  <div class="sc"><p>Inocente soy de la sangre de este justo. Allá vosotros.</p><div class="sc-ref">Mateo 27, 24 — Pilato se lava las manos</div></div>
+  <p>Nadie lava sus responsabilidades con agua. La Iglesia enseña, con el Concilio Vaticano II y la declaración <em>Nostra Aetate</em>, que <em class="gold">no se puede atribuir a todo el pueblo judío</em> la responsabilidad de la muerte de Cristo. La responsabilidad recae, en su verdad más profunda, sobre el pecado de la humanidad entera —de todos los hombres de todos los tiempos.</p>
+</div></div></div>
+
+<!-- ══════════ FLAGELACIÓN ══════════ -->
+<div class="sw" id="flagelacion"><div class="content"><div class="chapter">
+  <div class="tbadge">🩸 Circa las 8:30–9:00 de la mañana</div>
+  <div class="cnum">XI</div>
+  <h2 class="ctitle">La Flagelación: El Cuerpo del Señor bajo el Azote</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/The_Flagellation_of_Christ-Caravaggio_%281607%29.jpg"
+        alt="Caravaggio — La Flagelación"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">La Flagelación de Cristo<br>Caravaggio · c. 1607</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">La Flagelación de Cristo</span>
+        <span class="pcap-artist">Michelangelo Merisi da Caravaggio · c. 1607</span>
+        <span class="pcap-loc">Museo di Capodimonte · Nápoles</span>
+      </div>
+    </div>
+  </div>
+
+  <p>La <em class="gold">verberatio</em> romana era una de las penas más brutales del sistema punitivo antiguo. El <em>flagrum</em>: correas de cuero con piezas de hueso, metal o piedra. No había número fijo de golpes para los no ciudadanos romanos. La piel se desgarraba, los músculos quedaban expuestos.</p>
+  <div class="pchain">
+    <div class="pitem"><div class="ptl"><div class="pdot"></div><div class="pln"></div></div><div class="pc"><div class="pref">Isaías 52, 14</div><div class="ptxt">«Tan desfigurado estaba su aspecto, que no parecía hombre.»</div><div class="pful">El profeta contempló este momento ocho siglos antes con una exactitud que ninguna coincidencia puede explicar.</div></div></div>
+    <div class="pitem"><div class="ptl"><div class="pdot"></div></div><div class="pc"><div class="pref">Isaías 53, 5 — In vulnere eius sanati sumus</div><div class="ptxt">«Por sus heridas hemos sido curados.»</div><div class="pful">Las heridas del Siervo son medicina para los demás. El dolor del Inocente se convierte en sanación del culpable, porque el amor que habita en ese cuerpo puede cargar con el mal ajeno y transformarlo desde dentro.</div></div></div>
+  </div>
+  <div class="fq"><div class="fn">San León Magno — Sermón 63</div><p>Como el hierro que se mete en el fuego se hace fuego, así la naturaleza humana asumida por el Verbo queda santificada hasta el punto de que incluso su sufrimiento es fuente de gracia. No es el sufrimiento en sí mismo el que salva: es el amor infinito que lo habita.</p></div>
+</div></div></div>
+
+<!-- ══════════ CORONA ══════════ -->
+<div class="sw alt" id="corona"><div class="content"><div class="chapter">
+  <div class="tbadge">👑 Circa las 9:00 de la mañana</div>
+  <div class="cnum">XII</div>
+  <h2 class="ctitle">La Coronación de Espinas: El Rey Escarnecido</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/Titian_-_Crowning_with_Thorns_-_WGA22806.jpg"
+        alt="Tiziano — La Coronación de Espinas"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">La Coronación de Espinas<br>Tiziano Vecellio · c. 1542</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">La Coronación de Espinas</span>
+        <span class="pcap-artist">Tiziano Vecellio · c. 1542–1543</span>
+        <span class="pcap-loc">Musée du Louvre · París</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Los soldados tejieron una corona de espinas —el <em class="gold">ziziphus spina-christi</em>, cuyas espinas de dos a cuatro centímetros penetrarían profundamente en el cuero cabelludo— y la pusieron sobre la cabeza del Señor. Luego un manto de púrpura y el sarcasmo brutal: <em class="verse">«¡Salve, Rey de los judíos!»</em></p>
+  <div class="tb"><div class="tbt">Las Espinas: Del Génesis al Calvario — San Buenaventura</div><p>«Espinas y abrojos te producirá la tierra» (Gén. 3,18), como consecuencia del pecado original. Las espinas que la tierra maldita produce se convierten en corona sobre la cabeza del que viene a deshacer la maldición. La recapitulación redentora transforma el símbolo del pecado en signo de gloria eterna.</p></div>
+  <div class="fq"><div class="fn">Santa Brígida de Suecia — Revelationes</div><p>El dolor de la coronación fue uno de los más agudos de toda la Pasión, no solo por las heridas físicas sino por la confluencia del dolor físico con el escarnio moral: ser Rey verdadero y ser tratado como rey de farsa. [Revelación privada, propuesta como ayuda piadosa para la contemplación, siempre subordinada a la Escritura y a la Tradición de la Iglesia.]</p></div>
+</div></div></div>
+
+<!-- ══════════ ECCE HOMO ══════════ -->
+<div class="sw" id="eccehomo"><div class="content"><div class="chapter">
+  <div class="tbadge">🫀 Circa las 9:00–9:30 de la mañana</div>
+  <div class="cnum">XIII</div>
+  <h2 class="ctitle">Ecce Homo: El Rostro del Amor en el Dolor</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Ecce_homo_by_Antonio_Ciseri_%281%29.jpg"
+        alt="Ciseri — Ecce Homo"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">Ecce Homo<br>Antonio Ciseri · 1880</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">Ecce Homo — He Aquí el Hombre</span>
+        <span class="pcap-artist">Antonio Ciseri · 1880</span>
+        <span class="pcap-loc">Palazzo Pitti · Florencia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc"><p>¡He aquí el hombre! — Ecce homo!</p><div class="sc-ref">Juan 19, 5 — Las dos palabras más teológicamente ricas del proceso</div></div>
+  <p><em class="gold">Ecce homo.</em> Contemplad al hombre. Las dos palabras que Pilato pronunció como argumento pragmático son en realidad las dos más teológicamente ricas de todo el proceso. Pilato no sabe lo que dice. Pero la Iglesia ha visto en esas dos palabras un significado que supera infinitamente la intención de quien las pronunció.</p>
+  <div class="fq"><div class="fn">San Agustín — Sobre el Ecce Homo</div><p>En ese hombre flagelado y coronado de espinas está toda la humanidad herida por el pecado. Cristo tomó sobre sí las heridas del hombre para que el hombre pudiera contemplarlas en Él y curarse. No es la humanidad la que presenta sus heridas a Dios para que las cure desde fuera: es Dios quien entra en la carne herida de la humanidad y la sana desde dentro, desde el corazón mismo del dolor humano.</p></div>
+  <div class="sc"><p>No tendrías ningún poder sobre mí si no te hubiera sido dado de arriba. Por eso, el que me entregó a ti tiene mayor pecado.</p><div class="sc-ref">Juan 19, 11</div></div>
+</div></div></div>
+
+<!-- ══════════ VÍA DOLOROSA ══════════ -->
+<div class="sw alt" id="via"><div class="content"><div class="chapter">
+  <div class="tbadge">🛤 Circa las 9:00–10:30 de la mañana</div>
+  <div class="cnum">XIV</div>
+  <h2 class="ctitle">El Camino al Calvario: La Vía Dolorosa</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pieter_Bruegel_d._%C3%84._007.jpg"
+        alt="Bruegel — La Procesión al Calvario"
+        style="object-position:center 30%"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">La Procesión al Calvario<br>Pieter Bruegel el Viejo · 1564</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">La Procesión al Calvario</span>
+        <span class="pcap-artist">Pieter Bruegel el Viejo · 1564</span>
+        <span class="pcap-loc">Kunsthistorisches Museum · Viena</span>
+      </div>
+    </div>
+  </div>
+
+  <p>Jesús es cargado con el <em>patibulum</em> —el travesaño horizontal, estimado en treinta o cuarenta kilogramos— y sale en dirección al Gólgota. En un cuerpo que ha pasado toda la noche sin dormir, que ha sudado sangre en Getsemaní, que ha sido flagelado y coronado de espinas, esto exigía fuerzas sobrehumanas.</p>
+  <div class="tb"><div class="tbt">La Teología de Simón de Cirene</div><p>El primer ser humano que llevó la Cruz de Cristo fue un hombre que no la eligió sino que fue compelido a hacerlo. La Cruz que uno no eligió llevar, que la providencia pone sobre los hombros sin pedir permiso, es también la Cruz del Señor. El sufrimiento involuntario, unido al de Cristo, se convierte en participación en la obra redentora.</p></div>
+  <div class="sc"><p>Hijas de Jerusalén, no lloréis por mí; llorad más bien por vosotras y por vuestros hijos.</p><div class="sc-ref">Lucas 23, 28</div></div>
+  <div class="pchain">
+    <div class="pitem"><div class="ptl"><div class="pdot"></div><div class="pln"></div></div><div class="pc"><div class="pref">Éxodo 12 — El Cordero Pascual sin defecto</div><div class="ptxt">El cordero debía ser sin defecto; su sangre se aplicaría sobre los dinteles para que el ángel exterminador pasara de largo.</div><div class="pful">El verdadero Cordero, sin mancha, avanza hacia el lugar del sacrificio. «Cristo, nuestra Pascua, ha sido inmolado» (1 Cor. 5,7). Su sangre se aplicará sobre el madero de la Cruz, sobre los dinteles del corazón de cada creyente.</div></div></div>
+    <div class="pitem"><div class="ptl"><div class="pdot"></div></div><div class="pc"><div class="pref">Salmo 69, 8 — El Celo por la Casa de Dios</div><div class="ptxt">«Por amor de ti soporto el insulto y la vergüenza cubre mi rostro.»</div><div class="pful">El mismo celo que impulsó a Jesús a expulsar los mercaderes del Templo lo lleva ahora por el camino del Calvario: el amor al Padre, el amor a los hombres hasta el extremo.</div></div></div>
+  </div>
+</div></div></div>
+
+<!-- ══════════ CALVARIO ══════════ -->
+<div class="sw" id="calvario"><div class="content"><div class="chapter">
+  <div class="tbadge">✝ Circa las 10:30 de la mañana</div>
+  <div class="cnum">XV</div>
+  <h2 class="ctitle">El Gólgota: El Altar del Universo</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="pframe">
+    <div class="pframe-wrap" style="background:#000">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Cristo_crucificado.jpg"
+        alt="Velázquez — Cristo Crucificado"
+        style="object-position:center center;height:520px"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">Cristo Crucificado<br>Diego Velázquez · c. 1632</div>
+        <div class="fallback-hint">Descargá el archivo y abrilo en tu navegador para ver la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">Cristo Crucificado</span>
+        <span class="pcap-artist">Diego Velázquez · c. 1632</span>
+        <span class="pcap-loc">Museo del Prado · Madrid</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sc"><p>Y lo crucificaron.</p><div class="sc-ref">Marcos 15, 24 — Tres palabras que cambiaron el universo</div></div>
+  <p>La parquedad de los evangelistas ante el hecho central de la historia de la salvación es, en sí misma, un argumento de su veracidad. No escriben para emocionar; escriben para proclamar un hecho cuya significación ya saben y cuya enormidad no necesita amplificación literaria.</p>
+  <div class="pchain">
+    <div class="pitem"><div class="ptl"><div class="pdot"></div><div class="pln"></div></div><div class="pc"><div class="pref">Salmo 22, 13-18 — Escrito siglos antes de inventarse la crucifixión</div><div class="ptxt">«Me derramo como agua, todos mis huesos se dislocan. Han taladrado mis manos y mis pies. Se reparten mis vestidos, se sortean mi túnica.»</div><div class="pful">El salmista describe la crucifixión sin haberla visto jamás. El Espíritu que lo habitaba veía lo que el ojo humano no alcanzaba.</div></div></div>
+    <div class="pitem"><div class="ptl"><div class="pdot"></div><div class="pln"></div></div><div class="pc"><div class="pref">Isaías 53, 12 — Contado entre malhechores</div><div class="ptxt">«Fue contado entre los malhechores.»</div><div class="pful">El Hijo de Dios muere flanqueado por criminales, porque vino a salvar no a los justos sino a los pecadores.</div></div></div>
+    <div class="pitem"><div class="ptl"><div class="pdot"></div></div><div class="pc"><div class="pref">Lucas 23, 43 — El Buen Ladrón Dimas</div><div class="ptxt">«Hoy estarás conmigo en el Paraíso.»</div><div class="pful">La Cruz, que parecía el fin de todo, es ya, en ese instante, el umbral del cielo para el primero de sus redimidos.</div></div></div>
+  </div>
+  <div class="sc"><p>Mujer, he ahí a tu hijo. — He ahí a tu Madre.</p><div class="sc-ref">Juan 19, 26-27 — El testamento desde la Cruz</div></div>
+  <p>Las últimas palabras de Jesús a su Madre son el testamento con que le confía a la Iglesia como a un hijo. La espada que Simeón había anunciado treinta y tres años antes se cumple en toda su extensión. María no es espectadora pasiva: es la que participa en el sacrificio con su dolor de Madre y su fiat renovado al pie del madero.</p>
+  <p>Los jefes de los sacerdotes se mofaban: <em class="verse">«Es el Rey de Israel; que baje ahora de la Cruz y creeremos en Él.»</em> La tentación de siempre: demuestra tu poder y te creeremos. Y la respuesta de Cristo —el silencio de quien permanece en la Cruz— es la respuesta definitiva: <em class="gold">el poder de Dios no se demuestra evitando el sufrimiento sino atravesándolo.</em></p>
+</div></div></div>
+
+<!-- ══════════ TEOLOGÍA ══════════ -->
+<div class="sw alt" id="teologia"><div class="content"><div class="chapter">
+  <div class="cnum">XVI</div>
+  <h2 class="ctitle">El Sentido de Todo: Teología de la Cruz</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p class="lead">La muerte de Cristo no fue un accidente de la historia. No fue el fracaso de una misión bien intencionada. Detrás y dentro de todo, la fe católica ve y proclama el designio eterno de Dios.</p>
+  <div class="cgrid">
+    <div class="ci"><div class="cit">La Cruz como Sacrificio</div><p>Cristo ofrece al Padre, como sacerdote y como víctima, la ofrenda perfecta de obediencia y amor que la humanidad pecadora nunca pudo ofrecer (Hebreos 9, 12).</p></div>
+    <div class="ci"><div class="cit">La Cruz como Redención</div><p>El <em>admirabile commercium</em>: el asombroso intercambio por el que el Hijo asume la condición mortal para darnos la vida divina y la filiación adoptiva (2 Pedro 1, 4).</p></div>
+    <div class="ci"><div class="cit">La Cruz como Reconciliación</div><p>El abismo que el pecado abrió entre Dios y el hombre es cerrado por Aquel que, siendo Dios, se hace hombre y muere para devolver la comunión de vida.</p></div>
+    <div class="ci"><div class="cit">La Gravedad del Pecado</div><p>¿Qué es el pecado? Es aquello que hizo esto. No se puede contemplar la Cruz sin que crezca el aborrecimiento del pecado propio y el asombro ante la misericordia que responde con la entrega del Inocente.</p></div>
+  </div>
+  <div class="sc"><p>Al que no conocía pecado, lo hizo pecado por nosotros, para que nosotros, en Él, llegásemos a ser justicia de Dios.</p><div class="sc-ref">2 Corintios 5, 21 — El Admirabile Commercium</div></div>
+  <div class="fq"><div class="fn">San León Magno — Sermón sobre la Pasión</div><p>Quien comprende verdaderamente la Cruz no puede ya vivir para sí mismo: porque ha visto que su vida fue comprada con un precio infinito, y ese precio exige una respuesta de amor total. No como obligación externa sino como consecuencia interna de quien ha entendido lo que ha visto.</p></div>
+</div></div></div>
+
+<!-- ══════════ ORACIÓN FINAL ══════════ -->
+<div class="sw" id="oracion"><div class="content"><div class="chapter">
+  <div class="prayer">
+    <p>Señor Jesucristo,</p>
+    <p>Hijo eterno del Padre, Dios de Dios, Luz de Luz, que bajaste del cielo por nosotros los hombres y por nuestra salvación, y que en aquellas horas que hemos contemplado te entregaste con una libertad y un amor que exceden toda comprensión humana:</p>
+    <p>No permitáis que hayamos contemplado estas horas con los ojos del cuerpo y sin los ojos del alma. No permitáis que la familiaridad con la historia sagrada nos haga insensibles a su abismo.</p>
+    <p>Que la agonía de Getsemaní nos enseñe a unir nuestra voluntad a la del Padre en todas las horas oscuras de nuestra vida. Que la mirada a Pedro nos alcance a nosotros también, en cada una de nuestras negaciones, y nos devuelva al llanto fecundo de la contrición.</p>
+    <p>Que la flagelación nos haga sentir el peso de lo que nuestros pecados significan, no en abstracto sino en la carne del que amamos. Que la corona de espinas nos haga adorar la realeza verdadera. Que el Ecce Homo nos haga reconocer en ese rostro desfigurado el rostro más bello del universo: el rostro del amor que no se rinde.</p>
+    <p>Que la Cruz misma se convierta para nosotros en la escuela definitiva: donde aprendemos que Dios es amor, que el amor no tiene precio, y que el precio infinito que fue pagado exige una respuesta que dure toda la vida y se consuma en la eternidad.</p>
+  </div>
+</div></div></div>
+
+<!-- COLOPHON -->
+<footer class="col">
+  <div style="display:flex;justify-content:center;margin-bottom:18px;opacity:.5">
+    <svg width="90" height="60" viewBox="0 0 90 60"><circle cx="45" cy="30" r="22" stroke="#c9a84c" stroke-width=".7" opacity=".35" fill="none"/><line x1="0" y1="30" x2="27" y2="30" stroke="#c9a84c" stroke-width=".8"/><line x1="63" y1="30" x2="90" y2="30" stroke="#c9a84c" stroke-width=".8"/><line x1="45" y1="8" x2="45" y2="52" stroke="#c9a84c" stroke-width="2.5"/><line x1="32" y1="19" x2="58" y2="19" stroke="#c9a84c" stroke-width="2"/><circle cx="45" cy="30" r="4" fill="#c9a84c" opacity=".2"/></svg>
+  </div>
+  <div class="col-title">Adoramus te, Christe</div>
+  <p class="col-text">Te adoramos, Cristo, y te bendecimos,<br>porque por tu Santa Cruz redimiste al mundo.</p>
+  <div style="color:var(--gold);opacity:.3;letter-spacing:.8em;font-size:10px;margin:16px 0">✦ ✦ ✦</div>
+  <p class="col-text" style="font-size:12.5px">Meditación sobre las horas de la Pasión de Nuestro Señor Jesucristo,<br>compuesta con humildad y reverencia para las almas que amen la Cruz.</p>
+  <div class="col-lat">Omnia ad maiorem Dei gloriam</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('pb').style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';
+});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.05});
+document.querySelectorAll('.chapter').forEach(c=>obs.observe(c));
+const tis=document.querySelectorAll('.ti');
+const sObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const id=x.target.id;tis.forEach(t=>{t.classList.remove('active');if(t.getAttribute('href')==='#'+id)t.classList.add('active')})}})},{threshold:.2,rootMargin:'-10% 0px -65% 0px'});
+document.querySelectorAll('[id]').forEach(s=>sObs.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumen Fidei · Biblioteca de la fe católica</title>
+<meta name="description" content="Lumen Fidei — colección de páginas devocionales, meditativas y apologéticas sobre la fe católica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211b12;
+    --ink-soft:#574a37;
+    --parchment:#f4ecda;
+    --parchment-2:#ece1c8;
+    --card:#fbf5e7;
+    --gold:#a9842a;
+    --gold-bright:#d3ad4e;
+    --gold-pale:#e7d39a;
+    --oxblood:#7a2230;
+    --cosmos:#0a0d1d;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond',serif;
+    font-size:20px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.eyebrow,.kicker{font-family:'Cinzel',serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  em{color:var(--oxblood);font-style:italic}
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--oxblood)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px;margin-left:auto;margin-right:auto}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:92vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#f3edde;overflow:hidden;position:relative;
+    background:
+      radial-gradient(1100px 700px at 50% 18%,#1a2147,transparent 60%),
+      radial-gradient(900px 600px at 50% 120%,#3a1622,transparent 55%),
+      linear-gradient(180deg,#070914,#0a0d1d 55%,#0b0f22);
+  }
+  #stars{position:absolute;inset:0;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .rosette{margin:0 auto 28px;width:104px;height:104px;animation:spin 110s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .kicker{letter-spacing:.42em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-bright);margin-bottom:24px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(3.4rem,12vw,8rem);line-height:.92;letter-spacing:.01em;
+    color:#f6efde;text-shadow:0 2px 40px rgba(0,0,0,.5)}
+  .hero h1 .sub{display:block;font-size:.34em;letter-spacing:.18em;color:var(--gold-pale);
+    margin-top:.55em;font-weight:500;font-family:'Cinzel',serif;text-transform:uppercase}
+  .hero .sub-line{max-width:620px;margin:30px auto 0;font-size:1.18rem;color:#cdc6bb;
+    line-height:1.7;font-style:italic;font-family:'Cormorant Garamond',serif}
+
+  .hero .rule{display:flex;align-items:center;justify-content:center;gap:16px;
+    max-width:300px;margin:34px auto 0}
+  .hero .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold-bright))}
+  .hero .rule .line.r{background:linear-gradient(90deg,var(--gold-bright),transparent)}
+  .hero .rule svg{width:22px;height:22px;flex:none;opacity:.9}
+
+  .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--gold-bright);font-family:'Cinzel',serif;font-size:.62rem;
+    letter-spacing:.32em;text-transform:uppercase;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  /* ---------- bands ---------- */
+  section{position:relative}
+  .band{padding:96px 0}
+  .band.tint{background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(169,132,42,.10),transparent 60%),
+      var(--parchment-2)}
+  .band.light::after,.band.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px;display:flex;align-items:center;
+    justify-content:center;gap:12px}
+  .eyebrow::before,.eyebrow::after{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+
+  h2{font-size:clamp(2rem,5vw,3.1rem);font-weight:600;line-height:1.06;
+    letter-spacing:.01em;margin-bottom:.55em;color:var(--ink);text-align:center;
+    font-family:'Cormorant Garamond',serif;font-style:italic}
+
+  .intro{text-align:center;font-size:1.18rem;color:var(--ink-soft);line-height:1.75}
+  .intro .dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:3.6rem;line-height:.85;padding:8px 12px 0 0;color:var(--oxblood);font-weight:600}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- collection cards ---------- */
+  .grid{display:grid;gap:30px;margin-top:46px}
+  @media(min-width:820px){.g2{grid-template-columns:1fr 1fr}}
+
+  .col{
+    background:var(--card);border:1px solid rgba(169,132,42,.32);border-radius:4px;
+    padding:0;box-shadow:0 22px 50px -30px rgba(33,27,18,.45);
+    display:flex;flex-direction:column;overflow:hidden;position:relative;
+    transition:transform .35s ease,box-shadow .35s ease;
+  }
+  .col:hover{transform:translateY(-4px);box-shadow:0 30px 60px -28px rgba(33,27,18,.55)}
+  .col .head{padding:20px 26px 0;display:flex;align-items:center;gap:14px}
+  .col .head svg{width:34px;height:34px;flex:none;color:var(--gold)}
+  .col .head .tag{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gold);font-weight:600}
+  .col .body{padding:14px 26px 8px}
+  .col h3{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+    font-size:1.85rem;color:var(--ink);line-height:1.15;margin-bottom:10px;letter-spacing:.005em}
+  .col p{color:var(--ink-soft);font-size:1.02rem;line-height:1.65;margin:0}
+
+  .col ul{list-style:none;padding:14px 26px 26px;margin:0;border-top:1px dotted rgba(169,132,42,.4);
+    margin-top:18px}
+  .col ul li{counter-increment:t;border-bottom:1px dotted rgba(169,132,42,.3)}
+  .col ul li:last-child{border-bottom:none}
+  .col ul a{display:flex;align-items:baseline;gap:14px;padding:13px 4px;
+    text-decoration:none;color:var(--ink);font-size:1.08rem;
+    transition:color .25s ease,padding-left .25s ease;font-family:'EB Garamond',serif}
+  .col ul a:hover{color:var(--oxblood);padding-left:8px}
+  .col ul a .num{font-family:'Cinzel',serif;color:var(--gold);font-size:.74rem;
+    min-width:34px;font-weight:600;letter-spacing:.05em}
+  .col ul a .arr{margin-left:auto;color:var(--gold);opacity:0;transition:opacity .25s ease;font-family:'Cinzel',serif}
+  .col ul a:hover .arr{opacity:1}
+
+  /* ---------- prayer card ---------- */
+  .prayer{
+    background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:4px;
+    padding:42px 38px;margin-top:46px;
+    box-shadow:0 22px 50px -34px rgba(33,27,18,.5);position:relative;
+  }
+  .prayer h3{font-family:'Cinzel',serif;font-size:.74rem;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--gold);text-align:center;margin-bottom:8px;font-weight:600}
+  .prayer .name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.6rem;
+    text-align:center;color:var(--oxblood);margin-bottom:26px}
+  .prayer .tabs{display:flex;justify-content:center;gap:6px;margin-bottom:22px;flex-wrap:wrap}
+  .prayer .tabs button{
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    background:transparent;border:1px solid rgba(169,132,42,.4);color:var(--ink-soft);
+    padding:8px 16px;cursor:pointer;border-radius:2px;transition:.25s;font-weight:600;
+  }
+  .prayer .tabs button:hover{color:var(--oxblood);border-color:var(--gold)}
+  .prayer .tabs button.on{background:var(--gold);color:#1a140a;border-color:var(--gold)}
+  .prayer .text{display:none;font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.32rem;line-height:1.55;text-align:center;color:var(--ink);max-width:540px;margin:0 auto;
+    white-space:pre-line}
+  .prayer .text.on{display:block;animation:fade .5s ease}
+  .prayer .text .amen{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.3em;color:var(--gold);margin-top:18px}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  /* ---------- ornamental divider ---------- */
+  .rule{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;max-width:340px}
+  .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule svg{width:24px;height:24px;flex:none;color:var(--gold)}
+
+  /* ---------- footer ---------- */
+  footer{background:linear-gradient(180deg,#0b0f22,#070914);color:#c9c2b6;
+    text-align:center;padding:70px 26px}
+  footer .rosette{width:60px;height:60px;margin:0 auto 22px;opacity:.85;animation:none}
+  footer p{font-size:.95rem;color:#9d978c;margin:0 0 6px}
+  footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.4rem;
+    color:#e7d39a;margin-bottom:18px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.4}
+
+  ::selection{background:var(--gold);color:#1a140a}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap">
+    <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="50" r="34" opacity=".7"/>
+      <g opacity=".9">
+        <circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/>
+        <circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/>
+        <circle cx="29" cy="29" r="14"/><circle cx="71" cy="29" r="14"/>
+        <circle cx="29" cy="71" r="14"/><circle cx="71" cy="71" r="14"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    </svg>
+    <div class="kicker">Biblioteca de la fe católica</div>
+    <h1 class="display">Lumen Fidei
+      <span class="sub">La luz de la fe</span>
+    </h1>
+    <p class="sub-line">Una colección de páginas devocionales, meditativas e informativas
+      para contemplar, estudiar y comunicar mejor la riqueza de la fe.</p>
+    <div class="rule">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/>
+        <g stroke="currentColor" stroke-width="1.2" fill="none">
+          <path d="M12 1v4M12 19v4M1 12h4M19 12h4M4 4l3 3M17 17l3 3M20 4l-3 3M7 17l-3 3"/>
+        </g></svg>
+      <span class="line r"></span>
+    </div>
+  </div>
+  <div class="scroll">Desplazá para explorar</div>
+</header>
+
+<!-- ============ INTRO ============ -->
+<section class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow">Bienvenida</div>
+    <h2>Para contemplar, estudiar y compartir</h2>
+    <p class="intro dropcap"><strong>Lumen Fidei</strong> reúne meditaciones, apologética y reflexiones
+      pensadas como pequeñas obras visuales —páginas donde la palabra, la imagen y el silencio
+      se entrelazan para acompañar la vida interior. Cada entrada es una invitación a detenerse:
+      a leer despacio, a mirar con calma, a dejarse alcanzar por aquello que es verdadero,
+      bueno y bello.</p>
+  </div>
+</section>
+
+<!-- ============ COLECCIONES ============ -->
+<section class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow">El acervo</div>
+    <h2>Las colecciones</h2>
+
+    <div class="grid g2">
+
+      <!-- Apologética -->
+      <article class="col">
+        <div class="head">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M20 4 L34 10 V20 C34 28 27 34 20 36 C13 34 6 28 6 20 V10 Z"/>
+            <path d="M20 14 V26 M14 20 H26"/>
+          </svg>
+          <span class="tag">Apologética</span>
+        </div>
+        <div class="body">
+          <h3>La fe que da razón de sí misma</h3>
+          <p>Guías visuales para entender —y poder explicar— las grandes preguntas
+            sobre Dios, el mundo y el sentido último de las cosas.</p>
+        </div>
+        <ul>
+          <li><a href="apologetica/motor-inmovil/">
+            <span class="num">I.</span>
+            <span>El Motor Inmóvil <em style="font-style:italic;color:var(--ink-soft);font-size:.92em">— ¿por qué hay algo en vez de nada?</em></span>
+            <span class="arr">→</span>
+          </a></li>
+        </ul>
+      </article>
+
+      <!-- Meditaciones -->
+      <article class="col">
+        <div class="head">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M20 6 V34 M12 14 H28 M14 22 H26"/>
+            <circle cx="20" cy="6" r="2.5" fill="currentColor" stroke="none"/>
+          </svg>
+          <span class="tag">Meditaciones</span>
+        </div>
+        <div class="body">
+          <h3>El silencio que se hace oración</h3>
+          <p>Recorridos contemplativos por los misterios de la fe, acompañados de la pintura
+            sagrada y de la Escritura, para orar con los ojos del alma.</p>
+        </div>
+        <ul>
+          <li><a href="meditaciones/pasion-del-senor/">
+            <span class="num">I.</span>
+            <span>La Noche del Señor <em style="font-style:italic;color:var(--ink-soft);font-size:.92em">— meditación sobre la Pasión</em></span>
+            <span class="arr">→</span>
+          </a></li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORACIÓN ============ -->
+<section class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow">La oración del proyecto</div>
+    <h2 style="font-size:clamp(1.7rem,4.2vw,2.4rem)">Actiones nostras</h2>
+    <div class="rule" style="margin-top:14px">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span>
+    </div>
+
+    <div class="prayer">
+      <h3>Oración</h3>
+      <div class="name">Por toda obra comenzada en Ti</div>
+      <div class="tabs">
+        <button class="on" data-l="es">Español</button>
+        <button data-l="la">Latine</button>
+        <button data-l="en">English</button>
+      </div>
+      <p class="text on" data-l="es">Dirige, Señor, nuestras acciones con tus santas inspiraciones,
+y acompáñalas con tu ayuda misericordiosa,
+para que toda oración y obra nuestra comience siempre en Ti
+y por Ti llegue felizmente a su término.
+Por Cristo nuestro Señor.<span class="amen">Amén</span></p>
+      <p class="text" data-l="la">Actiones nostras, quaesumus Domine,
+aspirando praeveni et adiuvando prosequere:
+ut cuncta nostra oratio et operatio a te semper incipiat,
+et per te coepta finiatur.
+Per Christum Dominum nostrum.<span class="amen">Amen</span></p>
+      <p class="text" data-l="en">Direct, O Lord, all of our actions by Thy holy inspirations,
+and carry them on by Thy gracious assistance,
+so that every prayer and work of ours may begin from Thee
+and by Thee be happily ended.
+Through Christ, our Lord.<span class="amen">Amen</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    <g opacity=".8"><circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/><circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/></g>
+  </svg>
+  <p class="big">“Tu palabra es lámpara para mis pasos, luz en mi sendero.” <br><span style="font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-family:'Cinzel',serif;color:#a8997d">Salmo 119, 105</span></p>
+  <p>Lumen Fidei · biblioteca de páginas devocionales y apologéticas.</p>
+  <p style="margin-top:6px;font-size:.82rem;color:#7f7a70">Pensado para ser publicado como sitio estático. Ad maiorem Dei gloriam.</p>
+</footer>
+
+<script>
+  // starfield
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  let w,hh,stars;
+  function init(){w=c.width=innerWidth;hh=c.height=Math.max(innerHeight,600);
+    stars=Array.from({length:Math.min(220,Math.floor(w/6))},()=>({
+      x:Math.random()*w,y:Math.random()*hh,r:Math.random()*1.4+.2,
+      a:Math.random(),s:Math.random()*.018+.004}));}
+  function draw(){x.clearRect(0,0,w,hh);
+    for(const st of stars){st.a+=st.s;const o=.35+Math.abs(Math.sin(st.a))*.65;
+      x.beginPath();x.arc(st.x,st.y,st.r,0,7);
+      x.fillStyle='rgba(231,224,255,'+o+')';x.fill();}
+    requestAnimationFrame(draw);}
+  init();draw();addEventListener('resize',init);
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // prayer tabs
+  document.querySelectorAll('.prayer .tabs button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      const l=b.dataset.l;
+      document.querySelectorAll('.prayer .tabs button').forEach(x=>x.classList.toggle('on',x===b));
+      document.querySelectorAll('.prayer .text').forEach(t=>t.classList.toggle('on',t.dataset.l===l));
+    });
+  });
+</script>
+</body>
+</html>

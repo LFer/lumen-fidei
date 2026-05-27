@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Motor Inmóvil · Por qué hay algo en vez de nada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211b12;
+    --ink-soft:#574a37;
+    --parchment:#f4ecda;
+    --parchment-2:#ece1c8;
+    --card:#fbf5e7;
+    --gold:#a9842a;
+    --gold-bright:#d3ad4e;
+    --gold-pale:#e7d39a;
+    --oxblood:#7a2230;
+    --oxblood-deep:#581621;
+    --cosmos:#0a0d1d;
+    --cosmos-2:#121833;
+    --cosmos-3:#1b2347;
+    --star:#ede9ff;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond',serif;
+    font-size:20px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ---------- progress bar ---------- */
+  #progress{position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    z-index:999;box-shadow:0 0 8px rgba(211,173,78,.6)}
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,.eyebrow{font-family:'Cinzel',serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.32rem;line-height:1.7}
+  em{color:var(--oxblood);font-style:italic}
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--oxblood)}
+
+  /* ---------- layout ---------- */
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .eyebrow .num{font-family:'Cinzel',serif;color:var(--oxblood)}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+
+  h2{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:600;line-height:1.06;
+    letter-spacing:.01em;margin-bottom:.55em;color:var(--ink)}
+  h3{font-size:1.18rem;letter-spacing:.06em;color:var(--oxblood);margin-bottom:.4em}
+
+  /* ---------- section rhythm ---------- */
+  .band{padding:96px 0}
+  .band.light{background:var(--parchment)}
+  .band.tint{background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(169,132,42,.10),transparent 60%),
+      var(--parchment-2)}
+  .band.dark{background:
+      radial-gradient(900px 600px at 15% 0%,rgba(60,75,150,.35),transparent 55%),
+      radial-gradient(700px 500px at 90% 100%,rgba(122,34,48,.28),transparent 60%),
+      linear-gradient(180deg,var(--cosmos),#0c1124 60%,var(--cosmos));
+    color:#e9e4d6}
+  .band.dark h2{color:#f6f0e2}
+  .band.dark h3{color:var(--gold-bright)}
+  .band.dark strong{color:#fff}
+  .band.dark em{color:var(--gold-bright)}
+  .band.dark .eyebrow{color:var(--gold-bright)}
+  .band.dark .eyebrow::before{background:var(--gold-bright)}
+  .band.dark .eyebrow .num{color:#e7c97a}
+
+  /* paper grain */
+  .band.light::after,.band.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#f3edde;overflow:hidden;
+    background:radial-gradient(1100px 700px at 50% 18%,#1a2147,transparent 60%),
+      radial-gradient(900px 600px at 50% 120%,#3a1622,transparent 55%),
+      linear-gradient(180deg,#070914,#0a0d1d 55%,#0b0f22)}
+  #stars{position:absolute;inset:0;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .rosette{margin:0 auto 30px;width:96px;height:96px;animation:spin 90s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .kicker{font-family:'Cinzel',serif;letter-spacing:.4em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-bright);margin-bottom:26px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(3rem,11vw,7rem);line-height:.95;letter-spacing:.01em;
+    text-shadow:0 2px 40px rgba(0,0,0,.5)}
+  .hero h1 .small{display:block;font-size:.42em;letter-spacing:.04em;color:var(--gold-pale);margin-top:.4em;font-weight:500}
+  .hero .sub{max-width:640px;margin:30px auto 0;font-size:1.2rem;color:#cdc6bb;line-height:1.7}
+  .hero .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--gold-bright);font-family:'Cinzel',serif;font-size:.65rem;
+    letter-spacing:.3em;text-transform:uppercase;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ornamental divider ---------- */
+  .rule{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;max-width:340px}
+  .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule svg{width:26px;height:26px;flex:none}
+
+  /* ---------- drop cap ---------- */
+  .dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:4.6rem;line-height:.78;padding:6px 14px 0 0;color:var(--oxblood);font-weight:600}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--card);border:1px solid rgba(169,132,42,.32);
+    border-radius:4px;padding:26px 28px;
+    box-shadow:0 18px 40px -28px rgba(33,27,18,.55);position:relative}
+  .band.dark .card{background:rgba(255,255,255,.04);border-color:rgba(211,173,78,.28);
+    box-shadow:0 18px 50px -30px rgba(0,0,0,.7);color:#e9e4d6}
+  .grid{display:grid;gap:22px}
+  @media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+
+  .objection{border-left:4px solid var(--oxblood);background:rgba(122,34,48,.07);
+    padding:20px 24px;border-radius:0 4px 4px 0;font-style:italic;font-size:1.1rem}
+  .band.dark .objection{background:rgba(122,34,48,.18);border-color:#c66}
+  .answer{border-left:4px solid var(--gold);background:rgba(169,132,42,.10);
+    padding:20px 24px;border-radius:0 4px 4px 0}
+  .band.dark .answer{background:rgba(211,173,78,.12)}
+  .tag{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+    display:inline-block;margin-bottom:8px;font-weight:600}
+  .tag.bad{color:var(--oxblood)}
+  .tag.good{color:var(--gold)}
+  .band.dark .tag.good{color:var(--gold-bright)}
+
+  /* ---------- figures ---------- */
+  figure{margin:0}
+  .plate{background:#0c0f1f;border:1px solid rgba(211,173,78,.35);padding:10px;
+    border-radius:3px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+  .plate img{display:block;width:100%;height:auto;border-radius:2px}
+  figcaption{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold);margin-top:12px;text-align:center;line-height:1.6}
+  .band.dark figcaption{color:var(--gold-bright)}
+  figcaption span{display:block;font-family:'EB Garamond',serif;text-transform:none;
+    letter-spacing:0;font-size:.82rem;color:inherit;opacity:.75;margin-top:3px}
+
+  /* portrait split */
+  .split{display:grid;gap:40px;align-items:center}
+  @media(min-width:880px){.split{grid-template-columns:0.9fr 1.1fr}.split.rev{grid-template-columns:1.1fr 0.9fr}}
+
+  /* ---------- index ---------- */
+  .toc{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:6px;
+    padding:34px 30px;box-shadow:0 20px 50px -34px rgba(33,27,18,.5)}
+  .toc ol{list-style:none;counter-reset:t;display:grid;gap:2px}
+  @media(min-width:680px){.toc ol{grid-template-columns:1fr 1fr;column-gap:34px}}
+  .toc li{counter-increment:t;border-bottom:1px dotted rgba(169,132,42,.4)}
+  .toc a{display:flex;gap:14px;align-items:baseline;padding:11px 4px;text-decoration:none;
+    color:var(--ink);transition:.25s;font-size:1.05rem}
+  .toc a:hover{color:var(--oxblood);padding-left:10px}
+  .toc a::before{content:counter(t,upper-roman) ".";font-family:'Cinzel',serif;
+    color:var(--gold);font-size:.82rem;min-width:40px;font-weight:600}
+
+  /* ---------- icon list ---------- */
+  .ilist{display:grid;gap:18px;margin:8px 0}
+  .ilist .it{display:flex;gap:18px;align-items:flex-start}
+  .ilist .it svg{flex:none;width:40px;height:40px;margin-top:2px}
+  .ilist .it h4{font-family:'Cinzel',serif;font-size:.95rem;letter-spacing:.04em;
+    color:var(--oxblood);margin-bottom:.15em;font-weight:600}
+  .band.dark .ilist .it h4{color:var(--gold-bright)}
+  .ilist .it p{font-size:1rem;margin:0;color:var(--ink-soft)}
+  .band.dark .ilist .it p{color:#cfc8ba}
+
+  /* ---------- quote ---------- */
+  .pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);
+    line-height:1.18;font-weight:500;font-style:italic;text-align:center;color:var(--ink)}
+  .band.dark .pull{color:#f4eddd}
+  .pull .by{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+  .quotecard{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:4px;
+    padding:24px 26px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;
+    font-style:italic;line-height:1.34;position:relative;color:var(--ink)}
+  .quotecard::before{content:"\201C";position:absolute;top:-6px;left:14px;
+    font-size:4rem;color:var(--gold);opacity:.35;font-family:'Cormorant Garamond',serif}
+  .quotecard .who{display:block;font-family:'Cinzel',serif;font-style:normal;
+    font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+
+  /* cascade */
+  .cascade{display:grid;gap:0}
+  .cascade .step{display:flex;gap:16px;align-items:flex-start;padding:14px 0;
+    border-left:2px solid rgba(211,173,78,.4);padding-left:22px;margin-left:8px;position:relative}
+  .cascade .step::before{content:"";position:absolute;left:-7px;top:20px;width:12px;height:12px;
+    border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(211,173,78,.18)}
+  .cascade .step .w{font-family:'Cinzel',serif;color:var(--gold-bright);font-size:.78rem;
+    letter-spacing:.12em;text-transform:uppercase;min-width:118px;padding-top:3px;font-weight:600}
+  .cascade .step .t{flex:1}
+
+  .keyword{font-family:'Cinzel',serif;letter-spacing:.04em}
+  .note{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+  .band.dark .note{color:#b9b2a4}
+
+  footer{background:linear-gradient(180deg,#0b0f22,#070914);color:#c9c2b6;
+    text-align:center;padding:70px 26px}
+  footer .rosette{width:60px;height:60px;margin:0 auto 22px;opacity:.8}
+  footer p{font-size:.95rem;color:#9d978c;margin:0}
+  footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#e7d39a;margin-bottom:14px}
+
+  ::selection{background:var(--gold);color:#1a140a}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap">
+    <!-- rosette / sacred geometry -->
+    <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="50" r="34" opacity=".7"/>
+      <g opacity=".9">
+        <circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/>
+        <circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/>
+        <circle cx="29" cy="29" r="14"/><circle cx="71" cy="29" r="14"/>
+        <circle cx="29" cy="71" r="14"/><circle cx="71" cy="71" r="14"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    </svg>
+    <div class="kicker">Santo Tomás de Aquino · Las cinco vías</div>
+    <h1 class="display">El Motor Inmóvil
+      <span class="small">¿Por qué existe algo en vez de nada?</span>
+    </h1>
+    <p class="sub">Una guía visual para entender el argumento tomista de la existencia de Dios —
+    y por qué la objeción de “¿y si hay otro universo antes?” no lo derriba, sino que lo aclara.</p>
+  </div>
+  <div class="scroll">Desplazá para comenzar</div>
+</header>
+
+<!-- ============ INTRO + ÍNDICE ============ -->
+<section class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> El punto de partida</div>
+    <p class="lead dropcap">Estabas hablando con un amigo sobre la existencia de Dios y usaste una de las
+      vías de Santo Tomás: la del <em>movimiento</em>. Le dijiste, más o menos, que el universo tuvo un
+      principio y que ese principio es Dios. Y tu amigo te respondió con una buena objeción:</p>
+    <div class="objection" style="margin:10px 0 26px">
+      “¿Y cómo sabés que antes no había otro universo? ¿O que estamos dentro de varios universos?
+      Como estamos <em>adentro</em>, no podemos obtener información de afuera con certeza absoluta…
+      así que nuestro propio inicio podría ser aparente y relativo a nosotros.”
+    </div>
+    <p>La objeción es <strong>buena</strong>, pero no destruye el argumento tomista. Bien entendida,
+      lo aclara. Porque ataca una versión <em>débil</em> del argumento —no su corazón. Este es el
+      recorrido para entender la diferencia, paso a paso.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#a9842a" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <nav class="toc" style="margin-top:34px">
+      <ol>
+        <li><a href="#s1">Las dos versiones del argumento</a></li>
+        <li><a href="#s2">Horizontal vs. vertical</a></li>
+        <li><a href="#s3">Acto y potencia</a></li>
+        <li><a href="#s4">Cadenas: bastón vs. abuelo</a></li>
+        <li><a href="#s5">El multiverso no resuelve</a></li>
+        <li><a href="#s6">Esencia y existencia</a></li>
+        <li><a href="#s7">¿Quién creó a Dios?</a></li>
+        <li><a href="#s8">La contingencia</a></li>
+        <li><a href="#s9">Física y metafísica</a></li>
+        <li><a href="#s10">Dios sostiene el ser</a></li>
+        <li><a href="#s11">De la causa al Dios</a></li>
+        <li><a href="#s12">Respuestas rápidas</a></li>
+        <li><a href="#s13">Frases para la charla</a></li>
+        <li><a href="#s14">El cierre</a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ 1 · DOS VERSIONES ============ -->
+<section id="s1" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">I</span> Lo primero a despejar</div>
+    <h2 class="narrow">Hay dos argumentos distintos —y la objeción solo toca el flojo</h2>
+    <p class="narrow lead" style="color:#cfc8ba">Mucha gente confunde el argumento tomista con un razonamiento
+      mucho más simple. Conviene separarlos, porque tu amigo le pegó al simple.</p>
+
+    <div class="grid g2" style="margin-top:36px">
+      <div class="card">
+        <span class="tag bad">Versión débil · “Dios de los huecos”</span>
+        <h3 style="color:#e98b8b">“No sé qué pasó antes, entonces Dios”</h3>
+        <p style="color:#d8d1c4">Hubo un primer momento físico. No sé qué había antes.
+          Entonces meto a Dios ahí, para tapar el hueco.</p>
+        <p class="note" style="color:#b9988f">Esto es flojo: cada vez que la ciencia llena el hueco,
+          Dios se achica. La objeción del amigo —“¿y si había otro universo?”— lo destruye fácil.</p>
+      </div>
+      <div class="card">
+        <span class="tag good">Versión fuerte · El tomismo serio</span>
+        <h3>“Lo que cambia y depende necesita fundamento”</h3>
+        <p style="color:#e6e0d2">Todo lo que cambia, todo lo contingente, todo lo que <em>recibe</em> su
+          existencia de otro, no puede explicarse a sí mismo en último término. Por eso tiene que haber
+          una realidad primera —no causada, no movida— que sea fundamento de todo lo demás.</p>
+        <p class="note" style="color:#cdbf95">No depende de “qué pasó antes”. Depende de
+          <strong>por qué hay algo dependiente existiendo ahora</strong>.</p>
+      </div>
+    </div>
+
+    <div class="card narrow reveal" style="margin:40px auto 0;text-align:center;border-style:dashed">
+      <p style="margin:0;font-size:1.25rem;color:#f1ead0">La clave no es <em>“qué pasó antes”</em>,
+        sino <strong>“por qué hay algo que cambia y depende, justo ahora”.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · HORIZONTAL VS VERTICAL ============ -->
+<section id="s2" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">II</span> La distinción que cambia todo</div>
+    <h2 class="narrow">Tu amigo piensa en cadenas horizontales. Santo Tomás piensa en vertical.</h2>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:30px">
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <h3>↔ Dependencia horizontal (en el tiempo)</h3>
+        <p>Es la cadena que imagina tu amigo: un universo viene de otro, que viene de otro…</p>
+        <!-- horizontal chain svg -->
+        <svg viewBox="0 0 460 120" style="width:100%;height:auto;margin:10px 0">
+          <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#7a2230"/></marker></defs>
+          <g font-family="Cinzel" font-size="12" fill="#574a37">
+            <circle cx="40" cy="60" r="26" fill="#ece1c8" stroke="#a9842a"/><text x="40" y="64" text-anchor="middle">U₁</text>
+            <circle cx="160" cy="60" r="26" fill="#ece1c8" stroke="#a9842a"/><text x="160" y="64" text-anchor="middle">U₂</text>
+            <circle cx="280" cy="60" r="26" fill="#ece1c8" stroke="#a9842a"/><text x="280" y="64" text-anchor="middle">U₃</text>
+            <circle cx="410" cy="60" r="26" fill="#fbf5e7" stroke="#7a2230" stroke-width="2"/><text x="410" y="64" text-anchor="middle">hoy</text>
+          </g>
+          <g stroke="#7a2230" stroke-width="1.6" marker-end="url(#ar)" fill="none">
+            <path d="M70 60 H128"/><path d="M190 60 H248"/><path d="M310 60 H378"/>
+          </g>
+          <text x="230" y="108" text-anchor="middle" font-family="EB Garamond" font-style="italic" font-size="13" fill="#574a37">…antes / después en el tiempo →</text>
+        </svg>
+        <p class="note">“Capaz que antes de este universo hubo otro.” Puede ser. <strong>Eso no afecta el argumento.</strong></p>
+      </div>
+
+      <div>
+        <h3>↕ Dependencia vertical (ahora mismo)</h3>
+        <p>Las cosas existen <em>ahora</em>, cambian <em>ahora</em>, dependen <em>ahora</em>. ¿De dónde reciben su ser en este instante?</p>
+        <!-- vertical lamp svg -->
+        <svg viewBox="0 0 460 120" style="width:100%;height:auto;margin:10px 0">
+          <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+            <path d="M0,0 L9,4.5 L0,9 z" fill="#a9842a"/></marker></defs>
+          <g font-family="Cinzel" font-size="11.5" fill="#574a37">
+            <rect x="20" y="40" width="92" height="40" rx="6" fill="#fbf5e7" stroke="#7a2230" stroke-width="2"/><text x="66" y="64" text-anchor="middle">lámpara</text>
+            <rect x="160" y="40" width="92" height="40" rx="6" fill="#ece1c8" stroke="#a9842a"/><text x="206" y="64" text-anchor="middle">cable</text>
+            <rect x="300" y="40" width="92" height="40" rx="6" fill="#ece1c8" stroke="#a9842a"/><text x="346" y="64" text-anchor="middle">central</text>
+          </g>
+          <g stroke="#a9842a" stroke-width="1.6" marker-end="url(#ar2)" fill="none">
+            <path d="M160 60 H118"/><path d="M300 60 H258"/><path d="M430 60 H398"/>
+          </g>
+          <text x="442" y="64" font-family="Cinzel" font-size="20" fill="#a9842a">?</text>
+          <text x="230" y="108" text-anchor="middle" font-family="EB Garamond" font-style="italic" font-size="13" fill="#574a37">¿quién da la energía que ninguno tiene por sí mismo?</text>
+        </svg>
+        <p class="note">Si todo en la cadena <strong>recibe</strong> energía y nada la tiene por sí mismo, alargar la cadena no explica nada: solo agrega intermediarios.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:36px">
+    <div class="answer">
+      <p style="margin:0">Decir “este universo viene de otro universo” es una explicación <em>física</em> intermedia,
+      pero no una explicación <em>metafísica</em> final. Porque ese otro universo también tendría leyes,
+      energía, estructura, cambio y dependencia. Y entonces la pregunta vuelve: <strong>¿por qué existe eso?</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · ACTO Y POTENCIA ============ -->
+<section id="s3" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">III</span> La Primera Vía · el movimiento</div>
+  </div>
+  <div class="wrap split reveal" style="margin-top:8px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" alt="Detalle de Platón y Aristóteles en La Escuela de Atenas, de Rafael"
+          src="https://upload.wikimedia.org/wikipedia/commons/9/98/Sanzio_01_Plato_Aristotle.jpg">
+      </div>
+      <figcaption>Rafael · “La Escuela de Atenas” (1511)
+        <span>Platón y Aristóteles. De Aristóteles toma Santo Tomás el acto y la potencia.</span></figcaption>
+    </figure>
+    <div>
+      <h2 style="font-size:clamp(1.8rem,4.6vw,2.7rem)">“Movimiento” no es solo desplazarse: es <em>cambio</em></h2>
+      <p>Cuando Santo Tomás habla de movimiento, se refiere a algo más amplio: pasar de
+        <strong>potencia</strong> (lo que algo <em>puede</em> ser) a <strong>acto</strong> (lo que efectivamente <em>es</em>).</p>
+      <div class="ilist">
+        <div class="it">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#7a2230" stroke-width="1.6"><path d="M20 34V18"/><path d="M20 18c-6 0-9-5-9-9 5 0 9 4 9 9z"/><path d="M20 18c6 0 9-5 9-9-5 0-9 4-9 9z"/><path d="M12 34h16"/></svg>
+          <div><h4>La semilla y el árbol</h4><p>La semilla <em>puede</em> ser árbol, pero todavía no lo es. Al crecer, actualiza esa potencia.</p></div>
+        </div>
+        <div class="it">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#7a2230" stroke-width="1.6"><path d="M16 6c-3 4-3 8 0 12s3 8 0 12"/><path d="M24 6c-3 4-3 8 0 12s3 8 0 12"/><path d="M8 34h24"/></svg>
+          <div><h4>El agua que hierve</h4><p>No hierve porque <em>pueda</em> hervir; necesita calor <strong>actual</strong> que la actualice.</p></div>
+        </div>
+        <div class="it">
+          <svg viewBox="0 0 40 40" fill="none" stroke="#7a2230" stroke-width="1.6"><path d="M6 14l14-7 14 7-14 7z"/><path d="M12 17v8c0 2 4 4 8 4s8-2 8-4v-8"/></svg>
+          <div><h4>Aprender francés</h4><p>El alumno no aprende por su mera capacidad: necesita una causa actual —maestro, estudio, inteligencia en acto.</p></div>
+        </div>
+      </div>
+      <p style="margin-top:20px"><strong>Nada se actualiza a sí mismo</strong> en el mismo sentido y aspecto.
+        Lo que está en potencia necesita algo en acto que lo mueva. Si hay cambio real —y lo hay—, debe
+        existir una realidad primera que sea <em>acto puro</em>, sin mezcla de potencia: el <span class="keyword">Primer Motor Inmóvil</span>.</p>
+    </div>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:34px">
+    <div class="answer"><p style="margin:0">Ese motor no es una pieza dentro del universo, ni una superpartícula, ni una
+      energía cósmica, ni un universo anterior. Es <strong>aquello que fundamenta que haya</strong> sistema, cambio, acto, potencia y existencia.</p></div>
+  </div>
+</section>
+
+<!-- ============ 4 · CADENAS ============ -->
+<section id="s4" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">IV</span> Dos tipos de cadenas causales</div>
+    <h2 class="narrow">“¿Y si la cadena es infinita?” Depende de qué cadena.</h2>
+    <p class="narrow lead">Acá está el corazón de la respuesta. Hay que distinguir dos series muy diferentes.</p>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:34px">
+    <div class="grid g2" style="align-items:start">
+      <div class="card">
+        <span class="tag" style="color:var(--ink-soft)">Serie accidental · temporal</span>
+        <h3 style="color:var(--ink-soft)">Abuelo → padre → hijo</h3>
+        <p>El abuelo puede morir y el nieto seguir existiendo. El padre ya no hace falta para que el hijo
+          siga viviendo. Aquí <em>sí</em> se puede discutir si la cadena es infinita hacia el pasado.</p>
+        <p class="note">Santo Tomás no pretendía probar con la sola razón que el mundo tuvo un primer
+          segundo. Aceptaba por fe que fue creado “en el principio”, pero su argumento no depende de eso.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <span class="tag good">Serie esencial · jerárquica</span>
+        <h3>Mano → bastón → piedra</h3>
+        <p>El bastón mueve la piedra solo porque la mano lo mueve <strong>ahora</strong>. Si quitás la mano,
+          se acaba todo. Los intermediarios <em>no tienen causalidad propia</em>.</p>
+        <p class="note">Esta serie <strong>exige</strong> una causa primera actual. Y es con esta con la que trabaja el argumento tomista.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- three analogies -->
+  <div class="wrap reveal" style="margin-top:40px">
+    <div class="grid g3">
+      <div class="card" style="text-align:center">
+        <svg viewBox="0 0 120 70" style="width:100%;max-width:180px;height:auto" fill="none" stroke="#7a2230" stroke-width="2">
+          <rect x="4" y="26" width="22" height="20" rx="3"/><rect x="34" y="26" width="22" height="20" rx="3"/><rect x="64" y="26" width="22" height="20" rx="3"/><rect x="94" y="26" width="22" height="20" rx="3"/>
+          <path d="M26 36h8M56 36h8M86 36h8" stroke="#a9842a"/>
+          <circle cx="60" cy="58" r="2" fill="#7a2230" stroke="none"/><circle cx="68" cy="58" r="2" fill="#7a2230" stroke="none"/><circle cx="76" cy="58" r="2" fill="#7a2230" stroke="none"/>
+        </svg>
+        <h3 style="margin-top:8px">El tren infinito</h3>
+        <p>Si ningún vagón tiene motor propio, infinitos vagones <strong>tampoco</strong> se mueven. La infinitud no fabrica una locomotora.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <svg viewBox="0 0 120 70" style="width:100%;max-width:180px;height:auto" fill="none" stroke="#7a2230" stroke-width="2">
+          <rect x="12" y="18" width="14" height="34" rx="2"/><rect x="40" y="18" width="14" height="34" rx="2"/><rect x="68" y="18" width="14" height="34" rx="2"/><rect x="96" y="18" width="14" height="34" rx="2"/>
+          <path d="M30 35h6M58 35h6M86 35h6" stroke="#a9842a" stroke-dasharray="2 2"/>
+        </svg>
+        <h3 style="margin-top:8px">Los espejos</h3>
+        <p>Espejos que reflejan luz del anterior. Si ninguno tiene luz propia, por más infinitos que sean, <strong>no hay luz</strong>. Falta una fuente.</p>
+      </div>
+      <div class="card" style="text-align:center">
+        <svg viewBox="0 0 120 70" style="width:100%;max-width:140px;height:auto" fill="none" stroke="#7a2230" stroke-width="2">
+          <ellipse cx="60" cy="20" rx="20" ry="7"/><ellipse cx="60" cy="36" rx="20" ry="7"/><ellipse cx="60" cy="52" rx="20" ry="7"/>
+          <path d="M44 56q16 12 32 0" stroke="#a9842a"/>
+        </svg>
+        <h3 style="margin-top:8px">Tortugas hasta el fondo</h3>
+        <p>“La Tierra se apoya en una tortuga, y esa en otra…” Si todas necesitan apoyo, infinitas tortugas <strong>no dan</strong> el apoyo último.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:36px">
+    <div class="pull">Una colección infinita de cosas dependientes no se vuelve independiente
+      mágicamente por ser infinita.</div>
+  </div>
+</section>
+
+<!-- ============ 5 · MULTIVERSO ============ -->
+<section id="s5" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">V</span> La objeción estrella</div>
+    <h2 class="narrow">El multiverso no refuta a Dios. Solo agranda la creación.</h2>
+  </div>
+  <div class="wrap split rev reveal" style="margin-top:18px">
+    <div>
+      <p class="lead" style="color:#d8d1c4">Concedamos todo por un momento: que somos una burbuja en un campo
+        inflacionario, que hay infinitos universos con distintas constantes, que nacen de fluctuaciones cuánticas.</p>
+      <p><strong>¿Qué cambia?</strong> Cambia la física del escenario. <em>No cambia la pregunta metafísica.</em></p>
+      <p>El multiverso, si existe, tendría una naturaleza, una estructura, principios, algún modo de ser y de
+        dependencia. No sería “el Ser mismo”: sería <strong>algo que existe</strong>. Y todo lo que es “algo que
+        existe” pero no es la existencia misma, necesita explicación.</p>
+      <div class="answer" style="margin-top:8px">
+        <p style="margin:0">Antes preguntábamos “¿por qué existe este universo?”. Ahora preguntamos “¿por qué
+          existe el multiverso?”. <strong>El problema se movió un paso atrás —pero sigue ahí.</strong></p>
+      </div>
+    </div>
+    <figure>
+      <div class="plate">
+        <img loading="lazy" alt="Los Pilares de la Creación, fotografiados por el telescopio James Webb de la NASA"
+          src="https://upload.wikimedia.org/wikipedia/commons/6/68/Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg">
+      </div>
+      <figcaption>NASA / ESA · Telescopio James Webb (2022)
+        <span>“Los Pilares de la Creación”, en la Nebulosa del Águila. Toda esta inmensidad, si cambia y depende, sigue siendo creación.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 6 · ESENCIA Y EXISTENCIA ============ -->
+<section id="s6" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VI</span> El punto más profundo</div>
+    <h2 class="narrow">Una cosa es <em>qué</em> es algo. Otra cosa es <em>que exista</em>.</h2>
+  </div>
+  <div class="wrap reveal" style="margin-top:24px">
+    <div class="grid g2" style="align-items:center">
+      <div>
+        <p>Podés entender perfectamente qué es un <strong>unicornio</strong> —un caballo con cuerno— sin que
+          exista. Su esencia no incluye su existencia. Lo mismo vale para un árbol, un planeta, un átomo… o un universo entero.</p>
+        <p>En toda criatura, la existencia <strong>no está incluida</strong> en su esencia: un perro no
+          <em>tiene</em> que existir; una galaxia podría no haber existido. Son <span class="keyword">contingentes</span>.
+          Por eso reciben el ser de otro.</p>
+        <p>Dios, en cambio, no es “un ente más” muy poderoso. Es <em>ipsum esse subsistens</em>:
+          <strong>el Ser mismo subsistente</strong>. Aquel cuya esencia <em>es</em> existir. Por eso no necesita causa.</p>
+      </div>
+      <figure>
+        <div class="plate">
+          <img loading="lazy" alt="La Creación de Adán, de Miguel Ángel, en la Capilla Sixtina"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Michelangelo_-_Creation_of_Adam_%28cropped%29.jpg">
+        </div>
+        <figcaption>Miguel Ángel · “La Creación de Adán” (c. 1512), Capilla Sixtina
+          <span>Crear, en sentido metafísico, no es transformar materia: es <em>dar el ser</em>.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:30px">
+    <div class="card" style="text-align:center;border-style:dashed">
+      <p style="margin:0;font-size:1.2rem">No tenés un inventario donde figuran <span class="note">planetas, átomos, energía, agujeros negros… y Dios</span>
+        como un ítem más. Más bien: <strong>todo lo que existe participa del ser, y Dios es el Ser mismo que da existencia a todo lo demás.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 · QUIÉN CREÓ A DIOS ============ -->
+<section id="s7" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">VII</span> La objeción clásica</div>
+    <h2>“Si todo tiene causa… ¿quién creó a Dios?”</h2>
+    <p class="lead">Esta es la trampa más común. Y se desarma con una sola precisión.</p>
+    <div class="objection" style="margin:18px 0">El argumento <em>no</em> dice “todo tiene causa”.</div>
+    <p>Dice que <strong>todo lo que cambia</strong>, todo lo que pasa de potencia a acto, todo lo contingente,
+      todo lo compuesto, todo lo que <em>recibe</em> el ser, requiere causa.</p>
+    <p>Pero Dios no es cambiante, no es compuesto, no recibe el ser, no pasa de potencia a acto. Dios es
+      <strong>acto puro</strong>. No es una excepción arbitraria: simplemente <em>no pertenece</em> a la clase
+      de cosas que reciben el ser.</p>
+    <div class="grid g2" style="margin-top:26px">
+      <div class="quotecard">Preguntar “¿quién causó a Dios?” es como preguntar “¿qué sostiene al fundamento último?”.
+        <span class="who">Si necesitara fundamento, no sería último</span></div>
+      <div class="quotecard">O como preguntar “¿quién encendió la fuente de toda luz?”.
+        <span class="who">Si recibiera luz de otra, no sería la fuente</span></div>
+    </div>
+    <p style="margin-top:26px" class="note">Y por eso <strong>no es simétrico</strong> decir “el ateo no le pone
+      causa al universo, el creyente no le pone causa a Dios, es lo mismo”. El universo es cambiante, compuesto,
+      limitado, físico. Dios es acto puro, simple, necesario, inmaterial. No es la misma jugada.</p>
+  </div>
+</section>
+
+<!-- ============ 8 · CONTINGENCIA ============ -->
+<section id="s8" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VIII</span> La Tercera Vía · la contingencia</div>
+    <h2 class="narrow">“¿Y si el universo es eterno?” Lo eterno no es lo mismo que lo necesario.</h2>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:20px">
+    <p class="lead" style="color:#d8d1c4">Vemos cosas que existen pero <em>podrían no existir</em>: vos, este árbol,
+      la Tierra, las estrellas que nacen y mueren. No tienen en sí mismas la razón de su existencia. Si <strong>todo</strong>
+      fuera así, el conjunto entero quedaría sin explicación. Tiene que haber algo necesario por sí mismo.</p>
+
+    <div class="card" style="margin:30px 0">
+      <h3>La huella en la arena eterna</h3>
+      <p style="margin-bottom:0">Imaginá una huella eterna en una arena eterna, causada por un pie eterno. La huella
+        nunca “empezó” en el tiempo… y sin embargo <strong>depende</strong> del pie en cada instante. Eternidad temporal
+        no equivale a independencia. Un mundo eterno seguiría dependiendo de Dios <em>eternamente</em>.</p>
+    </div>
+
+    <div class="grid g2">
+      <div class="pull" style="font-size:1.7rem">“Lo eterno no necesariamente es necesario.”</div>
+      <div class="pull" style="font-size:1.7rem">“Un pasado infinito no elimina la dependencia ontológica presente.”</div>
+    </div>
+    <p style="margin-top:26px">Esto es brillante porque <strong>desata el argumento del debate cosmológico del momento</strong>.
+      Si mañana la física dijera “el Big Bang no fue el comienzo absoluto”, la fe no se cae. Dios no era una solución
+      provisoria para una laguna.</p>
+  </div>
+</section>
+
+<!-- ============ 9 · FÍSICA Y METAFÍSICA ============ -->
+<section id="s9" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">IX</span> Dos preguntas distintas</div>
+    <h2 class="narrow">Física y metafísica no son enemigas. Responden cosas diferentes.</h2>
+  </div>
+  <div class="wrap reveal" style="margin-top:30px">
+    <div class="grid g2" style="align-items:start">
+      <div class="card">
+        <h3 style="color:var(--ink-soft)">La física pregunta…</h3>
+        <p style="margin:0">¿Cómo evoluciona el universo? ¿Qué pasó después del Big Bang? ¿Hay inflación, universos
+          burbuja? ¿Qué ecuaciones lo modelan? Estudia las <strong>causas segundas</strong>: los procesos internos.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <h3>La metafísica pregunta…</h3>
+        <p style="margin:0">¿Por qué existe algo capaz de evolucionar? ¿Por qué hay leyes? ¿Por qué hay potencia que
+          puede actualizarse? ¿Por qué existe el orden físico <strong>en vez de nada</strong>?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:36px">
+    <h3 style="text-align:center;margin-bottom:20px">Cuidado con la palabra “nada”</h3>
+    <p>El vacío cuántico <strong>no es nada</strong>: es una realidad física con campos, leyes y potencialidades.
+      La <em>nada absoluta</em> no tiene propiedades, ni leyes, ni energía, ni fluctuaciones. De la nada absoluta no
+      sale algo, porque no hay nada que produzca ni ley que opere.</p>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="objection" style="font-size:1rem">“La física puede describir un estado anterior al Big Bang.” → <strong>Eso es ciencia.</strong></div>
+      <div class="answer" style="font-size:1rem">“Por lo tanto Dios no existe.” → <strong>Eso ya no es ciencia: es filosofía, y floja.</strong></div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:34px">
+    <p class="note" style="text-align:center;font-size:1rem">Y otra distinción útil: el argumento <span class="keyword">Kalam</span>
+      (“el universo comenzó, luego tiene causa”) sí depende de probar un comienzo temporal. El argumento <span class="keyword">tomista</span>
+      no: aun con un universo eterno, todo seguiría dependiendo de Dios <em>ahora</em>.</p>
+  </div>
+</section>
+
+<!-- ============ 10 · DIOS SOSTIENE ============ -->
+<section id="s10" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">X</span> La creación no es un evento pasado</div>
+    <h2>Dios no es un relojero que dio cuerda y se fue.</h2>
+    <p class="lead">La imagen del relojero es engañosa. Si Dios dejara de sostener en el ser a las criaturas, no
+      seguirían existiendo ni un segundo. La creación es una <strong>dependencia permanente</strong>.</p>
+  </div>
+  <div class="wrap reveal" style="margin-top:20px">
+    <div class="grid g2" style="align-items:center">
+      <div class="card" style="text-align:center">
+        <svg viewBox="0 0 80 80" style="width:84px;height:84px" fill="none" stroke="#7a2230" stroke-width="2">
+          <circle cx="40" cy="40" r="30"/><path d="M40 22v18l12 8"/>
+        </svg>
+        <h3 style="margin-top:6px">El relojero ✗</h3>
+        <p style="margin:0">Fabrica el reloj, le da cuerda, se va. El reloj sigue solo. <em>Así no es Dios.</em></p>
+      </div>
+      <div class="card" style="text-align:center;border-color:var(--gold)">
+        <svg viewBox="0 0 80 80" style="width:84px;height:84px" fill="none" stroke="#a9842a" stroke-width="2">
+          <path d="M30 54V26c0-4 20-8 20-2"/><circle cx="28" cy="54" r="6"/><circle cx="48" cy="48" r="6"/>
+          <path d="M54 22c4 2 6 6 6 10M58 18c6 3 9 9 9 16" stroke="#7a2230"/>
+        </svg>
+        <h3 style="margin-top:6px">El cantante y la canción ✓</h3>
+        <p style="margin:0">La canción depende del cantante <strong>mientras</strong> se canta. Si deja de cantar, la canción cesa. Así sostiene Dios el ser.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:30px">
+    <p style="text-align:center">La existencia no es algo “normal” y autosuficiente. Es <strong>don</strong>.
+      Cada cosa que existe participa del acto de ser, en cada instante. Y eso abre el alma a la gratitud.</p>
+  </div>
+</section>
+
+<!-- ============ 11 · CAUSA PRIMERA ≠ TEMPORAL ============ -->
+<section id="s11" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">XI</span> Causa primera no significa “la más antigua”</div>
+    <h2 class="narrow">Primera en el <em>orden del ser</em>, no en el calendario.</h2>
+  </div>
+  <div class="wrap split reveal" style="margin-top:18px">
+    <figure>
+      <svg viewBox="0 0 300 200" style="width:100%;height:auto">
+        <rect x="0" y="0" width="300" height="200" fill="#0c1124"/>
+        <!-- projector -->
+        <rect x="14" y="120" width="60" height="40" rx="5" fill="#1b2347" stroke="#d3ad4e" stroke-width="1.4"/>
+        <circle cx="70" cy="140" r="9" fill="#0c1124" stroke="#d3ad4e" stroke-width="1.4"/>
+        <circle cx="34" cy="112" r="13" fill="none" stroke="#d3ad4e" stroke-width="1.4"/>
+        <!-- beam -->
+        <path d="M78 134 L250 60 L250 168 L78 146 Z" fill="url(#beam)" opacity=".55"/>
+        <defs><linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#e7d39a" stop-opacity=".1"/><stop offset="1" stop-color="#e7d39a" stop-opacity=".5"/></linearGradient></defs>
+        <!-- screen -->
+        <rect x="250" y="50" width="40" height="128" fill="#f4ecda" opacity=".92"/>
+        <g font-family="EB Garamond" font-size="9" fill="#9aa3c8">
+          <text x="20" y="180">proyector</text><text x="252" y="44">pantalla</text>
+        </g>
+        <text x="150" y="116" text-anchor="middle" font-family="Cinzel" font-size="9" fill="#e7d39a" letter-spacing="1">la película en curso</text>
+      </svg>
+      <figcaption>El proyector y la película
+        <span>La causa de que la película esté en pantalla no es una escena anterior: es el proyector, en otro orden.</span></figcaption>
+    </figure>
+    <div>
+      <p>En una canción, las notas suenan una tras otra; pero la causa de que <em>suenen</em> no es una nota anterior:
+        es el músico tocando, en otro orden. En una película, la causa de que esté proyectada no es la escena previa:
+        es el proyector, externo al relato.</p>
+      <div class="answer"><p style="margin:0"><strong>Dios no es “la escena cero”</strong> antes de la primera escena.
+        Dios es el fundamento de que <em>haya</em> película. Por eso decir “quizás hubo una escena antes” no toca el argumento.</p></div>
+      <p style="margin-top:18px">Y la analogía del <strong>autor</strong>: un personaje no es la causa de que exista la
+        novela. Dentro de la historia puede matar a otro o empezar una guerra —causas internas reales— pero la
+        <em>existencia misma</em> de la historia depende de un autor en otro nivel.</p>
+      <p class="note">Sería un error de categoría que un personaje dijera: “Recorrí todas las páginas y no encontré
+        al autor como personaje, así que no existe autor.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11b · CASCADA DE ATRIBUTOS ============ -->
+<section class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> Del “motor” al Dios clásico</div>
+    <h2>¿Por qué esa causa primera sería <em>Dios</em>?</h2>
+    <p class="lead">No se afirma de arranque. Se va deduciendo, atributo por atributo, desde lo que ya sabemos.</p>
+    <div class="cascade" style="margin-top:28px">
+      <div class="step"><div class="w">Si es primera</div><div class="t">no puede depender de otra cosa.</div></div>
+      <div class="step"><div class="w">Si no depende</div><div class="t">no está compuesta de partes → es <strong>simple</strong>.</div></div>
+      <div class="step"><div class="w">Si es simple</div><div class="t">no tiene potencia pasiva → <strong>no cambia</strong>.</div></div>
+      <div class="step"><div class="w">Si no cambia</div><div class="t">está fuera de la sucesión temporal → es <strong>eterna</strong>.</div></div>
+      <div class="step"><div class="w">Si es acto puro</div><div class="t">posee de modo eminente toda perfección → es <strong>infinita</strong>.</div></div>
+      <div class="step"><div class="w">Si causa el orden</div><div class="t">no es irracional; contiene <strong>inteligencia</strong> de modo eminente.</div></div>
+      <div class="step"><div class="w">Si ordena a fines</div><div class="t">tiene <strong>voluntad</strong>; y como fundamento de todo, es <strong>única</strong>.</div></div>
+    </div>
+    <p style="margin-top:26px">Eso se parece muchísimo más a lo que llamamos <strong>Dios</strong> que a una fuerza
+      impersonal. No prueba todavía la Trinidad ni la Encarnación —eso viene por revelación— pero la razón sola
+      llega a una realidad necesaria, eterna, simple, inmaterial, inteligente, causa del ser de todo.</p>
+  </div>
+</section>
+
+<!-- ============ 12 · RESPUESTAS RÁPIDAS ============ -->
+<section id="s12" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">XII</span> Botiquín de objeciones</div>
+    <h2 class="narrow">Respuestas rápidas a los escapes más comunes</h2>
+  </div>
+  <div class="wrap reveal" style="margin-top:30px">
+    <div class="grid g2">
+      <div class="card"><span class="tag bad">“El universo se causó a sí mismo.”</span>
+        <p style="margin:0">Incoherente: tendría que existir <em>antes</em> de existir para producirse. Nada se da el ser desde la nada.</p></div>
+      <div class="card"><span class="tag bad">“Simplemente existe, sin causa.”</span>
+        <p style="margin:0">No es una explicación: es detener la razón arbitrariamente. ¿Por qué justo lo cambiante y compuesto puede ser bruto, y Dios no?</p></div>
+      <div class="card"><span class="tag bad">“Una ley fundamental lo explica todo.”</span>
+        <p style="margin:0">Una ley describe; no produce. Una ecuación en un pizarrón no crea planetas. Si la ley es eficaz, ya es algo que necesita explicación.</p></div>
+      <div class="card"><span class="tag bad">“Quizás la nada es inestable.”</span>
+        <p style="margin:0">Si la “nada” tiene una propiedad —inestabilidad— entonces no es nada: es ya algún estado físico.</p></div>
+      <div class="card"><span class="tag bad">“Quizás todo es una simulación.”</span>
+        <p style="margin:0">No elimina la pregunta, la desplaza: habría que explicar el sistema base, sus leyes y su existencia.</p></div>
+      <div class="card"><span class="tag bad">“No podemos entender la causa última.”</span>
+        <p style="margin:0">No comprenderla del todo no es no conocer nada. Sé que el océano existe aunque no pueda abarcarlo entero.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13 · FRASES ============ -->
+<section id="s13" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">XIII</span> Para la conversación</div>
+    <h2 class="narrow">Frases que valen oro</h2>
+    <p class="narrow lead" style="color:#cfc8ba">Primero concedé lo razonable, después corregí el foco. Estas líneas resumen todo.</p>
+  </div>
+  <div class="wrap reveal" style="margin-top:30px">
+    <div class="grid g2">
+      <div class="quotecard">Tu objeción solo mueve el problema un paso atrás. El argumento no busca el primer evento físico, sino el fundamento último del ser. <span class="who">La respuesta central</span></div>
+      <div class="quotecard">Un multiverso no refuta a Dios; como mucho, sería una creación más grande. <span class="who">Versión filosa</span></div>
+      <div class="quotecard">Dios no es una pieza dentro de la cadena: es la razón por la que hay cadena. <span class="who">El núcleo</span></div>
+      <div class="quotecard">Confundís causa primera con causa temporal primera. Es primera en el orden del ser, no en el reloj. <span class="who">Versión técnica</span></div>
+      <div class="quotecard">Lo contingente no se explica por acumulación de contingentes. <span class="who">Sobre la contingencia</span></div>
+      <div class="quotecard">No argumento desde una laguna de la cosmología, sino desde la dependencia de todo lo compuesto de acto y potencia. <span class="who">Para mandar a estudiar</span></div>
+    </div>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:36px">
+    <h3 style="text-align:center;color:var(--gold-bright)">El molde de respuesta</h3>
+    <div class="cascade" style="margin-top:20px">
+      <div class="step"><div class="w">1 · Concedé</div><div class="t">“Sí, puede haber un estado anterior, ciclos o multiverso. No lo niego.”</div></div>
+      <div class="step"><div class="w">2 · Corregí</div><div class="t">“Pero el argumento no depende de que este universo sea el primer evento absoluto.”</div></div>
+      <div class="step"><div class="w">3 · Profundizá</div><div class="t">“La pregunta es por qué existe cualquier realidad física, cambiante y contingente.”</div></div>
+      <div class="step"><div class="w">4 · Rematá</div><div class="t">“Agregar universos no elimina la causa primera: solo agranda lo que necesita fundamento.”</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14 · CIERRE ============ -->
+<section id="s14" class="band light">
+  <div class="wrap split reveal">
+    <figure>
+      <div class="plate" style="background:#0c0f1f">
+        <img loading="lazy" alt="El Triunfo de Santo Tomás de Aquino, de Benozzo Gozzoli"
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Benozzo_Gozzoli_-_Triumph_of_St_Thomas_Aquinas_-_WGA10334.jpg">
+      </div>
+      <figcaption>Benozzo Gozzoli · “El Triunfo de Santo Tomás de Aquino” (1471), Louvre
+        <span>Entre Platón y Aristóteles, con la luz del saber sobre el pecho.</span></figcaption>
+    </figure>
+    <div>
+      <div class="eyebrow"><span class="num">XIV</span> El cierre</div>
+      <h2 style="font-size:clamp(1.9rem,5vw,3rem)">El argumento es más radical que la cosmología</h2>
+      <p>La cosmología estudia la <em>historia</em> del universo. El tomismo pregunta por el <em>acto de existir</em>
+        del universo. Por eso tu amigo puede multiplicar universos, ciclos o dimensiones —pero mientras hable de
+        realidades físicas, cambiantes y dependientes, no salió del problema. Solo agrandó el escenario.</p>
+      <div class="answer">
+        <p style="margin:0 0 .4em"><strong>Dios no es “lo que había antes”.</strong></p>
+        <p style="margin:0">Dios es <em>“Aquel por quien hay algo”.</em></p>
+      </div>
+      <p style="margin-top:20px" class="note">Y ahí, donde la metafísica toca la fe, se abre el misterio cristiano:
+        “En el principio era el Verbo.” El Logos creador no es una abstracción —pero esa ya es otra etapa del camino.</p>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:60px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="#a9842a"><circle cx="12" cy="12" r="3"/><g stroke="#a9842a" stroke-width="1.2"><path d="M12 1v4M12 19v4M1 12h4M19 12h4M4 4l3 3M17 17l3 3M20 4l-3 3M7 17l-3 3"/></g></svg>
+      <span class="line r"></span></div>
+    <p class="pull" style="margin-top:36px">Dios no es el primer ladrillo de la pared.
+      Es la razón por la que hay ladrillos, pared, espacio, leyes y existencia.</p>
+  </div>
+</section>
+
+<footer>
+  <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    <g opacity=".8"><circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/><circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/></g>
+  </svg>
+  <p class="big">“De la nada absoluta, nada sale. De la nada, todo recibe el ser.”</p>
+  <p>Guía visual sobre la Primera y la Tercera Vía de Santo Tomás de Aquino · para estudiar y compartir.<br>
+  Obras de dominio público (Crivelli, Rafael, Miguel Ángel, Gozzoli, NASA/ESA · vía Wikimedia Commons).</p>
+</footer>
+
+<script>
+  // reading progress
+  const bar=document.getElementById('progress');
+  addEventListener('scroll',()=>{const h=document.documentElement;
+    const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;bar.style.width=p+'%';});
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // starfield
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  let w,hh,stars;
+  function init(){w=c.width=innerWidth;hh=c.height=Math.max(innerHeight,600);
+    stars=Array.from({length:Math.min(220,Math.floor(w/6))},()=>({
+      x:Math.random()*w,y:Math.random()*hh,r:Math.random()*1.4+.2,
+      a:Math.random(),s:Math.random()*.018+.004}));}
+  function draw(){x.clearRect(0,0,w,hh);
+    for(const st of stars){st.a+=st.s;const o=.35+Math.abs(Math.sin(st.a))*.65;
+      x.beginPath();x.arc(st.x,st.y,st.r,0,7);
+      x.fillStyle='rgba(231,224,255,'+o+')';x.fill();}
+    requestAnimationFrame(draw);}
+  init();draw();addEventListener('resize',init);
+</script>
+</body>
+</html>
