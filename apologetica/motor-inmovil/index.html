@@ -217,10 +217,28 @@
   footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#e7d39a;margin-bottom:14px}
 
   ::selection{background:var(--gold);color:#1a140a}
+
+  /* ---------- back-to-home link ---------- */
+  .home-link{
+    position:fixed;top:20px;left:22px;z-index:1000;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--gold-bright);
+    padding:8px 14px;border:1px solid rgba(211,173,78,.35);border-radius:2px;
+    background:rgba(10,13,29,.55);backdrop-filter:blur(8px);
+    transition:color .25s,border-color .25s,background .25s,transform .25s;
+  }
+  .home-link:hover{color:#fff;border-color:var(--gold-bright);background:rgba(10,13,29,.85);transform:translateX(-2px)}
+  .home-link svg{width:12px;height:12px}
+  @media(max-width:600px){.home-link{font-size:.58rem;padding:6px 10px;top:14px;left:14px}}
 </style>
 </head>
 <body>
 <div id="progress"></div>
+<a class="home-link" href="../../" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Lumen Fidei
+</a>
 
 <!-- ============ HERO ============ -->
 <header class="hero">
