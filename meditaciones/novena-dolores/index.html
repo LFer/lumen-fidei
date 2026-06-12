@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novena a Nuestra Señora de los Dolores — Para conocer y llorar los propios pecados</title>
+<meta name="description" content="Novena completa a Nuestra Señora de los Dolores para implorar la gracia de conocer los pecados y vicios ocultos, crecer en contrición y humildad, y alcanzar una verdadera conversión.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#08050e;--bg2:#0e0a18;--bg3:#130d1d;--card:#1b1326;
+  --gold:#c9a84c;--gold2:#e8c97a;--gold3:#f5e9c8;
+  --cream:#f0e6d3;--dim:#c8b89a;
+  --red:#7a1f33;--gb:rgba(201,168,76,.3);--gs:rgba(201,168,76,.6);
+  --tx:#e8dcc8;--td:#a89880;--tq:#d4c4a8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.85;overflow-x:hidden}
+#pb{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--red),var(--gold),var(--gold2));width:0%;z-index:9999;box-shadow:0 0 8px var(--gold)}
+
+/* TOC */
+#toc{position:fixed;right:0;top:50%;transform:translateY(-50%);width:185px;z-index:100;padding:10px 0;display:flex;flex-direction:column;gap:3px;pointer-events:none}
+.ti{pointer-events:all;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.07em;color:var(--td);padding:4px 12px 4px 8px;border-right:1px solid var(--gb);text-decoration:none;transition:all .3s;text-align:right;line-height:1.3}
+.ti:hover,.ti.active{color:var(--gold2);border-right-color:var(--gold);border-right-width:2px}
+@media(max-width:1100px){#toc{display:none}}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(74,22,46,.45) 0%,transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(26,16,50,.6) 0%,transparent 60%),var(--bg);padding:60px 24px;text-align:center;overflow:hidden}
+.cg{position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:320px;height:420px;background:radial-gradient(ellipse at 50% 80%,rgba(201,168,76,.1) 0%,transparent 70%);animation:flk 3s ease-in-out infinite alternate;pointer-events:none}
+@keyframes flk{0%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:.9;transform:translateX(-50%) scale(1.05)}100%{opacity:.65;transform:translateX(-50%) scale(.97)}}
+.htop{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;opacity:0;animation:fi 1s .4s both}
+.htitle{font-family:'Cinzel Decorative',serif;font-size:clamp(26px,5vw,58px);font-weight:700;color:var(--gold3);line-height:1.15;margin-bottom:14px;text-shadow:0 0 60px rgba(201,168,76,.3);opacity:0;animation:fi 1s .8s both;max-width:900px}
+.htitle span{display:block;font-size:.5em;color:var(--gold);letter-spacing:.1em;margin-top:8px}
+.hsub{font-family:'Cinzel',serif;font-size:clamp(10px,1.6vw,14px);letter-spacing:.14em;color:var(--dim);max-width:620px;margin:0 auto 32px;opacity:0;animation:fi 1s 1.1s both;line-height:1.9}
+.hdiv{display:flex;align-items:center;gap:14px;width:280px;margin:0 auto 28px;opacity:0;animation:fi 1s 1.3s both}
+.hdl{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hlat{font-style:italic;color:var(--td);font-size:14px;opacity:0;animation:fi 1s 1.5s both;line-height:1.7}
+.shint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--td);font-family:'Cinzel',serif;font-size:8px;letter-spacing:.3em;text-transform:uppercase;opacity:0;animation:fi 1s 2.2s both}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+
+/* CONTENT */
+.content{max-width:820px;margin:0 auto;padding:0 24px}
+.chapter{padding:70px 0 50px;opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.chapter.visible{opacity:1;transform:translateY(0)}
+.tbadge{display:inline-flex;align-items:center;gap:10px;background:rgba(201,168,76,.07);border:1px solid var(--gb);border-radius:2px;padding:5px 14px;margin-bottom:18px;font-family:'Cinzel',serif;font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.cnum{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.4em;color:var(--td);text-transform:uppercase;margin-bottom:6px}
+.ctitle{font-family:'Cinzel',serif;font-size:clamp(18px,3vw,29px);font-weight:700;color:var(--gold3);line-height:1.2;margin-bottom:6px}
+.csub{font-family:'Cinzel',serif;font-size:12px;color:var(--gold);letter-spacing:.1em;margin-bottom:22px}
+.cdiv{display:flex;align-items:center;gap:10px;margin-bottom:28px}
+.cdl{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+.chapter p{margin-bottom:20px;text-align:justify;hyphens:auto}
+.chapter p:first-of-type::first-letter{float:left;font-family:'Cinzel Decorative',serif;font-size:4em;line-height:.76;margin:8px 10px 0 0;color:var(--gold);text-shadow:0 0 28px rgba(201,168,76,.4)}
+
+/* ═══ PAINTING FRAME ═══ */
+.pframe{margin:40px 0;position:relative}
+.pframe-wrap{position:relative;border:1px solid var(--gs);background:var(--bg3)}
+.co{position:absolute;width:24px;height:24px;z-index:3;pointer-events:none}
+.co.tl{top:-2px;left:-2px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.co.tr{top:-2px;right:-2px;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
+.co.bl{bottom:-2px;left:-2px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold)}
+.co.br{bottom:-2px;right:-2px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+.pframe-wrap::before{content:'';position:absolute;inset:-6px;border:1px solid rgba(201,168,76,.12);pointer-events:none;z-index:0}
+.pframe-wrap img{
+  width:100%;height:auto;max-height:520px;object-fit:contain;object-position:center center;display:block;
+  filter:sepia(.12) brightness(.88) contrast(1.05) saturate(.95);
+  transition:filter .5s ease,transform .6s ease;
+  cursor:zoom-in;position:relative;z-index:1;
+}
+.pframe-wrap img:hover{filter:sepia(0) brightness(1) contrast(1.04) saturate(1);transform:scale(1.012)}
+.pframe-wrap .fallback{
+  display:none;width:100%;height:420px;flex-direction:column;align-items:center;justify-content:center;
+  gap:14px;background:linear-gradient(135deg,var(--bg3),var(--card));
+  border-top:1px dashed var(--gb);
+}
+.pframe-wrap .fallback.show{display:flex}
+.fallback-icon{font-size:36px;opacity:.3}
+.fallback-title{font-family:'Cinzel',serif;font-size:13px;color:var(--gold);letter-spacing:.12em;text-align:center;padding:0 40px}
+.fallback-hint{font-family:'Lora',serif;font-style:italic;font-size:12px;color:var(--td);text-align:center;padding:0 40px}
+.pframe-overlay{position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(transparent,rgba(8,5,14,.96));z-index:2;pointer-events:none}
+.pcap{position:absolute;bottom:0;left:0;right:0;padding:18px 22px 16px;z-index:3;pointer-events:none}
+.pcap-work{display:block;font-family:'Cinzel',serif;font-size:13px;color:var(--gold3);letter-spacing:.06em;margin-bottom:3px}
+.pcap-artist{display:block;font-family:'Lora',serif;font-style:italic;font-size:12.5px;color:var(--dim);margin-bottom:2px}
+.pcap-loc{display:block;font-family:'Cinzel',serif;font-size:9px;color:var(--td);letter-spacing:.15em;text-transform:uppercase}
+
+/* ═══ DEVOTIONAL EMBLEM (estampa) ═══ */
+.emblem{margin:40px 0;position:relative;border:1px solid var(--gs);background:radial-gradient(ellipse at 50% 35%,rgba(201,168,76,.07),transparent 70%),var(--bg3);padding:36px 20px 26px;text-align:center}
+.emblem::before{content:'';position:absolute;inset:-6px;border:1px solid rgba(201,168,76,.12);pointer-events:none}
+.emblem svg{max-width:300px;width:74%;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 0 18px rgba(201,168,76,.18))}
+.emblem-cap{margin-top:16px;font-family:'Cinzel',serif;font-size:10.5px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+.emblem-sub{font-style:italic;font-size:13px;color:var(--td);margin-top:6px;line-height:1.6}
+
+/* SCRIPTURE */
+.sc{margin:30px 0;padding:20px 24px 20px 28px;border-left:3px solid var(--gold);background:linear-gradient(135deg,rgba(201,168,76,.06),rgba(201,168,76,.02));border-radius:0 4px 4px 0;position:relative}
+.sc::before{content:'❝';position:absolute;top:-10px;left:16px;font-size:32px;color:var(--gold);opacity:.4;font-family:Georgia,serif}
+.sc p{font-style:italic;color:var(--tq);font-size:15.5px;line-height:1.75;margin-bottom:8px!important;text-align:left!important}
+.sc p:first-of-type::first-letter{all:unset}
+.sc-ref{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.23em;color:var(--gold);text-transform:uppercase}
+
+/* FATHER QUOTE */
+.fq{margin:30px 0;padding:24px 28px;background:var(--card);border:1px solid var(--gb);border-top:3px solid var(--red)}
+.fn{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.fn::before{content:'✦';font-size:7px;color:var(--red)}
+.fq p{font-style:italic;color:var(--tq);font-size:15px;line-height:1.8;margin-bottom:0!important;text-align:left!important}
+.fq p:first-of-type::first-letter{all:unset}
+
+/* THEOLOGY / INTENTION BOX */
+.tb{margin:30px 0;padding:24px 28px;background:linear-gradient(135deg,rgba(36,16,46,.8),rgba(14,10,24,.8));border:1px solid rgba(122,31,51,.45);border-radius:4px;position:relative}
+.tb::before{content:'✝';position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--bg2);padding:0 10px;color:var(--red);font-size:14px}
+.tbt{font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.28em;color:var(--dim);text-transform:uppercase;margin-bottom:12px}
+.tb p{color:var(--tq);font-size:15px;margin-bottom:10px!important;text-align:left!important}
+.tb p:first-of-type::first-letter{all:unset}
+.tb p:last-child{margin-bottom:0!important}
+
+/* GRID */
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0}
+@media(max-width:600px){.cgrid{grid-template-columns:1fr}}
+.ci{padding:16px 18px;background:var(--card);border:1px solid var(--gb);border-top:2px solid var(--gold)}
+.cit{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.ci p{font-size:13px;color:var(--td);line-height:1.65;margin-bottom:0!important;text-align:left!important}
+.ci p:first-of-type::first-letter{all:unset}
+
+/* PRAYER */
+.prayer{margin:44px 0;padding:34px;background:linear-gradient(135deg,rgba(74,22,46,.18),rgba(26,16,50,.42));border:1px solid var(--gb);border-top:2px solid var(--gold);text-align:center;position:relative}
+.prayer::before{content:'✦ ORACIÓN ✦';position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:var(--bg);padding:0 14px;font-family:'Cinzel',serif;font-size:8px;letter-spacing:.38em;color:var(--gold);text-transform:uppercase}
+.prayer p{font-style:italic;color:var(--tq);font-size:15px;line-height:1.85;max-width:580px;margin:0 auto 14px!important;text-align:center!important}
+.prayer p:first-of-type::first-letter{all:unset}
+.prayer p:last-child{margin-bottom:0!important}
+.prayer .amen{font-family:'Cinzel',serif;font-style:normal;font-size:10px;letter-spacing:.34em;color:var(--gold);text-transform:uppercase;display:block;margin-top:6px}
+
+/* RITUAL (cómo comenzar / cómo concluir cada día) */
+.ritual{margin:30px 0;padding:24px 28px;background:rgba(201,168,76,.045);border:1px solid var(--gb);border-radius:3px}
+.ritual-t{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.ritual-t::before{content:'✦';font-size:7px;color:var(--red)}
+.ritual p{font-size:14.5px;color:var(--tq);margin-bottom:12px!important;text-align:left!important;line-height:1.8;font-style:italic}
+.ritual p:first-of-type::first-letter{all:unset}
+.ritual p:last-child{margin-bottom:0!important}
+.ritual .rub{font-family:'Cinzel',serif;font-size:9px;letter-spacing:.22em;color:var(--td);text-transform:uppercase;margin:16px 0 8px;font-style:normal}
+.ritual ul{list-style:none;margin:6px 0 0;padding:0}
+.ritual li{padding:8px 0;border-bottom:1px dotted rgba(201,168,76,.25);font-size:14.5px;color:var(--tq);display:flex;gap:14px;align-items:baseline}
+.ritual li:last-child{border-bottom:none}
+.ritual li .n{font-family:'Cinzel',serif;color:var(--gold);font-size:10px;min-width:22px;flex-shrink:0}
+
+/* DOLOR CONTEMPLADO */
+.dolor{margin:28px 0;padding:18px 24px;text-align:center;border-top:1px solid var(--gb);border-bottom:1px solid var(--gb);background:rgba(122,31,51,.1)}
+.dolor .dl{font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.dolor p{font-style:italic;color:var(--tq);font-size:15px;margin:0!important;text-align:center!important;line-height:1.75}
+.dolor p::first-letter{all:unset}
+
+/* JACULATORIA */
+.jac{text-align:center;font-style:italic;color:var(--gold2);font-size:15.5px;margin:20px auto 0;max-width:560px;line-height:1.7}
+
+/* WRAPPERS */
+.sw{padding:0}.alt{background:linear-gradient(180deg,var(--bg3),var(--bg2))}
+.ib{background:linear-gradient(180deg,var(--bg2),var(--bg3));padding:65px 0;border-top:1px solid var(--gb)}
+em.gold{color:var(--gold);font-style:normal}
+em.verse{font-style:italic;color:var(--gold3)}
+.lead{font-size:18px;color:var(--dim);line-height:1.9;margin-bottom:26px}
+.lead:first-of-type::first-letter{all:unset}
+
+/* COLOPHON */
+.col{background:var(--bg2);border-top:1px solid var(--gb);padding:55px 24px;text-align:center}
+.col-title{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.col-text{font-style:italic;color:var(--td);font-size:14px;max-width:460px;margin:0 auto 16px;line-height:1.8}
+.col-lat{font-family:'Cinzel',serif;font-size:10px;letter-spacing:.28em;color:var(--gold);text-transform:uppercase;opacity:.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gs);border-radius:3px}
+
+/* ---------- back-to-home link ---------- */
+.home-link{
+  position:fixed;top:20px;left:22px;z-index:1000;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Cinzel',serif;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;text-decoration:none;color:var(--gold2);
+  padding:8px 14px;border:1px solid var(--gb);border-radius:2px;
+  background:rgba(8,5,14,.6);backdrop-filter:blur(8px);
+  transition:color .25s,border-color .25s,background .25s,transform .25s;
+}
+.home-link:hover{color:var(--gold3);border-color:var(--gold);background:rgba(8,5,14,.9);transform:translateX(-2px)}
+.home-link svg{width:12px;height:12px}
+@media(max-width:600px){.home-link{font-size:8px;padding:6px 10px;top:14px;left:14px}}
+</style>
+</head>
+<body>
+<div id="pb"></div>
+<a class="home-link" href="../../" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Lumen Fidei
+</a>
+
+<!-- TOC -->
+<nav id="toc">
+  <a class="ti" href="#introduccion">Introducción</a>
+  <a class="ti" href="#comorezar">Cómo rezarla</a>
+  <a class="ti" href="#oracion-inicial">Oración inicial</a>
+  <a class="ti" href="#intencion">Intención fija</a>
+  <a class="ti" href="#dia1">Día 1 · Simeón</a>
+  <a class="ti" href="#dia2">Día 2 · Egipto</a>
+  <a class="ti" href="#dia3">Día 3 · El Niño perdido</a>
+  <a class="ti" href="#dia4">Día 4 · La Amargura</a>
+  <a class="ti" href="#dia5">Día 5 · La Cruz</a>
+  <a class="ti" href="#dia6">Día 6 · La Piedad</a>
+  <a class="ti" href="#dia7">Día 7 · El Sepulcro</a>
+  <a class="ti" href="#dia8">Día 8 · Contrición</a>
+  <a class="ti" href="#dia9">Día 9 · Perseverancia</a>
+  <a class="ti" href="#finales">Oraciones finales</a>
+</nav>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="hero">
+  <div class="cg"></div>
+  <div style="opacity:0;animation:fi 1.5s .2s both">
+    <svg width="220" height="170" viewBox="0 0 320 240" aria-label="Corazón de María traspasado por siete espadas">
+      <g stroke="#c9a84c" stroke-width=".7" opacity=".3">
+        <line x1="160" y1="228" x2="160" y2="238"/>
+        <line x1="58" y1="206" x2="50" y2="214"/><line x1="262" y1="206" x2="270" y2="214"/>
+        <line x1="20" y1="150" x2="8" y2="150"/><line x1="300" y1="150" x2="312" y2="150"/>
+      </g>
+      <defs><g id="swh">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#swh" xlink:href="#swh" transform="rotate(-72 160 150)"/>
+      <use href="#swh" xlink:href="#swh" transform="rotate(-48 160 150)"/>
+      <use href="#swh" xlink:href="#swh" transform="rotate(-24 160 150)"/>
+      <use href="#swh" xlink:href="#swh"/>
+      <use href="#swh" xlink:href="#swh" transform="rotate(24 160 150)"/>
+      <use href="#swh" xlink:href="#swh" transform="rotate(48 160 150)"/>
+      <use href="#swh" xlink:href="#swh" transform="rotate(72 160 150)"/>
+    </svg>
+  </div>
+  <p class="htop" style="margin-top:20px">Devocionario Católico · Septenario de los Dolores</p>
+  <h1 class="htitle">Novena a Nuestra Señora<br>de los Dolores<span>Para conocer y llorar los propios pecados</span></h1>
+  <p class="hsub">Para implorar, por intercesión de la Madre Dolorosa, la gracia de conocer los pecados, fallas y vicios ocultos del alma, crecer en contrición y humildad, y alcanzar una firme enmienda de vida</p>
+  <div class="hdiv"><div class="hdl"></div><span style="color:var(--gold);font-size:10px">✦</span><div class="hdl"></div></div>
+  <p class="hlat"><em>Stabat Mater dolorosa, iuxta crucem lacrimosa,<br>dum pendebat Filius.</em></p>
+  <div class="shint"><span>Comenzar</span><span>▼</span></div>
+</section>
+
+<!-- ══════════ INTRODUCCIÓN ══════════ -->
+<div class="ib" id="introduccion"><div class="content"><div class="chapter visible">
+  <div class="cnum">Introducción</div>
+  <h2 class="ctitle">La Escuela del Corazón Traspasado</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p class="lead">Entre todas las devociones que la Iglesia ha custodiado a lo largo de los siglos, pocas son tan antiguas, tan sobrias y tan fecundas como la devoción a los Dolores de la Santísima Virgen María.</p>
+  <p>No es una devoción triste, aunque contemple el dolor; ni sentimental, aunque hable al corazón. Es la contemplación, sostenida y amorosa, de aquella Madre que permaneció de pie junto a la Cruz cuando todo parecía perdido, y cuya alma fue atravesada —según la profecía del anciano Simeón— por una espada de dolor. La Iglesia la honra bajo este título desde hace siglos: los hijos de San Felipe Benicio y los Siervos de María propagaron el rezo de los Siete Dolores, y la fiesta de Nuestra Señora de los Dolores quedó fijada en el calendario el 15 de septiembre, al día siguiente de la Exaltación de la Santa Cruz, porque no hay Cruz sin Madre al pie de ella.</p>
+  <p>¿Por qué acudir precisamente a la Dolorosa para pedir <em class="gold">luz sobre los propios pecados</em>? Porque nadie ha visto como ella lo que el pecado es y lo que el pecado hace. Los santos enseñan que María, al pie de la Cruz, contempló en la carne de su Hijo el estrago de todos los pecados del mundo —también de los nuestros, también de los más secretos—. Ella conoce el pecado no por haberlo cometido, sino por haberlo llorado; y por eso puede alcanzarnos la gracia más difícil de todas: ver la verdad sobre nosotros mismos <em class="gold">sin desesperar</em>, porque la vio siempre bañada en la sangre redentora.</p>
+  <div class="sc"><p>¿Quién advierte sus propios yerros? Purifícame, Señor, de las faltas que me están ocultas.</p><div class="sc-ref">Salmo 18, 13 — Ab occultis meis munda me</div></div>
+  <p>Ésta es la petición que sostiene toda la novena. Hay pecados que conocemos y confesamos; pero hay también miserias que no vemos: apegos desordenados que llamamos costumbres, orgullo que llamamos carácter, tibieza que llamamos prudencia, vicios que se esconden detrás de virtudes aparentes. El alma que no pide luz acaba creyendo su propia versión de sí misma. Por eso vamos a la Madre: para que nos mire con aquellos ojos que vieron la Pasión, y nos obtenga del Espíritu Santo el don santísimo del <em class="gold">conocimiento propio</em>, que según todos los maestros de la vida espiritual es la puerta de la humildad, y la humildad la puerta de toda conversión verdadera.</p>
+  <div class="fq"><div class="fn">San Agustín — Soliloquios</div><p>Noverim me, noverim Te: que me conozca, Señor, y que te conozca a Ti. Que me conozca para humillarme; que te conozca para amarte.</p></div>
+</div></div></div>
+
+<!-- ══════════ CÓMO REZARLA ══════════ -->
+<div class="sw alt" id="comorezar"><div class="content"><div class="chapter">
+  <div class="cnum">Disposiciones</div>
+  <h2 class="ctitle">Cómo Conviene Rezar esta Novena</h2>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p>Una novena no es una fórmula que obra por sí sola: es nueve días de audiencia ante la Madre de Dios. Lo que se pide aquí —ver el propio pecado— es una gracia grande, y las gracias grandes piden disposiciones serias. Conviene, pues, rezarla así:</p>
+  <div class="cgrid">
+    <div class="ci"><div class="cit">Con recogimiento</div><p>Buscar cada día un momento de silencio, a ser posible a la misma hora y en el mismo lugar, ante una imagen de la Dolorosa o un crucifijo, y si se puede, ante el Santísimo Sacramento. Rezar despacio: la prisa es enemiga de la luz.</p></div>
+    <div class="ci"><div class="cit">Con examen de conciencia</div><p>Dedicar unos minutos, al terminar el rezo de cada día, a examinar la conciencia sobre la materia del día. No para atormentarse, sino para dejar que la luz pedida empiece a obrar.</p></div>
+    <div class="ci"><div class="cit">Con propósito de confesión</div><p>Ordenar la novena hacia una buena confesión sacramental, durante los nueve días o al terminarlos. Lo que la luz descubra, el sacramento lo perdona: ése es el término natural de este camino.</p></div>
+    <div class="ci"><div class="cit">Con confianza y constancia</div><p>Sin escrúpulo y sin desaliento. Si un día se omite, se retoma al siguiente sin turbación. Dios no desprecia jamás un corazón que lo busca con humildad y perseverancia.</p></div>
+  </div>
+  <p>Cada día de la novena está completo en sí mismo: basta abrir el día que corresponde y rezarlo de principio a fin. La estructura es siempre la misma: oración inicial e intención fija, contemplación del dolor del día, meditación, intención particular, oración del día, y los rezos finales —un Padrenuestro, siete Avemarías en honor de los Siete Dolores, un Gloria y la jaculatoria—. Quien no pueda rezar las siete Avemarías, rece al menos tres: la Virgen mira más el corazón que la cuenta.</p>
+</div></div></div>
+
+<!-- ══════════ ORACIÓN INICIAL ══════════ -->
+<div class="sw" id="oracion-inicial"><div class="content"><div class="chapter">
+  <div class="cnum">Para todos los días</div>
+  <h2 class="ctitle">Oración Inicial</h2>
+  <p class="csub">Se reza al comenzar cada uno de los nueve días</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <p style="text-align:center;font-style:italic;color:var(--td)">Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+  <div class="prayer">
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo:</p>
+    <p>vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas.</p>
+    <p>Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla.</p>
+    <p>Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados.</p>
+    <p>Por Jesucristo, tu Hijo, nuestro Señor.<span class="amen">Amén</span></p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ INTENCIÓN FIJA ══════════ -->
+<div class="sw alt" id="intencion"><div class="content"><div class="chapter">
+  <div class="cnum">Para todos los días</div>
+  <h2 class="ctitle">Intención Especial de la Novena</h2>
+  <p class="csub">Se renueva cada día, después de la oración inicial</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+  <div class="tb"><div class="tbt">Intención que se pide durante toda la novena</div>
+    <p><em>Virgen Santísima de los Dolores: por los méritos de la Pasión de tu Hijo y por la espada que traspasó tu corazón, alcánzame estas cinco gracias:</em></p>
+    <p><em class="gold">Luz</em>, para conocer mis pecados, mis apegos desordenados y mis vicios ocultos, y descubrir cuanto hay en mí que todavía ofende a Dios.</p>
+    <p><em class="gold">Humildad</em>, para reconocerlos sin excusas, sin disimulos y sin engañarme a mí mismo.</p>
+    <p><em class="gold">Dolor</em>, para llorarlos con verdadera contrición, más por amor a Dios que por temor del castigo.</p>
+    <p><em class="gold">Fortaleza</em>, para corregirme con obras, confesarme con sinceridad y emprender una firme enmienda de vida.</p>
+    <p><em class="gold">Confianza</em>, para no caer ni en el escrúpulo ni en la desesperación, sabiendo que Dios no desprecia un corazón contrito y humillado. <em>Amén.</em></p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 1 ══════════ -->
+<div class="sw" id="dia1"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Primero · Primer Dolor</div>
+  <div class="cnum">Día I</div>
+  <h2 class="ctitle">La Profecía de Simeón</h2>
+  <p class="csub">Primer Dolor de la Santísima Virgen</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por una espada">
+      <defs><g id="sw1">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw1" xlink:href="#sw1" transform="rotate(-30 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Primer Dolor · La Profecía de Simeón</div>
+    <div class="emblem-sub">«Y a ti misma una espada te atravesará el alma» — Lucas 2, 35</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>María presenta al Niño en el Templo, y oye de labios del anciano Simeón que su Hijo será signo de contradicción, y que una espada de dolor atravesará su propia alma.</p>
+  </div>
+
+  <p>Cuarenta días después de Belén, la Madre sube al Templo con el Niño en brazos, para cumplir la ley y ofrecer al Señor su primogénito. Es un día de luz: el anciano Simeón, que esperaba el consuelo de Israel, recibe en sus brazos al Mesías y bendice a Dios porque sus ojos han visto la salvación. Y entonces, en medio de aquella alegría, el profeta se vuelve hacia la Madre, y pronuncia la primera profecía de la Pasión.</p>
+  <div class="sc"><p>Éste está puesto para caída y elevación de muchos en Israel, y para ser señal de contradicción —y a ti misma una espada te atravesará el alma—, a fin de que queden al descubierto los pensamientos de muchos corazones.</p><div class="sc-ref">Lucas 2, 34-35</div></div>
+  <p>Reparemos en lo que suele pasarse por alto: la espada de María tiene un propósito. No se anuncia el dolor de la Madre como una desgracia sin sentido, sino <em class="gold">«a fin de que queden al descubierto los pensamientos de muchos corazones»</em>. La Cruz de Cristo y la espada de su Madre son, juntas, la luz que pone de manifiesto lo que cada corazón esconde. Ante el Crucificado y la Dolorosa nadie permanece neutral: allí se revela lo que somos. Por eso esta novena comienza aquí: pedimos ser contados entre esos «muchos corazones» cuyos pensamientos quedan al descubierto —no en el último día, cuando ya no haya remedio, sino ahora, cuando todavía hay misericordia y enmienda.</p>
+  <p>María oyó la profecía y no huyó de ella. No pidió explicaciones, no se defendió de la palabra oscura: la guardó en su corazón, y vivió treinta y tres años con la espada anunciada pendiendo sobre su alma. Ella nos enseña la primera disposición del conocimiento propio: <em class="gold">aceptar de antemano la verdad</em>, venga cuando venga y duela lo que duela. Nosotros, en cambio, ¡cuántas veces preferimos no saber! El alma se defiende de la luz con mil razones: que no es para tanto, que todos hacen lo mismo, que ya habrá tiempo. María nunca se defendió de la verdad; por eso puede alcanzarnos la gracia de no defendernos de ella.</p>
+  <div class="fq"><div class="fn">San Bernardo de Claraval — Sermón sobre los Dolores de la Virgen</div><p>Verdaderamente, oh Madre bendita, una espada atravesó tu alma; porque no pudo penetrar la carne de tu Hijo sin atravesar el alma de la Madre. Jesús expiró, y la lanza cruel que abrió su costado ya no tocó su alma; pero atravesó la tuya.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir la gracia de no temer la verdad sobre uno mismo: aceptar de antemano, como María, todo lo que Dios quiera mostrarme de mi alma durante esta novena, sin defenderme de la luz, sin excusarme y sin huir de ella.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Virgen purísima, que al presentar en el Templo al Autor de la vida recibiste a cambio el anuncio de la espada:</p>
+    <p>alcánzame la gracia de recibir, como tú, la palabra que hiere y que salva. Tu alma fue atravesada para que quedaran al descubierto los pensamientos de los corazones: descubre, Madre, los pensamientos del mío. Pon delante de mis ojos lo que he querido no mirar; deshaz las excusas con que me defiendo; y enséñame que la luz de Dios nunca hiere para destruir, sino para sanar.</p>
+    <p>Que yo no tema saber quién soy, porque sé de quién soy hijo. Y que esta espada de la verdad, que hoy te pido, abra en mí el camino de la contrición, de la confesión y de la enmienda de mi vida.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Virgen Dolorosísima, alcánzame conocer y llorar mis pecados.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>¿De qué verdad sobre mí mismo me he estado defendiendo? ¿Qué es eso que prefiero no mirar?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 2 ══════════ -->
+<div class="sw alt" id="dia2"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Segundo · Segundo Dolor</div>
+  <div class="cnum">Día II</div>
+  <h2 class="ctitle">La Huida a Egipto</h2>
+  <p class="csub">Segundo Dolor de la Santísima Virgen</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por dos espadas">
+      <defs><g id="sw2">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw2" xlink:href="#sw2" transform="rotate(-30 160 150)"/>
+      <use href="#sw2" xlink:href="#sw2" transform="rotate(30 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Segundo Dolor · La Huida a Egipto</div>
+    <div class="emblem-sub">«Levántate, toma al Niño y a su Madre, y huye a Egipto» — Mateo 2, 13</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>María, avisada por el ángel en medio de la noche, huye a Egipto con San José y el Niño, para librar a Jesús de Herodes, que lo busca para matarlo.</p>
+  </div>
+
+  <p>Apenas se han ido los Magos, la noche de Belén se llena de amenaza. Un ángel despierta a José: hay que partir ahora, sin esperar al alba, porque el rey quiere la muerte del Niño. Y la Madre se levanta en la oscuridad, envuelve a su tesoro, y emprende el camino del destierro: noches a la intemperie, un país extranjero, la pobreza de los desterrados. En sus brazos lleva al Dueño del universo, proscrito en su propio mundo.</p>
+  <div class="sc"><p>Levántate, toma contigo al Niño y a su Madre, y huye a Egipto; y estate allí hasta que yo te diga, porque Herodes va a buscar al Niño para matarlo.</p><div class="sc-ref">Mateo 2, 13</div></div>
+  <p>Herodes murió hace veinte siglos; pero su sombra no ha muerto. Cada pecado grave es un Herodes que busca al Niño para matarlo: para matar la vida de la gracia en el alma. Y los apegos desordenados reinan en nosotros como reinaba Herodes: con miedo a perder el trono. Preguntémonos hoy, delante de la Madre: <em class="gold">¿qué hay en mí que no quiere que Cristo reine?</em> Los vicios ocultos rara vez se presentan con su nombre; se visten de derechos adquiridos, de gustos legítimos, de «mi manera de ser», de costumbres que «no hacen mal a nadie». Pero se les conoce por esta señal: se inquietan y se defienden cuando la gracia amenaza su dominio.</p>
+  <p>María nos enseña hoy el remedio más antiguo y más humilde de la vida espiritual: <em class="gold">la huida</em>. Con la tentación reconocida y con la ocasión próxima de pecado no se dialoga ni se negocia: se huye, pronto y sin mirar atrás, como José se levantó de noche sin esperar al día. Huir no es cobardía: es obediencia. Quien se cree fuerte para quedarse junto al fuego sin quemarse, ya ha empezado a arder. Pidamos hoy conocer cuáles son nuestras ocasiones de caída —los lugares, las compañías, las pantallas, las horas— y la prontitud de María para poner tierra de por medio.</p>
+  <div class="fq"><div class="fn">San Bernardo de Claraval — Homilía «Super Missus Est»</div><p>Si se levantan los vientos de las tentaciones, si tropiezas con los escollos de las tribulaciones, mira a la estrella, invoca a María. Si la sigues, no te extravías; si le ruegas, no desesperas; si en ella piensas, no yerras. Si ella te sostiene, no caes; si ella te protege, nada temes.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir la gracia de conocer mis apegos desordenados y las ocasiones próximas que me hacen caer; y la prontitud de María y de José para huir de ellas sin demora, sin negociar y sin volver la mirada.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre peregrina del destierro, que cruzaste el desierto de noche llevando en brazos al perseguido:</p>
+    <p>enséñame a guardar la vida de la gracia como tú guardaste al Niño. Descúbreme los Herodes que reinan en mi corazón: los apegos que temen perder su trono, los hábitos que se disfrazan de inocencia, las ocasiones que rondan mi debilidad. Y alcánzame de tu Hijo la obediencia pronta de aquella noche santa: levantarme sin tardanza, huir sin discutir, y preferir cualquier destierro antes que la muerte del alma.</p>
+    <p>Virgen fiel: que ningún pecado me parezca pequeño si entristece a Dios, y que ninguna renuncia me parezca grande si me conserva en su amistad.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Madre Dolorosa, líbrame de los Herodes que reinan en mi corazón.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>¿Cuáles son las ocasiones en que casi siempre caigo? ¿Qué hago —concretamente— para evitarlas?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 3 ══════════ -->
+<div class="sw" id="dia3"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Tercero · Tercer Dolor</div>
+  <div class="cnum">Día III</div>
+  <h2 class="ctitle">El Niño Jesús Perdido en el Templo</h2>
+  <p class="csub">Tercer Dolor de la Santísima Virgen</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por tres espadas">
+      <defs><g id="sw3">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw3" xlink:href="#sw3" transform="rotate(-45 160 150)"/>
+      <use href="#sw3" xlink:href="#sw3"/>
+      <use href="#sw3" xlink:href="#sw3" transform="rotate(45 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Tercer Dolor · El Niño Perdido en el Templo</div>
+    <div class="emblem-sub">«Tu padre y yo te buscábamos con dolor» — Lucas 2, 48</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>María pierde al Niño Jesús en Jerusalén, lo busca durante tres días con angustia indecible, y lo halla en el Templo, entre los doctores, en las cosas de su Padre.</p>
+  </div>
+
+  <p>Terminada la fiesta de Pascua, la caravana de Nazaret emprende el regreso. María camina una jornada entera creyendo que el Niño va con los parientes; José piensa que va con la Madre. Al caer la tarde se buscan, se preguntan, y descubren la verdad que hiela el alma: <em class="gold">Jesús no está</em>. Tres días lo buscan por los caminos y por la ciudad, sin comer apenas, sin dormir, preguntando a todos por el Hijo perdido. Ningún dolor de María, dicen los santos, fue más desconcertante que éste: en los demás sabía dónde estaba su Hijo; en éste, lo había perdido sin saber cómo.</p>
+  <div class="sc"><p>Hijo, ¿por qué nos has hecho esto? Mira que tu padre y yo te buscábamos con dolor. — ¿Por qué me buscabais? ¿No sabíais que yo debo ocuparme en las cosas de mi Padre?</p><div class="sc-ref">Lucas 2, 48-49</div></div>
+  <p>Hay aquí una figura terrible del alma tibia: se puede caminar una jornada entera —y años enteros— creyendo que Jesús «viene en la caravana», y que todo está bien porque nada duele. La gracia no se pierde solamente por grandes pecados estruendosos: también se va apagando por negligencias consentidas, oraciones abandonadas poco a poco, confesiones aplazadas mes tras mes, pequeñas infidelidades que nadie ve. La tibieza es el arte de perder a Dios sin sentirlo. Y su disfraz favorito es la presunción: <em class="gold">«Jesús vendrá con los demás; en mi vida todo está en orden».</em> Pidamos hoy la gracia de detener la caravana y preguntarnos con verdad: ¿está Jesús conmigo, o hace tiempo que camino sin Él?</p>
+  <p>Pero María no sólo nos muestra la pérdida: nos enseña la búsqueda. Buscó <em class="gold">con dolor</em> —porque la ausencia de Dios debe doler más que toda otra ausencia— y buscó <em class="gold">sin descanso</em>, hasta hallarlo. ¿Y dónde lo halló? En el Templo, en las cosas de su Padre. Al Dios que se perdió se lo vuelve a encontrar donde se lo dejó: en la oración abandonada, en los sacramentos postergados, en la casa del Padre. Quien lo busca allí con dolor y humildad, lo encuentra siempre; nadie lo buscó jamás con lágrimas y volvió con las manos vacías.</p>
+  <div class="fq"><div class="fn">San Alfonso María de Ligorio — Sobre el Tercer Dolor</div><p>Llore quien ha perdido a Dios por su propia culpa; pero llore y búsquelo como María: no con desaliento, sino con amor. Quien busca a Jesús con dolor de haberlo perdido, lo hallará más pronto de lo que teme; porque Él se deja encontrar de quien lo busca con todo el corazón.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir dolor por la tibieza: la gracia de sentir la pérdida de Dios como la mayor de todas las pérdidas, de conocer las negligencias con que he ido dejando enfriar mi alma, y de buscar al Señor con la diligencia de María hasta hallarlo.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre afligida, que buscaste tres días entre lágrimas al Hijo de tu alma:</p>
+    <p>alcánzame la gracia de no perder jamás a Jesús por el pecado; y si por mi miseria lo he perdido, no permitas que siga caminando tranquilo como si Él viniera conmigo. Despierta mi alma de la tibieza; muéstrame las oraciones que abandoné, los sacramentos que dejé enfriar, las pequeñas infidelidades que fueron apagando tu luz en mí.</p>
+    <p>Y dame, Señora, tu santa impaciencia: ese dolor de la ausencia de Dios que no descansa hasta encontrarlo; para que lo busque donde se deja hallar —en la oración, en su Palabra, en el sacramento del perdón— y, hallándolo, no vuelva a apartarme de Él jamás.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Madre mía, no permitas que pierda a Jesús; y si lo he perdido, ayúdame a buscarlo hasta hallarlo.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>¿Qué prácticas de oración y de vida cristiana he ido abandonando sin darme cuenta? ¿Cuándo me confesé por última vez?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 4 ══════════ -->
+<div class="sw alt" id="dia4"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Cuarto · Cuarto Dolor</div>
+  <div class="cnum">Día IV</div>
+  <h2 class="ctitle">María Encuentra a Jesús Camino del Calvario</h2>
+  <p class="csub">Cuarto Dolor de la Santísima Virgen — La Calle de la Amargura</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por cuatro espadas">
+      <defs><g id="sw4">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw4" xlink:href="#sw4" transform="rotate(-60 160 150)"/>
+      <use href="#sw4" xlink:href="#sw4" transform="rotate(-20 160 150)"/>
+      <use href="#sw4" xlink:href="#sw4" transform="rotate(20 160 150)"/>
+      <use href="#sw4" xlink:href="#sw4" transform="rotate(60 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Cuarto Dolor · El Encuentro en la Calle de la Amargura</div>
+    <div class="emblem-sub">«Él soportaba nuestros sufrimientos y cargaba con nuestros dolores» — Isaías 53, 4</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>María sale al encuentro de Jesús en la calle de la Amargura, y lo ve pasar cargado con la Cruz, coronado de espinas, camino del Calvario.</p>
+  </div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="img/dia4-camino-calvario.jpg"
+        alt="Bruegel — La Procesión al Calvario"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">La Procesión al Calvario<br>Pieter Bruegel el Viejo · 1564</div>
+        <div class="fallback-hint">Abrí esta página desde el sitio publicado para contemplar la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">La Procesión al Calvario</span>
+        <span class="pcap-artist">Pieter Bruegel el Viejo · 1564</span>
+        <span class="pcap-loc">Kunsthistorisches Museum · Viena</span>
+      </div>
+    </div>
+  </div>
+
+  <p>La tradición y los santos lo han contemplado siempre: en algún recodo de la calle que sube al Calvario, la Madre logró abrirse paso entre la muchedumbre, y los ojos de Jesús y los ojos de María se encontraron. Él iba deshecho: el rostro cubierto de sangre y de polvo, las espaldas desgarradas por la flagelación, el madero sobre la herida viva del hombro. Ella no pudo abrazarlo, ni curarlo, ni cargar la Cruz en su lugar: sólo pudo mirarlo, y ser vista. Y en ese cruce de miradas se consumó uno de los dolores más hondos que ha conocido corazón humano.</p>
+  <div class="sc"><p>Él soportaba nuestros sufrimientos y cargaba con nuestros dolores. Fue traspasado por nuestras rebeliones, triturado por nuestras culpas; el castigo que nos trae la paz cayó sobre Él, y por sus llagas hemos sido curados.</p><div class="sc-ref">Isaías 53, 4-5</div></div>
+  <p>Detengámonos aquí, porque éste es el corazón de la novena: <em class="gold">lo que María vio pasar por la calle de la Amargura eran nuestros pecados hechos visibles</em>. El pecado «en abstracto» no convierte a nadie: una lista de faltas puede dejarnos fríos. Pero verlo en la carne de Cristo —cada mentira en aquellas llagas, cada impureza en aquella carne desgarrada, cada soberbia en aquella corona de espinas, cada tibieza en aquel peso que lo derribaba— eso cambia el corazón. Y también los pecados que llamamos <em class="gold">ocultos</em> iban sobre aquella Cruz: nada de lo que yo escondo a los hombres dejó de pesar allí. Lo que nadie sabe de mí, Él lo cargó.</p>
+  <p>Y la mirada de María, que entonces se clavó en su Hijo, se vuelve ahora hacia nosotros. No es una mirada que acusa: es una mirada que traspasa, como la espada que la atravesaba a ella. Quien se deja mirar por la Madre Dolorosa empieza a ver sus pecados de otra manera: ya no como infracciones de un reglamento, sino como heridas infligidas a Alguien que ama. Ésa es la luz que pedimos: ver el pecado como lo ve ella —con toda su gravedad, y a la vez dentro de un amor más grande que toda gravedad.</p>
+  <div class="fq"><div class="fn">Stabat Mater — Secuencia medieval</div><p>Eia, Mater, fons amoris, me sentire vim doloris fac, ut tecum lugeam. — Oh Madre, fuente de amor: hazme sentir la fuerza de tu dolor, para que llore contigo.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir la gracia de sentir el peso real de mis pecados —también de los que nadie conoce— viéndolos no en abstracto, sino en la carne llagada de Cristo; y el don de las lágrimas de la compunción, para llorarlos con María.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre de la Amargura, que saliste al encuentro de tu Hijo y lo viste pasar bajo el peso de mis pecados:</p>
+    <p>alcánzame un puesto a tu lado en aquella calle. Que yo vea lo que tú viste, y sienta algo de lo que tú sentiste; que descubra mis mentiras en sus llagas, mi soberbia en sus espinas, mi tibieza en el peso que lo derriba; y que nunca más llame pequeño a lo que tanto le costó.</p>
+    <p>Mírame, Señora, como lo miraste a Él; y que tu mirada traspase mis disimulos, deshaga mi dureza, y abra en mi corazón la fuente de las lágrimas que purifican. Por el dolor de aquel encuentro, concédeme no esconder nada a Dios, ya que nada de lo mío le fue escondido a tu Hijo en la Cruz.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Madre de la Amargura, hazme sentir el peso de mis pecados y llorarlos contigo.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>¿Veo mis pecados como ofensas a un Dios vivo que me ama, o como meras imperfecciones sin importancia? ¿Cuáles he estado llamando «pequeños» para no mirarlos?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 5 ══════════ -->
+<div class="sw" id="dia5"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Quinto · Quinto Dolor</div>
+  <div class="cnum">Día V</div>
+  <h2 class="ctitle">Jesús Muere en la Cruz</h2>
+  <p class="csub">Quinto Dolor de la Santísima Virgen — Stabat Mater</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por cinco espadas">
+      <defs><g id="sw5">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw5" xlink:href="#sw5" transform="rotate(-60 160 150)"/>
+      <use href="#sw5" xlink:href="#sw5" transform="rotate(-30 160 150)"/>
+      <use href="#sw5" xlink:href="#sw5"/>
+      <use href="#sw5" xlink:href="#sw5" transform="rotate(30 160 150)"/>
+      <use href="#sw5" xlink:href="#sw5" transform="rotate(60 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Quinto Dolor · Jesús Muere en la Cruz</div>
+    <div class="emblem-sub">«Junto a la cruz de Jesús estaba su Madre» — Juan 19, 25</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>María permanece de pie junto a la Cruz durante las tres horas de la agonía, une su dolor a la ofrenda de su Hijo, y lo ve inclinar la cabeza y morir.</p>
+  </div>
+
+  <div class="pframe">
+    <div class="pframe-wrap">
+      <div class="co tl"></div><div class="co tr"></div><div class="co bl"></div><div class="co br"></div>
+      <img src="img/dia5-crucifixion.jpg"
+        alt="Velázquez — Cristo Crucificado"
+        onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+      <div class="fallback">
+        <div class="fallback-icon">🖼</div>
+        <div class="fallback-title">Cristo Crucificado<br>Diego Velázquez · c. 1632</div>
+        <div class="fallback-hint">Abrí esta página desde el sitio publicado para contemplar la pintura</div>
+      </div>
+      <div class="pframe-overlay"></div>
+      <div class="pcap">
+        <span class="pcap-work">Cristo Crucificado</span>
+        <span class="pcap-artist">Diego Velázquez · c. 1632</span>
+        <span class="pcap-loc">Museo del Prado · Madrid</span>
+      </div>
+    </div>
+  </div>
+
+  <p>El Evangelio lo dice con una sola palabra, y esa palabra ha bastado a veinte siglos de contemplación: <em class="gold">stabat</em> — «estaba de pie». No desmayada, no arrastrada, no escondida entre la multitud: de pie junto a la Cruz, erguida en medio de la ruina de todo, cuando los discípulos habían huido y el cielo mismo se había vestido de tinieblas. Allí estuvo tres horas, recibiendo en el alma cada palabra, cada estertor, cada gota; uniendo su dolor de Madre, en silencio, a la ofrenda con que el Hijo reconciliaba al mundo.</p>
+  <div class="sc"><p>Junto a la cruz de Jesús estaba su Madre... Jesús, viendo a su Madre y junto a ella al discípulo a quien amaba, dice a su Madre: «Mujer, he ahí a tu hijo». Luego dice al discípulo: «He ahí a tu Madre».</p><div class="sc-ref">Juan 19, 25-27</div></div>
+  <p>Si queremos saber qué es el pecado, no hay otra escuela: hay que mirarlo desde el pie de la Cruz, al lado de María. Desde cualquier otro lugar, el pecado se disimula, se relativiza, se explica. Desde aquí, no: aquí se ve lo que cuesta. <em class="gold">«Mirarán al que traspasaron»</em>, había escrito el profeta Zacarías; y esa mirada —la mirada al Traspasado— es la que funde los corazones de piedra. Cada pecado mío estuvo presente en aquella hora; también los secretos, también los que aún no he querido reconocer. Y sin embargo, de aquella Cruz no bajó una maldición, sino un testamento de amor: el perdón para los verdugos, el Paraíso para el ladrón, y la Madre para nosotros.</p>
+  <p>Porque ése es el prodigio del quinto dolor: en la hora en que nuestros pecados le quitaban al Hijo, el Hijo nos daba a su Madre. <em class="gold">«He ahí a tu Madre»</em>: la palabra fue dicha a Juan, pero en Juan estábamos todos los pecadores redimidos. María quedó constituida Madre nuestra precisamente entonces, precisamente allí, al precio de aquel dolor. Por eso nadie como ella tiene derecho a mostrarnos nuestros pecados; y nadie como ella sabe hacerlo sin destruirnos, porque nos recibió como hijos en el momento en que más le costábamos.</p>
+  <div class="fq"><div class="fn">San Ambrosio de Milán — Sobre la Virgen junto a la Cruz</div><p>Estaba en pie la Madre ante la Cruz y, mientras los hombres huían, ella permanecía intrépida. Contemplaba con ojos de piedad las heridas de su Hijo, porque sabía que por ellas vendría la redención de todos.</p></div>
+  <div class="tb"><div class="tbt">El coloquio ante el Crucificado — San Ignacio de Loyola</div><p>Imaginándome a Cristo nuestro Señor delante y puesto en cruz, hacer un coloquio: preguntarme <em class="gold">qué he hecho por Cristo, qué hago por Cristo, qué debo hacer por Cristo</em>. Y así, viéndole tal, y colgado en la cruz, decirle lo que se me ofreciere del corazón.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir la gracia de contemplar lo que mi pecado costó —mirando al Traspasado hasta que el corazón se conmueva— y de recibir de veras a María como Madre y maestra de mi alma, dejándome corregir y enseñar por ella.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre Dolorosa, que estuviste de pie junto a la Cruz cuando todos huyeron:</p>
+    <p>obténme la gracia de no huir yo también. De no huir de la Cruz, donde se ve la verdad de mi pecado; de no huir de la luz, que me muestra lo que soy; de no huir del amor, que me espera con los brazos extendidos y clavados. Que yo mire al que traspasé con mis culpas, hasta que mi corazón de piedra se rompa y se haga corazón de carne.</p>
+    <p>Y pues tu Hijo, al morir, me entregó a ti como hijo, recíbeme, Madre, con todas mis miserias; muéstramelas tú, que sabes mostrarlas sin desesperarme; y no te apartes de mi lado hasta que mi vida entera sea una respuesta a aquella pregunta: ¿qué debo hacer por Cristo?<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Madre, alcánzame estar contigo al pie de la Cruz, y no huir de ella jamás.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>Ante el Crucificado: ¿qué he hecho por Cristo? ¿Qué hago por Cristo? ¿Qué voy a hacer por Cristo?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 6 ══════════ -->
+<div class="sw alt" id="dia6"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Sexto · Sexto Dolor</div>
+  <div class="cnum">Día VI</div>
+  <h2 class="ctitle">María Recibe en sus Brazos el Cuerpo de Jesús</h2>
+  <p class="csub">Sexto Dolor de la Santísima Virgen — La Piedad</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por seis espadas">
+      <defs><g id="sw6">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw6" xlink:href="#sw6" transform="rotate(-70 160 150)"/>
+      <use href="#sw6" xlink:href="#sw6" transform="rotate(-42 160 150)"/>
+      <use href="#sw6" xlink:href="#sw6" transform="rotate(-14 160 150)"/>
+      <use href="#sw6" xlink:href="#sw6" transform="rotate(14 160 150)"/>
+      <use href="#sw6" xlink:href="#sw6" transform="rotate(42 160 150)"/>
+      <use href="#sw6" xlink:href="#sw6" transform="rotate(70 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Sexto Dolor · La Piedad</div>
+    <div class="emblem-sub">«Mirad y ved si hay dolor como mi dolor» — Lamentaciones 1, 12</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>Bajado de la Cruz el cuerpo sin vida de Jesús, María lo recibe en sus brazos y en su regazo, y contempla una por una las heridas de su Hijo.</p>
+  </div>
+
+  <p>Los mismos brazos que lo recibieron en Belén lo reciben ahora en el Calvario. Entonces era un niño tibio de vida, envuelto en pañales; ahora es un cuerpo helado, envuelto en sangre. José de Arimatea y Nicodemo lo han bajado del madero con reverencia infinita, y lo han puesto sobre el regazo de la Madre. Y María hace entonces lo que sólo el amor sabe hacer ante el estrago del mal: no aparta los ojos. Contempla una por una las heridas: las manos taladradas, la cabeza rota por las espinas, el costado abierto, las espaldas surcadas. Las cuenta, las venera, las llora.</p>
+  <div class="sc"><p>¿No os conmueve a cuantos pasáis por el camino? Mirad y ved si hay dolor comparable al dolor que me atormenta.</p><div class="sc-ref">Lamentaciones 1, 12 — Aplicado por la Iglesia a la Madre Dolorosa</div></div>
+  <p>Cada una de aquellas heridas tiene nombre, y muchos de esos nombres son los nuestros. Lo dice la Escritura sin atenuantes: fue traspasado <em class="gold">por nuestras rebeliones</em>, triturado <em class="gold">por nuestras culpas</em>. En el regazo de María está, visible y tangible, la obra completa del pecado: esto es lo que el pecado hace cuando se le deja llegar hasta el final. Y aquí se aprende la contrición verdadera, que no es el mero miedo al castigo, sino el dolor de haber herido al Amor. El siervo teme el látigo; el hijo llora por haber lastimado a su padre. La Dolorosa nos enseña a llorar como hijos.</p>
+  <p>Pidamos hoy la valentía de María: la de no apartar los ojos. Nosotros desviamos la mirada de nuestras miserias porque tememos que la verdad nos aplaste. Pero junto a la Madre se puede mirar todo sin desesperar, porque ese cuerpo llagado que ella sostiene no es la condena de nuestros pecados: es su <em class="gold">precio ya pagado</em>. Mirar las llagas con María es ver, al mismo tiempo, la gravedad de la culpa y la sobreabundancia del perdón. Quien aprende a mirar así, ya no se esconde de Dios: se arroja en sus brazos.</p>
+  <div class="fq"><div class="fn">Stabat Mater — Secuencia medieval</div><p>Sancta Mater, istud agas: crucifixi fige plagas cordi meo valide. — Santa Madre, esto te pido: que las llagas del Crucificado queden grabadas hondamente en mi corazón.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir la contrición que nace del amor: no sólo el temor del castigo, sino el dolor de haber herido a Dios, que es mi Padre y mi Redentor; y la gracia de mirar mis miserias sin apartar los ojos y sin desesperar.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre de la Piedad, que recibiste en tu regazo el cuerpo deshecho de tu Hijo y contemplaste sus heridas una por una:</p>
+    <p>déjame mirar contigo. Pon ante mis ojos esas llagas santas, y junto a ellas mis pecados que las abrieron; y no permitas que aparte la vista, ni por cobardía ni por falso consuelo. Pero tampoco permitas, Señora, que la verdad me hunda: enséñame a leer en cada herida, al mismo tiempo, lo que hizo mi culpa y lo que hizo su amor.</p>
+    <p>Graba, Madre, las llagas del Crucificado en lo más hondo de mi corazón: para que me duelan más mis pecados que todos mis fracasos, y me consuele más su misericordia que todos mis méritos. Y que de tanto mirar al Amor traspasado, aprenda al fin a no traspasarlo más.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Dulce Madre de la Piedad, graba en mi corazón las llagas de tu Hijo.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>De mis pecados, ¿cuál ha herido más al Corazón de Dios? ¿Le he pedido perdón por él con todo el corazón, o sólo de paso?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 7 ══════════ -->
+<div class="sw" id="dia7"><div class="content"><div class="chapter">
+  <div class="tbadge">🗡 Día Séptimo · Séptimo Dolor</div>
+  <div class="cnum">Día VII</div>
+  <h2 class="ctitle">Jesús es Sepultado</h2>
+  <p class="csub">Séptimo Dolor de la Santísima Virgen — La Soledad</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Corazón traspasado por siete espadas">
+      <defs><g id="sw7">
+        <line x1="160" y1="26" x2="160" y2="104" stroke="#c9a84c" stroke-width="2.2"/>
+        <path d="M160 122 L155 104 L165 104 Z" fill="#c9a84c"/>
+        <line x1="147" y1="44" x2="173" y2="44" stroke="#c9a84c" stroke-width="3"/>
+        <circle cx="160" cy="22" r="3.2" fill="#c9a84c"/>
+      </g></defs>
+      <path d="M160 196 C124 166 96 140 96 112 C96 91 111 77 130 77 C144 77 156 86 160 97 C164 86 176 77 190 77 C209 77 224 91 224 112 C224 140 196 166 160 196 Z"
+        fill="rgba(201,168,76,.05)" stroke="#e8c97a" stroke-width="2"/>
+      <use href="#sw7" xlink:href="#sw7" transform="rotate(-72 160 150)"/>
+      <use href="#sw7" xlink:href="#sw7" transform="rotate(-48 160 150)"/>
+      <use href="#sw7" xlink:href="#sw7" transform="rotate(-24 160 150)"/>
+      <use href="#sw7" xlink:href="#sw7"/>
+      <use href="#sw7" xlink:href="#sw7" transform="rotate(24 160 150)"/>
+      <use href="#sw7" xlink:href="#sw7" transform="rotate(48 160 150)"/>
+      <use href="#sw7" xlink:href="#sw7" transform="rotate(72 160 150)"/>
+    </svg>
+    <div class="emblem-cap">Séptimo Dolor · La Sepultura del Señor</div>
+    <div class="emblem-sub">«Hizo rodar una gran piedra a la entrada del sepulcro» — Mateo 27, 60</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Dolor que se contempla</div>
+    <p>María acompaña el cuerpo de su Hijo hasta el sepulcro nuevo, lo ve sepultar tras la gran piedra, y vuelve en soledad, guardando ella sola, en la noche del mundo, la fe y la esperanza de la Resurrección.</p>
+  </div>
+
+  <p>Cae la tarde del viernes. José de Arimatea ha envuelto el cuerpo en una sábana limpia; Nicodemo ha traído la mirra y el áloe. Lo llevan a un sepulcro nuevo, excavado en la roca, en un huerto cercano al Calvario. María acompaña cada paso de aquel cortejo brevísimo, y asiste al momento que resume todos sus dolores: la gran piedra rueda, y el cuerpo de su Hijo —el rostro que ella besó en Belén— queda oculto a sus ojos. Después, el silencio. La Madre vuelve por las calles que ya oscurecen, con las manos vacías. Es la hora de la Soledad.</p>
+  <div class="sc"><p>José tomó el cuerpo, lo envolvió en una sábana limpia y lo puso en su sepulcro nuevo, que había hecho excavar en la roca; luego hizo rodar una gran piedra a la entrada del sepulcro, y se fue.</p><div class="sc-ref">Mateo 27, 59-60</div></div>
+  <p>Y sin embargo, en aquella noche sin luz, una lámpara quedó encendida. Es enseñanza venerable de la tradición que en el Sábado Santo, cuando la fe de los discípulos yacía sepultada con el Maestro, <em class="gold">la fe de toda la Iglesia se refugió en el corazón de María</em>: ella sola siguió creyendo, esperando contra toda esperanza la palabra del tercer día. Para nosotros es lección preciosa: cuando el conocimiento propio nos muestre la noche de nuestra alma —y la mostrará, si la luz pedida obra de veras— no es hora de desesperar, sino de velar con María. El sábado del alma también termina en aurora.</p>
+  <p>Hay además, en este sepulcro, una gracia que pedir. Escribe el Apóstol que por el bautismo <em class="gold">fuimos sepultados con Cristo en la muerte, para caminar en una vida nueva</em> (Romanos 6, 4). El hombre viejo —los hábitos de pecado, los apegos descubiertos en estos días— debe quedar enterrado con Cristo: no escondido, sino muerto y sepultado de verdad, con ruptura firme. Y una cosa más, contra el escrúpulo: el pecado confesado y perdonado queda bajo la piedra. No es piedad desenterrarlo una y otra vez con turbación; Dios no resucita nuestras culpas perdonadas, y nosotros tampoco debemos hacerlo. Se recuerdan con humildad agradecida, no con angustia.</p>
+  <div class="fq"><div class="fn">San Alfonso María de Ligorio — Sobre el Séptimo Dolor</div><p>Considera el dolor de María al despedirse del cuerpo de su Hijo, cuando la piedra cerró el sepulcro. Pero aun entonces no desfalleció su esperanza: sabía que al tercer día la muerte sería vencida. Quien acompaña a María en su soledad, aprende de ella a esperar cuando todo parece perdido.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir la gracia de sepultar definitivamente la vida vieja —con ruptura firme y sin componendas—, de no desenterrar con escrúpulo los pecados ya perdonados, y de esperar con María, contra toda esperanza, en las noches del alma.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Virgen de la Soledad, que volviste del sepulcro con las manos vacías y el corazón lleno de fe:</p>
+    <p>acompáñame en esta hora de mi novena, cuando la luz recibida me ha mostrado mi noche. No permitas que me espante de lo que he visto en mí, ni que lo esconda de nuevo bajo excusas: dame sepultarlo contigo, de verdad y para siempre, en la muerte redentora de tu Hijo.</p>
+    <p>Enséñame también tu esperanza del Sábado Santo: a creer cuando no veo, a velar cuando todo calla, a no desenterrar jamás lo que Dios ya ha perdonado. Y que de este sepulcro, Madre, salga yo como tu Hijo: no remendado, sino nuevo; para caminar, desde ahora, en una vida nueva.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Virgen de la Soledad, alcánzame sepultar al hombre viejo y esperar contra toda esperanza.»</p>
+    <p class="rub">Examen breve del día</p>
+    <p>¿Hay en mi vida pecados «mal enterrados», dejados a medias, con la puerta entreabierta? Y al revés: ¿sigo desenterrando con angustia lo que Dios ya perdonó?</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 8 ══════════ -->
+<div class="sw alt" id="dia8"><div class="content"><div class="chapter">
+  <div class="tbadge">🕯 Día Octavo · Petición</div>
+  <div class="cnum">Día VIII</div>
+  <h2 class="ctitle">Para Pedir Contrición Profunda y Conocimiento de Sí Mismo</h2>
+  <p class="csub">Junto al Corazón traspasado de la Madre</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Cirio encendido: la luz que examina el alma">
+      <circle cx="160" cy="84" r="30" stroke="#c9a84c" stroke-width="1" fill="none" opacity=".25"/>
+      <g stroke="#c9a84c" stroke-width="1" opacity=".4">
+        <line x1="160" y1="38" x2="160" y2="48"/>
+        <line x1="124" y1="58" x2="131" y2="65"/><line x1="196" y1="58" x2="189" y2="65"/>
+        <line x1="112" y1="86" x2="122" y2="86"/><line x1="208" y1="86" x2="198" y2="86"/>
+        <line x1="126" y1="112" x2="133" y2="106"/><line x1="194" y1="112" x2="187" y2="106"/>
+      </g>
+      <path d="M160 60 C169 75 172 86 166 96 C163 101 157 101 154 96 C148 86 151 75 160 60 Z" fill="#e8c97a" opacity=".85"/>
+      <path d="M160 74 C164 81 165 87 162 92 C161 94 159 94 158 92 C155 87 156 81 160 74 Z" fill="#f5e9c8"/>
+      <line x1="160" y1="100" x2="160" y2="110" stroke="#c9a84c" stroke-width="2"/>
+      <rect x="146" y="110" width="28" height="76" rx="2" fill="rgba(201,168,76,.06)" stroke="#c9a84c" stroke-width="2"/>
+      <line x1="120" y1="190" x2="200" y2="190" stroke="#c9a84c" stroke-width="2"/>
+      <line x1="132" y1="198" x2="188" y2="198" stroke="#c9a84c" stroke-width="1.2" opacity=".5"/>
+    </svg>
+    <div class="emblem-cap">Ab Occultis Meis Munda Me</div>
+    <div class="emblem-sub">«Purifícame de las faltas que me están ocultas» — Salmo 18, 13</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Gracia que se pide</div>
+    <p>Recorridos los Siete Dolores, se pide hoy, junto al Corazón traspasado de María, un examen veraz de la propia alma y una contrición profunda de los pecados conocidos y ocultos.</p>
+  </div>
+
+  <p>Durante siete días hemos acompañado a la Madre por el camino de sus dolores: del Templo a Egipto, de Jerusalén al Calvario, de la Cruz al sepulcro. Hoy la novena se vuelve hacia dentro. Con la Dolorosa al lado —porque sin ella este trabajo espanta o engaña— ponemos el alma delante de Dios y le pedimos el doble don que da título a este día: <em class="gold">conocerme y dolerme</em>. Conocerme: ver mi alma como Dios la ve. Dolerme: que esa vista no quede en diagnóstico estéril, sino que se haga contrición.</p>
+  <div class="sc"><p>Ten piedad de mí, oh Dios, según tu gran misericordia; según la multitud de tus piedades, borra mi iniquidad. Pues yo reconozco mi culpa, y mi pecado está siempre ante mí... Un corazón contrito y humillado, oh Dios, tú no lo desprecias.</p><div class="sc-ref">Salmo 50 — Miserere</div></div>
+  <p>Tres velos esconden el alma a sus propios ojos. El primero es el <em class="gold">orgullo</em>, que no soporta verse pecador y por eso no mira, o mira sólo lo que puede absolverse a sí mismo. El segundo es la <em class="gold">tibieza</em>, que mira y no le importa: «cosas de todos», «ya me confesaré algún día». El tercero, el más sutil, es el <em class="gold">autoengaño</em>, que negocia con los nombres: llama carácter a la ira, sinceridad a la maledicencia, prudencia a la cobardía, descanso a la pereza, amor propio a la vanidad. Contra estos tres velos no bastan los propósitos: hace falta la luz del Espíritu Santo, y por eso se pide de rodillas. <em class="verse">«Si decimos que no tenemos pecado, nos engañamos a nosotros mismos y la verdad no está en nosotros»</em> (1 Juan 1, 8); pero el mismo apóstol añade la promesa: <em class="verse">«si confesamos nuestros pecados, fiel y justo es Él para perdonarnos»</em>.</p>
+  <div class="tb"><div class="tbt">Qué es la contrición — Concilio de Trento</div><p>La contrición es <em class="gold">«un dolor del alma y una detestación del pecado cometido, con propósito de no pecar en adelante»</em>. Es <em>perfecta</em> cuando nace del amor de Dios ofendido; <em>imperfecta</em> (atrición) cuando nace de la fealdad del pecado o del temor del castigo. Una y otra son don de Dios, y una y otra deben conducir al sacramento de la Penitencia, donde la perfecta alcanza su sello y la imperfecta su plenitud.</p></div>
+  <p>Una advertencia, para caminar seguro: el conocimiento propio que viene de Dios <em class="gold">humilla y pacifica a la vez</em>; el que viene del enemigo, o del orgullo herido, turba y desespera. El escrúpulo se mira a sí mismo sin mirar a Dios, y por eso se hunde; la santa compunción se mira a sí misma en presencia de la misericordia, y por eso, cuanto más llora, más espera. Si en estos días la luz te muestra miserias que no sospechabas, no te turbes: es buena señal. Los santos se tenían por los mayores pecadores no por exageración, sino porque veían más; y cuanto más veían, más confiaban.</p>
+  <div class="fq"><div class="fn">Santa Teresa de Jesús — Sobre el conocimiento propio</div><p>Mientras estamos en esta tierra, no hay cosa que más nos importe que la humildad. El propio conocimiento es el pan con que se han de comer todos los manjares, por delicados que sean, en este camino de oración: sin este pan, no se podría sustentar el alma.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir un examen de conciencia completo y veraz —que rasgue los velos del orgullo, de la tibieza y del autoengaño— y una contrición profunda, que duela por amor y descanse en la misericordia.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre del Corazón traspasado: tú que viste el pecado del mundo en la carne de tu Hijo, ayúdame hoy a verlo en mi propia alma.</p>
+    <p>Pide al Espíritu Santo que encienda su lámpara sobre mí: que alumbre los rincones que nunca examino, los pecados que he vestido con nombres amables, las omisiones que no quise contar, los apegos que defiendo sin saberlo. Rasga, Señora, los tres velos: mi orgullo, que no quiere verse; mi tibieza, a la que nada duele; mi autoengaño, que todo lo negocia.</p>
+    <p>Y cuando la luz me muestre lo que soy, alcánzame el don más precioso: un corazón contrito y humillado, que llore sus pecados por amor de Aquel a quien hirieron, y que llore esperando, porque sabe que un corazón así Dios no lo desprecia jamás.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Purifícame, Señor, de mis faltas ocultas; Madre Dolorosa, alcánzame un corazón contrito y humillado.»</p>
+    <p class="rub">Examen del día</p>
+    <p>Repasar despacio, por escrito si es posible, los exámenes de los siete días anteriores, y anotar lo que la luz haya ido mostrando: será la materia de la próxima confesión.</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ DÍA 9 ══════════ -->
+<div class="sw" id="dia9"><div class="content"><div class="chapter">
+  <div class="tbadge">⚓ Día Noveno · Petición</div>
+  <div class="cnum">Día IX</div>
+  <h2 class="ctitle">Para Pedir Conversión Firme, Santa Confesión y Perseverancia Final</h2>
+  <p class="csub">Coronación de la novena</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <div class="emblem">
+    <svg viewBox="0 0 320 240" aria-label="Ancla de la esperanza y de la perseverancia">
+      <g fill="#c9a84c" opacity=".5">
+        <path d="M120 56 L124 64 L120 72 L116 64 Z"/>
+        <path d="M200 56 L204 64 L200 72 L196 64 Z"/>
+      </g>
+      <circle cx="160" cy="48" r="10" stroke="#c9a84c" stroke-width="2.5" fill="none"/>
+      <line x1="160" y1="58" x2="160" y2="176" stroke="#c9a84c" stroke-width="2.5"/>
+      <line x1="128" y1="86" x2="192" y2="86" stroke="#c9a84c" stroke-width="3"/>
+      <path d="M112 138 A48 48 0 0 0 208 138" stroke="#c9a84c" stroke-width="2.5" fill="none"/>
+      <path d="M112 138 L101 124 L120 127 Z" fill="#c9a84c"/>
+      <path d="M208 138 L219 124 L200 127 Z" fill="#c9a84c"/>
+    </svg>
+    <div class="emblem-cap">Usque in Finem</div>
+    <div class="emblem-sub">«El que persevere hasta el fin, ése se salvará» — Mateo 24, 13</div>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para comenzar — como todos los días</div>
+    <p class="rub">Señal de la Cruz</p>
+    <p>Por la señal de la Santa Cruz, de nuestros enemigos líbranos, Señor, Dios nuestro. En el nombre del Padre, y del Hijo, y del Espíritu Santo. Amén.</p>
+    <p class="rub">Oración inicial</p>
+    <p>Virgen Santísima de los Dolores, Madre fiel que permaneciste de pie junto a la Cruz de tu Hijo: vengo a tus plantas durante estos nueve días para alcanzar de Dios, por tu poderosa intercesión, la gracia de conocer mis pecados, mis fallas y mis miserias ocultas, y la gracia mayor de llorarlas y enmendarlas. Alcánzame del Espíritu Santo un rayo de su luz, para que vea mi alma como Dios la ve; un golpe de su gracia, para que mi corazón se quebrante de dolor por haber ofendido a tan buen Padre; y una esperanza firme e inquebrantable, porque sé que quien me muestra la herida es el mismo que quiere sanarla. Madre Dolorosa: por la espada que atravesó tu alma, no permitas que yo viva engañado sobre mí mismo, ni muera sin haber llorado mis pecados. Por Jesucristo, tu Hijo, nuestro Señor. Amén.</p>
+    <p class="rub">Renovación de la intención</p>
+    <p>Renuevo, Madre, la intención de toda esta novena: luz para conocer mis pecados y vicios ocultos, humildad para reconocerlos, dolor para llorarlos, fortaleza para enmendarme, y confianza inquebrantable en la misericordia de Dios. Amén.</p>
+  </div>
+
+  <div class="dolor">
+    <div class="dl">Gracia que se pide</div>
+    <p>En este último día se pide el fruto maduro de toda la novena: una conversión firme y con obras, una santa confesión sacramental, y la gracia de las gracias: la perseverancia final.</p>
+  </div>
+
+  <p>Una novena que termina en sentimientos y no en obras, no ha terminado: se ha evaporado. Por eso este último día pide tres gracias concretas, que son una sola gracia desplegada. La primera, la <em class="gold">conversión firme</em>: no el propósito vago de «ser mejor», sino la decisión, con nombre y fecha, de cortar lo que hay que cortar y comenzar lo que hay que comenzar. Dios no pide gestos espectaculares: pide el corazón entero.</p>
+  <div class="sc"><p>Convertíos a mí de todo corazón, con ayuno, con llanto, con luto. Rasgad los corazones y no las vestiduras; convertíos al Señor, vuestro Dios, porque es compasivo y misericordioso, lento a la ira y rico en clemencia.</p><div class="sc-ref">Joel 2, 12-13</div></div>
+  <p>La segunda gracia es la <em class="gold">santa confesión</em>. Toda la luz recibida en estos nueve días tiene un destino: el tribunal de la misericordia, donde el mismo Cristo, por el ministerio del sacerdote, pronuncia sobre el alma la palabra que ninguna meditación puede pronunciar: <em class="verse">«Yo te absuelvo de tus pecados»</em>. Él instituyó este sacramento la tarde de Pascua, cuando sopló sobre los Apóstoles: <em class="verse">«Recibid el Espíritu Santo: a quienes perdonéis los pecados, les quedan perdonados»</em> (Juan 20, 22-23). No hay vergüenza que valga más que esa absolución; y la Madre acompaña hasta la puerta del confesionario a todo hijo que se decide.</p>
+  <div class="tb"><div class="tbt">Las cinco cosas de una buena confesión</div><p><em class="gold">Examen</em> de conciencia, hecho con calma y verdad —el de estos nueve días—. <em class="gold">Dolor</em> de los pecados, por amor más que por temor. <em class="gold">Propósito</em> firme de la enmienda, que evita también las ocasiones. <em class="gold">Confesión</em> íntegra, humilde y sincera, sin callar por vergüenza ningún pecado grave. <em class="gold">Satisfacción</em>: cumplir la penitencia y reparar el daño hecho.</p></div>
+  <p>La tercera gracia es la mayor y la más olvidada: la <em class="gold">perseverancia final</em> —morir en gracia de Dios—. Los santos enseñan, con el Concilio de Trento, que es un don gratuito que no puede merecerse en estricta justicia, pero que se alcanza con la oración humilde y constante; y que quien la pide cada día por intercesión de María, pide bien. Nadie puede presumir: <em class="verse">«el que crea estar en pie, mire no caiga»</em> (1 Corintios 10, 12). San Felipe Neri repetía cada mañana: «Señor, no te fíes de Felipe, porque si no me sostienes, hoy te traicionará». Ésa es la humildad alegre del que persevera: desconfianza total de sí, confianza total en Dios, y la mano siempre en la mano de la Madre.</p>
+  <div class="fq"><div class="fn">San Agustín — Confesiones</div><p>¡Tarde te amé, hermosura tan antigua y tan nueva, tarde te amé! Tú estabas dentro de mí, y yo fuera, y por fuera te buscaba. Me llamaste y clamaste, y rompiste mi sordera; brillaste y resplandeciste, y curaste mi ceguera.</p></div>
+
+  <div class="tb"><div class="tbt">Intención particular del día</div>
+    <p>Pedir una conversión firme y con obras; resolver el día y la hora de la próxima confesión, y hacerla íntegra y sincera; y comenzar a pedir, desde hoy y cada día de la vida, la gracia de la perseverancia final.</p>
+  </div>
+
+  <div class="prayer">
+    <p>Madre Dolorosa, Refugio de los pecadores y Madre de la perseverancia:</p>
+    <p>al terminar esta novena no te pido sentimientos, sino obras. Alcánzame una conversión verdadera: que corte sin miedo lo que aparta de Dios, que repare el mal que hice, que cambie lo que llevo años prometiendo cambiar. Llévame pronto al sacramento del perdón, y acompáñame tú misma: que me confiese con la sinceridad de quien se sabe mirado por ti, sin callar nada, sin excusar nada, sin desesperar de nada.</p>
+    <p>Y una gracia más, la última y la más grande: la perseverancia final. Que no me aparte de tu Hijo ni una hora de cuantas me queden; que si caigo, me levante en seguida; y que en el paso de la muerte tú estés a mi lado, como estuviste junto a la Cruz, para entregarme en sus brazos. Madre mía: no me sueltes de tu mano hasta verme contigo en el cielo.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Para concluir — rezos del día</div>
+    <ul>
+      <li><span class="n">I.</span><span>Un <strong>Padrenuestro</strong>, ofrecido al Padre Eterno por los méritos de la Pasión de su Hijo.</span></li>
+      <li><span class="n">II.</span><span><strong>Siete Avemarías</strong>, una en honor de cada uno de los Siete Dolores de la Santísima Virgen <em>(quien no pueda, rece al menos tres)</em>.</span></li>
+      <li><span class="n">III.</span><span>Un <strong>Gloria</strong>, en acción de gracias por la obra de la Redención.</span></li>
+      <li><span class="n">IV.</span><span>La <strong>Oración final</strong> a Nuestra Señora de los Dolores, que se encuentra a continuación.</span></li>
+    </ul>
+    <p class="rub">Jaculatoria</p>
+    <p class="jac">«Madre de la perseverancia, no me sueltes de tu mano hasta verme contigo en el cielo.»</p>
+    <p class="rub">Resolución del día</p>
+    <p>Fijar hoy mismo el día y la hora de la confesión, y un propósito concreto —uno solo, pequeño y firme— de enmienda para los próximos treinta días.</p>
+  </div>
+</div></div></div>
+
+<!-- ══════════ ORACIONES FINALES ══════════ -->
+<div class="ib" id="finales"><div class="content"><div class="chapter">
+  <div class="cnum">Conclusión</div>
+  <h2 class="ctitle">Oraciones Finales</h2>
+  <p class="csub">Para el término de la novena — y para todos los días que se quiera</p>
+  <div class="cdiv"><div class="cdl"></div><span style="color:var(--gold);font-size:10px">✦</span></div>
+
+  <p class="lead">Terminados los nueve días, conviene sellar la novena con esta oración a Nuestra Señora de los Dolores, que puede rezarse también, si se desea, al final de cada día.</p>
+
+  <div class="prayer">
+    <p>Virgen Santísima de los Dolores, Reina de los Mártires y Madre de Misericordia:</p>
+    <p>recibe esta novena que he puesto en tus manos traspasadas de dolor. Lo que en ella te pedí, sigue pidiéndolo tú por mí, que sabes pedir mejor: la luz que no se apague, la humildad que no se canse, el dolor de mis pecados que no se enfríe, la enmienda que no se rinda, y la confianza que no se turbe jamás.</p>
+    <p>Por la profecía que aceptaste, por el destierro que sufriste, por los tres días que buscaste, por el encuentro que te traspasó, por la Cruz junto a la que estuviste de pie, por el cuerpo que recibiste en tus brazos y por el sepulcro ante el cual esperaste: alcánzame de tu Hijo el perdón de todos mis pecados, los que conozco y los que ignoro, los que confesé y los que aún no he sabido confesar.</p>
+    <p>Y pues fuiste hecha Madre mía al pie de la Cruz, sé Madre mía hasta el final: en la vida, para que no vuelva a crucificar a tu Hijo; en la muerte, para que muera en su gracia; y en la eternidad, para que cante contigo, para siempre, las misericordias del Señor.</p>
+    <p>Por Jesucristo, tu Hijo, nuestro Señor.<span class="amen">Amén</span></p>
+  </div>
+
+  <div class="ritual">
+    <div class="ritual-t">Jaculatorias a Nuestra Señora de los Dolores</div>
+    <p style="font-style:normal;font-size:13.5px;color:var(--td)">Pueden repetirse durante el día, especialmente en la tentación, ante el crucifijo, o al visitar una imagen de la Dolorosa:</p>
+    <ul>
+      <li><span class="n">✦</span><span><em>«Virgen Santísima de los Dolores, ruega por nosotros que recurrimos a ti.»</em></span></li>
+      <li><span class="n">✦</span><span><em>«Madre Dolorosa, alcánzame conocer, llorar y enmendar mis pecados.»</em></span></li>
+      <li><span class="n">✦</span><span><em>«Dulce Corazón de María, sed la salvación mía.»</em></span></li>
+      <li><span class="n">✦</span><span><em>«Madre, no me sueltes de tu mano hasta verme contigo en el cielo.»</em></span></li>
+      <li><span class="n">✦</span><span><em>V/. Ora pro nobis, Virgo dolorosissima.<br>R/. Ut digni efficiamur promissionibus Christi.</em></span></li>
+    </ul>
+  </div>
+
+  <div class="cgrid">
+    <div class="ci"><div class="cit">Las Avemarías de los Dolores</div><p>Es práctica piadosa y tradicional terminar cada día —de la novena, y aun de toda la vida— con <em>siete Avemarías</em> en honor de los Siete Dolores de María, o al menos con <em>tres</em>, diciendo tras cada una: «Virgen Dolorosísima, ruega por nosotros».</p></div>
+    <div class="ci"><div class="cit">El sello de la novena</div><p>El fruto natural de estos nueve días es una buena confesión sacramental. Si todavía no se ha hecho, no se difiera: lo que la luz descubrió, el sacramento lo perdona, y la Madre acompaña hasta la puerta.</p></div>
+  </div>
+
+  <div class="sc"><p>Un corazón contrito y humillado, oh Dios, tú no lo desprecias.</p><div class="sc-ref">Salmo 50, 19 — Cor contritum et humiliatum, Deus, non despicies</div></div>
+</div></div></div>
+
+<!-- COLOPHON -->
+<footer class="col">
+  <div style="display:flex;justify-content:center;margin-bottom:18px;opacity:.55">
+    <svg width="120" height="74" viewBox="0 0 120 74">
+      <line x1="0" y1="37" x2="34" y2="37" stroke="#c9a84c" stroke-width=".8" opacity=".5"/>
+      <line x1="86" y1="37" x2="120" y2="37" stroke="#c9a84c" stroke-width=".8" opacity=".5"/>
+      <path d="M60 58 C46 46 36 36 36 25 C36 17 42 11 49 11 C54 11 58 14 60 19 C62 14 66 11 71 11 C78 11 84 17 84 25 C84 36 74 46 60 58 Z" fill="none" stroke="#c9a84c" stroke-width="1.4"/>
+      <line x1="60" y1="2" x2="60" y2="34" stroke="#c9a84c" stroke-width="1.6"/>
+      <path d="M60 40 L57.5 32 L62.5 32 Z" fill="#c9a84c"/>
+      <line x1="53" y1="9" x2="67" y2="9" stroke="#c9a84c" stroke-width="1.6"/>
+    </svg>
+  </div>
+  <div class="col-title">Virgo Dolorosissima, ora pro nobis</div>
+  <p class="col-text">Novena a Nuestra Señora de los Dolores, compuesta para implorar la gracia<br>de conocer y llorar los propios pecados, y alcanzar una firme enmienda de vida.</p>
+  <div style="color:var(--gold);opacity:.3;letter-spacing:.8em;font-size:10px;margin:16px 0">✦ ✦ ✦</div>
+  <p class="col-text" style="font-size:12.5px">Quien desee imprimirla o copiarla para su devoción, hágalo libremente:<br>las cosas de la Madre son de todos sus hijos.</p>
+  <div class="col-lat">Omnia ad maiorem Dei gloriam</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('pb').style.width=((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100)+'%';
+});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.05});
+document.querySelectorAll('.chapter').forEach(c=>obs.observe(c));
+const tis=document.querySelectorAll('.ti');
+const sObs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){const id=x.target.id;tis.forEach(t=>{t.classList.remove('active');if(t.getAttribute('href')==='#'+id)t.classList.add('active')})}})},{threshold:.2,rootMargin:'-10% 0px -65% 0px'});
+document.querySelectorAll('[id]').forEach(s=>sObs.observe(s));
+</script>
+</body>
+</html>
