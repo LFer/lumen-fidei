@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El principio de la evidencia · La luz de la evidencia y la humildad ante la realidad</title>
+<meta name="description" content="Una reflexión filosófica y espiritual sobre la humildad intelectual, el principio de evidencia y la relación entre fe y razón en el alma católica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211b12;
+    --ink-soft:#574a37;
+    --parchment:#f4ecda;
+    --parchment-2:#ece1c8;
+    --card:#fbf5e7;
+    --gold:#a9842a;
+    --gold-bright:#d3ad4e;
+    --gold-pale:#e7d39a;
+    --oxblood:#7a2230;
+    --oxblood-deep:#581621;
+    --cosmos:#0a0d1d;
+    --cosmos-2:#121833;
+    --cosmos-3:#1b2347;
+    --star:#ede9ff;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond',serif;
+    font-size:20px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ---------- progress bar ---------- */
+  #progress{position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    z-index:999;box-shadow:0 0 8px rgba(211,173,78,.6)}
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,.eyebrow{font-family:'Cinzel',serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.32rem;line-height:1.7}
+  em{color:var(--oxblood);font-style:italic}
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--oxblood)}
+
+  /* ---------- layout ---------- */
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .eyebrow .num{font-family:'Cinzel',serif;color:var(--oxblood)}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+
+  h2{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:600;line-height:1.06;
+    letter-spacing:.01em;margin-bottom:.55em;color:var(--ink)}
+  h3{font-size:1.18rem;letter-spacing:.06em;color:var(--oxblood);margin-bottom:.4em}
+
+  /* ---------- section rhythm ---------- */
+  .band{padding:96px 0}
+  .band.light{background:var(--parchment)}
+  .band.tint{background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(169,132,42,.10),transparent 60%),
+      var(--parchment-2)}
+  .band.dark{background:
+      radial-gradient(900px 600px at 15% 0%,rgba(60,75,150,.35),transparent 55%),
+      radial-gradient(700px 500px at 90% 100%,rgba(122,34,48,.28),transparent 60%),
+      linear-gradient(180deg,var(--cosmos),#0c1124 60%,var(--cosmos));
+    color:#e9e4d6}
+  .band.dark h2{color:#f6f0e2}
+  .band.dark h3{color:var(--gold-bright)}
+  .band.dark strong{color:#fff}
+  .band.dark em{color:var(--gold-bright)}
+  .band.dark .eyebrow{color:var(--gold-bright)}
+  .band.dark .eyebrow::before{background:var(--gold-bright)}
+  .band.dark .eyebrow .num{color:#e7c97a}
+
+  /* paper grain */
+  .band.light::after,.band.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#f3edde;overflow:hidden;position:relative;
+    background:radial-gradient(1100px 700px at 50% 18%,#1a2147,transparent 60%),
+      radial-gradient(900px 600px at 50% 120%,#3a1622,transparent 55%),
+      linear-gradient(180deg,#070914,#0a0d1d 55%,#0b0f22)}
+  #stars{position:absolute;inset:0;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .rosette{margin:0 auto 30px;width:96px;height:96px;animation:spin 90s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .kicker{font-family:'Cinzel',serif;letter-spacing:.4em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-bright);margin-bottom:26px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(3rem,11vw,7rem);line-height:.95;letter-spacing:.01em;
+    text-shadow:0 2px 40px rgba(0,0,0,.5)}
+  .hero h1 .small{display:block;font-size:.42em;letter-spacing:.04em;color:var(--gold-pale);margin-top:.4em;font-weight:500}
+  .hero .sub{max-width:640px;margin:30px auto 0;font-size:1.2rem;color:#cdc6bb;line-height:1.7;font-style:italic;font-family:'Cormorant Garamond',serif}
+  .hero .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--gold-bright);font-family:'Cinzel',serif;font-size:.65rem;
+    letter-spacing:.3em;text-transform:uppercase;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ornamental divider ---------- */
+  .rule{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;max-width:340px}
+  .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule svg{width:26px;height:26px;flex:none}
+
+  /* ---------- drop cap ---------- */
+  .dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:4.6rem;line-height:.78;padding:6px 14px 0 0;color:var(--oxblood);font-weight:600}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--card);border:1px solid rgba(169,132,42,.32);
+    border-radius:4px;padding:26px 28px;
+    box-shadow:0 18px 40px -28px rgba(33,27,18,.55);position:relative}
+  .band.dark .card{background:rgba(255,255,255,.04);border-color:rgba(211,173,78,.28);
+    box-shadow:0 18px 50px -30px rgba(0,0,0,.7);color:#e9e4d6}
+  .grid{display:grid;gap:22px}
+  @media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+
+  .objection{border-left:4px solid var(--oxblood);background:rgba(122,34,48,.07);
+    padding:20px 24px;border-radius:0 4px 4px 0;font-style:italic;font-size:1.1rem}
+  .band.dark .objection{background:rgba(122,34,48,.18);border-color:#c66}
+  .answer{border-left:4px solid var(--gold);background:rgba(169,132,42,.10);
+    padding:20px 24px;border-radius:0 4px 4px 0}
+  .band.dark .answer{background:rgba(211,173,78,.12)}
+  .tag{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+    display:inline-block;margin-bottom:8px;font-weight:600}
+  .tag.bad{color:var(--oxblood)}
+  .tag.good{color:var(--gold)}
+  .band.dark .tag.good{color:var(--gold-bright)}
+
+  /* ---------- index / TOC ---------- */
+  .toc{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:6px;
+    padding:34px 30px;box-shadow:0 20px 50px -34px rgba(33,27,18,.5)}
+  .toc ol{list-style:none;counter-reset:t;display:grid;gap:2px}
+  @media(min-width:680px){.toc ol{grid-template-columns:1fr 1fr;column-gap:34px}}
+  .toc li{counter-increment:t;border-bottom:1px dotted rgba(169,132,42,.4)}
+  .toc a{display:flex;gap:14px;align-items:baseline;padding:11px 4px;text-decoration:none;
+    color:var(--ink);transition:.25s;font-size:1.05rem}
+  .toc a:hover{color:var(--oxblood);padding-left:10px}
+  .toc a::before{content:counter(t,upper-roman) ".";font-family:'Cinzel',serif;
+    color:var(--gold);font-size:.82rem;min-width:40px;font-weight:600}
+
+  /* ---------- quote ---------- */
+  .pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);
+    line-height:1.18;font-weight:500;font-style:italic;text-align:center;color:var(--ink)}
+  .band.dark .pull{color:#f4eddd}
+  .pull .by{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+  .quotecard{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:4px;
+    padding:24px 26px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;
+    font-style:italic;line-height:1.34;position:relative;color:var(--ink)}
+  .quotecard::before{content:"\201C";position:absolute;top:-6px;left:14px;
+    font-size:4rem;color:var(--gold);opacity:.35;font-family:'Cormorant Garamond',serif}
+  .quotecard .who{display:block;font-family:'Cinzel',serif;font-style:normal;
+    font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .band.dark .quotecard{background:rgba(255,255,255,.04);border-color:rgba(211,173,78,.28);color:#f0e8d6}
+
+  /* ---------- prayer block ---------- */
+  .prayer-block{margin:40px 0 0;padding:36px 32px;background:rgba(169,132,42,.07);
+    border:1px solid rgba(169,132,42,.3);border-top:3px solid var(--gold);
+    border-radius:0 0 4px 4px;text-align:center;position:relative}
+  .prayer-block::before{content:'✦ ORACIÓN ✦';position:absolute;top:-10px;left:50%;
+    transform:translateX(-50%);background:var(--cosmos);padding:0 14px;
+    font-family:'Cinzel',serif;font-size:8px;letter-spacing:.38em;color:var(--gold-bright);
+    text-transform:uppercase}
+  .prayer-block p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.32rem;
+    line-height:1.6;color:#e9e4d6;max-width:580px;margin:0 auto 16px!important;text-align:center!important}
+  .prayer-block p:last-child{margin-bottom:0!important}
+  .prayer-amen{font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--gold-bright);display:block;margin-top:18px}
+
+  .keyword{font-family:'Cinzel',serif;letter-spacing:.04em}
+  .note{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+  .band.dark .note{color:#b9b2a4}
+
+  footer{background:linear-gradient(180deg,#0b0f22,#070914);color:#c9c2b6;
+    text-align:center;padding:70px 26px}
+  footer .rosette{width:60px;height:60px;margin:0 auto 22px;opacity:.8;animation:none}
+  footer p{font-size:.95rem;color:#9d978c;margin:0}
+  footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#e7d39a;margin-bottom:14px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.4}
+
+  ::selection{background:var(--gold);color:#1a140a}
+
+  /* ---------- back-to-home link ---------- */
+  .home-link{
+    position:fixed;top:20px;left:22px;z-index:1000;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--gold-bright);
+    padding:8px 14px;border:1px solid rgba(211,173,78,.35);border-radius:2px;
+    background:rgba(10,13,29,.55);backdrop-filter:blur(8px);
+    transition:color .25s,border-color .25s,background .25s,transform .25s;
+  }
+  .home-link:hover{color:#fff;border-color:var(--gold-bright);background:rgba(10,13,29,.85);transform:translateX(-2px)}
+  .home-link svg{width:12px;height:12px}
+  @media(max-width:600px){.home-link{font-size:.58rem;padding:6px 10px;top:14px;left:14px}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a class="home-link" href="../../" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Lumen Fidei
+</a>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap">
+    <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="50" r="34" opacity=".7"/>
+      <g opacity=".9">
+        <circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/>
+        <circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/>
+        <circle cx="29" cy="29" r="14"/><circle cx="71" cy="29" r="14"/>
+        <circle cx="29" cy="71" r="14"/><circle cx="71" cy="71" r="14"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    </svg>
+    <div class="kicker">Filosofía · Epistemología católica</div>
+    <h1 class="display">La luz de la evidencia
+      <span class="small">y la humildad ante la realidad</span>
+    </h1>
+    <p class="sub">El principio de la evidencia: por qué nuestra cultura ha perdido el contacto
+      con la realidad, y cómo el alma cristiana puede recuperarlo.</p>
+  </div>
+  <div class="scroll">Desplazá para comenzar</div>
+</header>
+
+<!-- ============ INTRO + ÍNDICE ============ -->
+<section class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> El punto de partida</div>
+    <p class="lead dropcap">Hay una enfermedad profunda en el alma moderna: el hombre ya no quiere recibir
+      la realidad como se le presenta. Prefiere imponerle sus deseos, sus emociones, sus intereses o sus
+      ideologías. Quiere que las cosas sean verdaderas porque le resultan útiles, cómodas o emocionalmente
+      satisfactorias. Pero la verdad no nace de nuestra voluntad. La verdad no depende de lo que sentimos.
+      <em>La verdad es la conformidad de la inteligencia con la realidad.</em></p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#a9842a" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <nav class="toc" style="margin-top:34px">
+      <ol>
+        <li><a href="#s1">La enfermedad del alma moderna</a></li>
+        <li><a href="#s2">El principio de evidencia</a></li>
+        <li><a href="#s3">El desorden espiritual</a></li>
+        <li><a href="#s4">Estudiosidad y curiosidad</a></li>
+        <li><a href="#s5">La sobriedad del juicio</a></li>
+        <li><a href="#s6">Fe y razón</a></li>
+        <li><a href="#s7">La paz interior</a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ I · LA ENFERMEDAD DEL ALMA MODERNA ============ -->
+<section id="s1" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">I</span> La raíz del problema</div>
+    <h2 class="narrow">El hombre que ya no quiere recibir la realidad como se le presenta</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2.2em">La inteligencia humana fue creada para recibir el ser, no para fabricarlo. Dos actitudes radicalmente opuestas definen la relación del alma con la verdad.</p>
+
+    <div class="grid g2" style="margin-top:8px">
+      <div class="card">
+        <span class="tag bad">El error moderno</span>
+        <h3 style="color:#e98b8b">La inteligencia como fábrica</h3>
+        <p style="color:#d8d1c4">El hombre impone a la realidad sus deseos, emociones e ideologías.
+          Quiere que las cosas sean verdaderas porque le resultan útiles o emocionalmente satisfactorias.</p>
+        <p class="note" style="color:#b9988f">Fabricar la verdad es la forma más íntima de soberbia: poner la voluntad propia por encima del ser.</p>
+      </div>
+      <div class="card">
+        <span class="tag good">La actitud ordenada</span>
+        <h3>La inteligencia como receptáculo</h3>
+        <p style="color:#e6e0d2">La mente tiene el deber de someterse humildemente a la realidad cuando
+          esta se manifiesta. No dice: «esto es verdad porque yo lo quiero», sino: <strong>«esto es verdad porque es así».</strong></p>
+        <p class="note" style="color:#cdbf95">Esa docilidad ante lo real es una forma de pobreza espiritual: dejar que la verdad nos posea, en vez de intentar poseerla nosotros.</p>
+      </div>
+    </div>
+
+    <div class="answer narrow reveal" style="margin:40px auto 0">
+      <p style="margin:0;font-size:1.15rem">La humildad intelectual no es debilidad. Es <strong>obediencia noble</strong>: el alma que se inclina ante la realidad obedece, en última instancia, al Autor de todo ser.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ II · EL PRINCIPIO DE EVIDENCIA ============ -->
+<section id="s2" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">II</span> El criterio de la verdad</div>
+    <h2 class="narrow">Lo que es debe gobernar lo que pienso</h2>
+    <p class="narrow">El principio de evidencia nos recuerda que el criterio de la verdad no es mi impresión subjetiva, sino la realidad misma en cuanto se manifiesta. Si mi juicio no se ajusta a la cosa, el problema no está en la cosa, sino en mi juicio. Por eso la humildad intelectual es una virtud indispensable: sin ella, incluso una inteligencia brillante puede convertirse en una fábrica de errores.</p>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:46px">
+    <div class="pull narrow" style="margin:0 auto">
+      «Lo que es, debe gobernar lo que pienso.»
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:52px">
+    <p>Pero no basta con mirar la realidad. También hay que juzgarla en la medida justa. Hay cosas que conocemos con <strong>certeza</strong>; otras, solo con <strong>probabilidad</strong>; otras, apenas por <strong>indicios</strong>; y otras, simplemente <strong>no las sabemos</strong>. Una gran parte del desorden moderno nace de no respetar esos grados.</p>
+
+    <p>El hombre quiere certeza donde solo hay sospecha, quiere dogma donde solo hay opinión, quiere conclusión definitiva donde apenas hay señales incompletas.</p>
+
+    <div class="grid g2" style="margin-top:30px">
+      <div class="objection">
+        «Yo tengo razón; estoy seguro de ello.»<br>
+        <span style="display:block;margin-top:10px;font-size:.9rem;color:var(--ink-soft);font-style:normal">Certeza reclamada donde solo hay sospecha o impresión subjetiva.</span>
+      </div>
+      <div class="answer">
+        <p style="margin:0">Respeta los grados: <strong>afirma lo cierto, sopesa lo probable, calla lo que no sabes.</strong> La fortaleza intelectual está en esa distinción, no en la audacia del juicio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III · EL DESORDEN ESPIRITUAL ============ -->
+<section id="s3" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">III</span> La ansiedad de certeza</div>
+    <h2 class="narrow">El alma que no puede vivir bajo la Providencia</h2>
+    <p class="narrow">Esto no es solo un defecto intelectual. También es un desorden espiritual. Muchas veces el alma busca certeza no por amor a la verdad, sino por ansiedad. Quiere saberlo todo, anticiparlo todo, explicarlo todo, dominarlo todo. Le cuesta vivir bajo la Providencia. Le cuesta aceptar que hay cosas que Dios no le ha dado a conocer.</p>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:40px">
+    <div class="quotecard narrow" style="margin:0 auto">
+      El alma ansiosa se aferra a teorías, rumores, interpretaciones y predicciones, no porque estén suficientemente fundadas, sino porque le dan una <em>falsa sensación de control</em>.
+    </div>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:44px">
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag bad">La ansiedad de certeza</span>
+        <h3 style="color:var(--oxblood)">Saber para dominar</h3>
+        <p>Se aferra a teorías y predicciones no por estar fundadas, sino por la falsa sensación de control que otorgan. Es una huida disfrazada de conocimiento.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <span class="tag good">El descanso en la Providencia</span>
+        <h3>Vivir bajo la luz que Dios da</h3>
+        <p>El alma ordenada sabe que hay cosas que Dios no le ha dado a conocer. Descansa en esa ignorancia con confianza filial, sin necesitar controlarlo todo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IV · ESTUDIOSIDAD Y CURIOSIDAD ============ -->
+<section id="s4" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">IV</span> La virtud y su sombra</div>
+    <h2 class="narrow">No todo conocimiento buscado es virtuoso</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2.2em">Aquí aparece una diferencia decisiva entre la santa estudiosidad y la curiosidad desordenada. No son distintos grados de la misma cosa: son actitudes radicalmente opuestas ante el saber.</p>
+
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag good">Santa estudiosidad</span>
+        <h3>El conocimiento ordenado</h3>
+        <p style="color:#e6e0d2">Busca la verdad que conviene al estado de vida, al deber, a la salvación del alma y al servicio del prójimo. Ordena el conocimiento a Dios y al bien.</p>
+        <p class="note" style="color:#cdbf95">No busca saber más de lo que conviene, ni por caminos que no le corresponden.</p>
+      </div>
+      <div class="card">
+        <span class="tag bad">Curiosidad desordenada</span>
+        <h3 style="color:#e98b8b">El conocimiento como dominio</h3>
+        <p style="color:#d8d1c4">Busca saber por inquietud, por vanidad, por miedo o por deseo de dominio. No tiene como fin el bien: busca poseer, controlar, aventajar.</p>
+        <p class="note" style="color:#b9988f">Hay cosas que no nos corresponde saber; buscarlas es desobediencia espiritual.</p>
+      </div>
+    </div>
+
+    <div class="answer narrow reveal" style="margin:40px auto 0">
+      <p style="margin:0">Hay cosas que, aun siendo verdaderas, pueden alimentar la <em>agitación del alma</em> si las buscamos fuera del orden querido por Dios. El conocimiento que no está ordenado a la caridad termina por corromper al que lo posee.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ V · LA SOBRIEDAD DEL JUICIO ============ -->
+<section id="s5" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">V</span> El silencio como fortaleza</div>
+    <h2 class="narrow">Hasta aquí llega la evidencia; más allá debo callar</h2>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:40px">
+    <div class="pull narrow" style="margin:0 auto">
+      «Requiere más amor a la verdad decir "no lo sé" que inventar una seguridad falsa.»
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:52px">
+    <p>El alma cristiana debe aprender a decir: «hasta aquí llega la evidencia; hasta aquí puedo afirmar; más allá debo callar». Ese silencio no es debilidad. Es fortaleza. Requiere más dominio de sí mismo abstenerse de un juicio temerario que pronunciar una opinión fuerte sin fundamento.</p>
+
+    <p>Esta sobriedad es especialmente necesaria al hablar del prójimo. Una sola apariencia no siempre basta para condenar. Un dato incompleto no siempre permite una acusación. La lengua se vuelve peligrosa cuando la inteligencia no se somete a la evidencia.</p>
+
+    <div class="grid g2" style="margin-top:30px">
+      <div class="objection">
+        «Una sospecha es suficiente. Un rumor no puede ser mentira si todos lo repiten.»
+      </div>
+      <div class="answer">
+        <p style="margin:0"><strong>Una sospecha no es una certeza. Una impresión no es una prueba.</strong> Quien juzga más allá de lo que sabe peca contra la verdad y, muchas veces, contra la caridad.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.8em">Vivimos rodeados de afirmaciones fuertes, noticias rápidas, opiniones apasionadas y relatos que exigen adhesión inmediata. Pero el cristiano no está llamado a repetir todo lo que oye. Está llamado a <strong>examinar, discernir y conservar la paz</strong>. La fe no nos convierte en ingenuos; nos exige ser más realistas, porque creemos en un Dios que es la Verdad misma.</p>
+  </div>
+</section>
+
+<!-- ============ VI · FE Y RAZÓN ============ -->
+<section id="s6" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VI</span> La unión de dos luces</div>
+    <h2 class="narrow">La fe no destruye la razón. La purifica. La eleva. La sana de la soberbia.</h2>
+    <p class="narrow">El católico no desprecia la evidencia; la honra. Sabe que la creación viene de Dios y que, por tanto, la realidad tiene un orden inteligible. Sabe que cuando la inteligencia se inclina ante lo real, está obedeciendo, en última instancia, al Autor de todo ser.</p>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:44px">
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag good">La razón</span>
+        <h3>Mira lo creado, reconoce el orden</h3>
+        <p>La razón sana no teme la realidad: la abraza. Ve el orden inteligible del mundo y en él reconoce la huella del Creador. Inclina la inteligencia ante lo real como obediencia al Autor de todo ser.</p>
+      </div>
+      <div class="card">
+        <span class="tag good">La fe</span>
+        <h3>Escucha a Dios, recibe la luz superior</h3>
+        <p>La fe escucha a Dios y recibe lo que la razón, por sí sola, no podría alcanzar. Ante los misterios, la inteligencia no se apaga; <em>se arrodilla</em>. No cree contra la evidencia, sino más allá de ella.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:52px">
+    <p>La fe también nos enseña que no toda verdad está al alcance inmediato de nuestros ojos. Hay misterios que superan la razón sin contradecirla. Por eso el alma fiel debe vivir en una doble actitud: <strong>firmeza ante lo evidente</strong> y <strong>humildad ante lo que no sabe</strong>.</p>
+
+    <div class="answer" style="margin-top:26px">
+      <p style="margin:0">El error moderno oscila entre dos pecados: niega lo evidente y dogmatiza lo dudoso. El cristiano debe hacer lo contrario: <strong>aceptar con obediencia lo que se muestra verdadero y callar prudentemente donde Dios no ha dado suficiente luz.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VII · LA PAZ INTERIOR + ORACIÓN ============ -->
+<section id="s7" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VII</span> El fruto de la disciplina intelectual</div>
+    <h2 class="narrow">Una lámpara firme que alumbra el camino</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2.2em">Esta disciplina interior trae paz. El alma deja de perseguir explicaciones totales. Deja de necesitar una opinión sobre todo. Aprende a descansar en la verdad conocida y a confiar a Dios lo que todavía no entiende.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:0">
+    <div class="quotecard">
+      La luz de la fe no es una linterna nerviosa que pretende iluminar todos los rincones del futuro. Es una <em>lámpara firme</em> que alumbra el camino necesario para caminar hacia Dios. No nos da dominio absoluto sobre la realidad; nos da orientación, obediencia y esperanza.
+    </div>
+
+    <p style="margin-top:2em;color:#cfc8ba">Nos enseña a vivir con los ojos abiertos, la inteligencia sobria y el corazón confiado. No somos Dios. No vemos todo. No comprendemos todo. Por eso el juicio humano debe ser sobrio.</p>
+
+    <div class="prayer-block">
+      <p>Señor, danos amor por la verdad. Líbranos de la mentira cómoda, de la opinión temeraria y de la falsa certeza. Danos una inteligencia dócil ante la realidad, una lengua prudente ante el prójimo y un corazón humilde ante tus misterios.</p>
+      <p>Que no busquemos saber para dominar, sino conocer para servirte. Que la evidencia nos conduzca a la verdad, y que la verdad nos conduzca a Ti.</p>
+      <span class="prayer-amen">Amén</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    <g opacity=".8"><circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/><circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/></g>
+  </svg>
+  <p class="big">«Tu palabra es lámpara para mis pasos, luz en mi sendero.»<br><span style="font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-family:'Cinzel',serif;color:#a8997d">Salmo 119, 105</span></p>
+  <p>Lumen Fidei · biblioteca de páginas devocionales y apologéticas.</p>
+  <p style="margin-top:6px;font-size:.82rem;color:#7f7a70">Ad maiorem Dei gloriam.</p>
+</footer>
+
+<script>
+  // starfield
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  let w,hh,stars;
+  function init(){w=c.width=innerWidth;hh=c.height=Math.max(innerHeight,600);
+    stars=Array.from({length:Math.min(220,Math.floor(w/6))},()=>({
+      x:Math.random()*w,y:Math.random()*hh,r:Math.random()*1.4+.2,
+      a:Math.random(),s:Math.random()*.018+.004}));}
+  function draw(){x.clearRect(0,0,w,hh);
+    for(const st of stars){st.a+=st.s;const o=.35+Math.abs(Math.sin(st.a))*.65;
+      x.beginPath();x.arc(st.x,st.y,st.r,0,7);
+      x.fillStyle='rgba(231,224,255,'+o+')';x.fill();}
+    requestAnimationFrame(draw);}
+  init();draw();addEventListener('resize',init);
+
+  // progress bar
+  const pb=document.getElementById('progress');
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    pb.style.width=(window.scrollY/h*100)+'%';
+  });
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
