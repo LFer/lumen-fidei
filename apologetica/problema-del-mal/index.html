@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El problema del mal y la existencia de Dios · La línea recta contra la cual medimos lo torcido</title>
+<meta name="description" content="Una reflexión apologética sobre el problema del mal, la existencia de Dios y el fundamento objetivo del bien y del mal: por qué el escándalo ante el sufrimiento inocente, lejos de refutar a Dios, apunta hacia Él.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211b12;
+    --ink-soft:#574a37;
+    --parchment:#f4ecda;
+    --parchment-2:#ece1c8;
+    --card:#fbf5e7;
+    --gold:#a9842a;
+    --gold-bright:#d3ad4e;
+    --gold-pale:#e7d39a;
+    --oxblood:#7a2230;
+    --oxblood-deep:#581621;
+    --cosmos:#0a0d1d;
+    --cosmos-2:#121833;
+    --cosmos-3:#1b2347;
+    --star:#ede9ff;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond',serif;
+    font-size:20px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ---------- progress bar ---------- */
+  #progress{position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    z-index:999;box-shadow:0 0 8px rgba(211,173,78,.6)}
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,.eyebrow{font-family:'Cinzel',serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.32rem;line-height:1.7}
+  em{color:var(--oxblood);font-style:italic}
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--oxblood)}
+
+  /* ---------- layout ---------- */
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .eyebrow .num{font-family:'Cinzel',serif;color:var(--oxblood)}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+
+  h2{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:600;line-height:1.06;
+    letter-spacing:.01em;margin-bottom:.55em;color:var(--ink)}
+  h3{font-size:1.18rem;letter-spacing:.06em;color:var(--oxblood);margin-bottom:.4em}
+
+  /* ---------- section rhythm ---------- */
+  .band{padding:96px 0}
+  .band.light{background:var(--parchment)}
+  .band.tint{background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(169,132,42,.10),transparent 60%),
+      var(--parchment-2)}
+  .band.dark{background:
+      radial-gradient(900px 600px at 15% 0%,rgba(60,75,150,.35),transparent 55%),
+      radial-gradient(700px 500px at 90% 100%,rgba(122,34,48,.28),transparent 60%),
+      linear-gradient(180deg,var(--cosmos),#0c1124 60%,var(--cosmos));
+    color:#e9e4d6}
+  .band.dark h2{color:#f6f0e2}
+  .band.dark h3{color:var(--gold-bright)}
+  .band.dark strong{color:#fff}
+  .band.dark em{color:var(--gold-bright)}
+  .band.dark .eyebrow{color:var(--gold-bright)}
+  .band.dark .eyebrow::before{background:var(--gold-bright)}
+  .band.dark .eyebrow .num{color:#e7c97a}
+
+  /* paper grain */
+  .band.light::after,.band.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#f3edde;overflow:hidden;position:relative;
+    background:radial-gradient(1100px 700px at 50% 18%,#1a2147,transparent 60%),
+      radial-gradient(900px 600px at 50% 120%,#3a1622,transparent 55%),
+      linear-gradient(180deg,#070914,#0a0d1d 55%,#0b0f22)}
+  #stars{position:absolute;inset:0;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .rosette{margin:0 auto 30px;width:96px;height:96px;animation:spin 90s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .kicker{font-family:'Cinzel',serif;letter-spacing:.4em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-bright);margin-bottom:26px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(2.7rem,9vw,6rem);line-height:.98;letter-spacing:.01em;
+    text-shadow:0 2px 40px rgba(0,0,0,.5)}
+  .hero h1 .small{display:block;font-size:.4em;letter-spacing:.03em;color:var(--gold-pale);margin-top:.5em;font-weight:500}
+  .hero .sub{max-width:660px;margin:30px auto 0;font-size:1.2rem;color:#cdc6bb;line-height:1.7;font-style:italic;font-family:'Cormorant Garamond',serif}
+  .hero .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--gold-bright);font-family:'Cinzel',serif;font-size:.65rem;
+    letter-spacing:.3em;text-transform:uppercase;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ornamental divider ---------- */
+  .rule{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;max-width:340px}
+  .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule svg{width:26px;height:26px;flex:none}
+
+  /* ---------- drop cap ---------- */
+  .dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:4.6rem;line-height:.78;padding:6px 14px 0 0;color:var(--oxblood);font-weight:600}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--card);border:1px solid rgba(169,132,42,.32);
+    border-radius:4px;padding:26px 28px;
+    box-shadow:0 18px 40px -28px rgba(33,27,18,.55);position:relative}
+  .band.dark .card{background:rgba(255,255,255,.04);border-color:rgba(211,173,78,.28);
+    box-shadow:0 18px 50px -30px rgba(0,0,0,.7);color:#e9e4d6}
+  .grid{display:grid;gap:22px}
+  @media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+
+  .objection{border-left:4px solid var(--oxblood);background:rgba(122,34,48,.07);
+    padding:20px 24px;border-radius:0 4px 4px 0;font-style:italic;font-size:1.1rem}
+  .band.dark .objection{background:rgba(122,34,48,.18);border-color:#c66}
+  .answer{border-left:4px solid var(--gold);background:rgba(169,132,42,.10);
+    padding:20px 24px;border-radius:0 4px 4px 0}
+  .band.dark .answer{background:rgba(211,173,78,.12)}
+  .tag{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+    display:inline-block;margin-bottom:8px;font-weight:600}
+  .tag.bad{color:var(--oxblood)}
+  .tag.good{color:var(--gold)}
+  .band.dark .tag.good{color:var(--gold-bright)}
+
+  /* ---------- figures ---------- */
+  figure{margin:0}
+  .plate{background:#0c0f1f;border:1px solid rgba(211,173,78,.35);padding:10px;
+    border-radius:3px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+  .plate img{display:block;width:100%;height:auto;border-radius:2px}
+  figcaption{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold);margin-top:12px;text-align:center;line-height:1.6}
+  .band.dark figcaption{color:var(--gold-bright)}
+  figcaption span{display:block;font-family:'EB Garamond',serif;text-transform:none;
+    letter-spacing:0;font-size:.82rem;color:inherit;opacity:.75;margin-top:3px}
+
+  /* portrait split */
+  .split{display:grid;gap:40px;align-items:center}
+  @media(min-width:880px){.split{grid-template-columns:0.95fr 1.05fr}.split.rev{grid-template-columns:1.05fr 0.95fr}}
+
+  /* ---------- index / TOC ---------- */
+  .toc{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:6px;
+    padding:34px 30px;box-shadow:0 20px 50px -34px rgba(33,27,18,.5)}
+  .toc ol{list-style:none;counter-reset:t;display:grid;gap:2px}
+  @media(min-width:680px){.toc ol{grid-template-columns:1fr 1fr;column-gap:34px}}
+  .toc li{counter-increment:t;border-bottom:1px dotted rgba(169,132,42,.4)}
+  .toc a{display:flex;gap:14px;align-items:baseline;padding:11px 4px;text-decoration:none;
+    color:var(--ink);transition:.25s;font-size:1.05rem}
+  .toc a:hover{color:var(--oxblood);padding-left:10px}
+  .toc a::before{content:counter(t,upper-roman) ".";font-family:'Cinzel',serif;
+    color:var(--gold);font-size:.82rem;min-width:40px;font-weight:600}
+
+  /* ---------- quote ---------- */
+  .pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);
+    line-height:1.18;font-weight:500;font-style:italic;text-align:center;color:var(--ink)}
+  .band.dark .pull{color:#f4eddd}
+  .pull .by{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+
+  .quotecard{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:4px;
+    padding:24px 26px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;
+    font-style:italic;line-height:1.34;position:relative;color:var(--ink)}
+  .quotecard::before{content:"\201C";position:absolute;top:-6px;left:14px;
+    font-size:4rem;color:var(--gold);opacity:.35;font-family:'Cormorant Garamond',serif}
+  .quotecard .who{display:block;font-family:'Cinzel',serif;font-style:normal;
+    font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .band.dark .quotecard{background:rgba(255,255,255,.04);border-color:rgba(211,173,78,.28);color:#f0e8d6}
+
+  /* ---------- litany (repeated affirmations) ---------- */
+  .litany{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:2px}
+  .litany li{padding:10px 4px 10px 22px;position:relative;font-size:1.08rem;
+    border-bottom:1px dotted rgba(169,132,42,.32)}
+  .litany li:last-child{border-bottom:none}
+  .litany li::before{content:"✦";position:absolute;left:0;top:10px;color:var(--gold);
+    font-size:.7rem}
+  .band.dark .litany li::before{color:var(--gold-bright)}
+
+  .keyword{font-family:'Cinzel',serif;letter-spacing:.04em}
+  .note{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+  .band.dark .note{color:#b9b2a4}
+
+  footer{background:linear-gradient(180deg,#0b0f22,#070914);color:#c9c2b6;
+    text-align:center;padding:70px 26px}
+  footer .rosette{width:60px;height:60px;margin:0 auto 22px;opacity:.8;animation:none}
+  footer p{font-size:.95rem;color:#9d978c;margin:0}
+  footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#e7d39a;margin-bottom:14px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.4}
+  footer .credit{margin-top:20px;font-size:.78rem;color:#7f7a70;max-width:600px;margin-left:auto;margin-right:auto}
+
+  ::selection{background:var(--gold);color:#1a140a}
+
+  /* ---------- back-to-home link ---------- */
+  .home-link{
+    position:fixed;top:20px;left:22px;z-index:1000;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--gold-bright);
+    padding:8px 14px;border:1px solid rgba(211,173,78,.35);border-radius:2px;
+    background:rgba(10,13,29,.55);backdrop-filter:blur(8px);
+    transition:color .25s,border-color .25s,background .25s,transform .25s;
+  }
+  .home-link:hover{color:#fff;border-color:var(--gold-bright);background:rgba(10,13,29,.85);transform:translateX(-2px)}
+  .home-link svg{width:12px;height:12px}
+  @media(max-width:600px){.home-link{font-size:.58rem;padding:6px 10px;top:14px;left:14px}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a class="home-link" href="../../" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Lumen Fidei
+</a>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap">
+    <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="50" r="34" opacity=".7"/>
+      <g opacity=".9">
+        <circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/>
+        <circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/>
+        <circle cx="29" cy="29" r="14"/><circle cx="71" cy="29" r="14"/>
+        <circle cx="29" cy="71" r="14"/><circle cx="71" cy="71" r="14"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    </svg>
+    <div class="kicker">Apologética · Filosofía · El problema del mal</div>
+    <h1 class="display">El problema del mal
+      <span class="small">y la existencia de Dios</span>
+    </h1>
+    <p class="sub">La objeción más antigua contra Dios encierra, sin saberlo, una pista de Dios:
+      no se puede llamar torcida a una línea sin presuponer la línea recta.</p>
+  </div>
+  <div class="scroll">Desplazá para comenzar</div>
+</header>
+
+<!-- ============ INTRO + ÍNDICE ============ -->
+<section class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> El grito y la pregunta</div>
+    <p class="lead dropcap">Una de las objeciones más antiguas contra la existencia de Dios es la existencia
+      del mal. Cada vez que ocurre una tragedia —un terremoto, una guerra, una enfermedad, la muerte de
+      inocentes, el sufrimiento de un niño— aparece la misma pregunta: si Dios existe, si Dios es bueno
+      y todopoderoso, <em>¿por qué permite esto?</em></p>
+
+    <p>No es una pregunta menor. No debe tratarse con liviandad. El sufrimiento humano no es un juego
+      intelectual ni un problema académico frío. Cuando alguien perdió un hijo, cuando una familia queda
+      enterrada bajo escombros, cuando una persona inocente sufre una injusticia brutal, lo primero no
+      debería ser una explicación apresurada, sino <strong>compasión, silencio, ayuda concreta y oración</strong>.</p>
+
+    <p>Pero dicho eso, también es necesario pensar. Porque muchas veces esta pregunta se usa no solo como
+      un grito de dolor, sino como un argumento contra Dios. Y ahí es donde quiero detenerme.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#a9842a" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <nav class="toc" style="margin-top:34px">
+      <ol>
+        <li><a href="#s1">La formulación clásica</a></li>
+        <li><a href="#s2">¿Qué significa que algo sea «malo»?</a></li>
+        <li><a href="#s3">«Esto no debería pasar»</a></li>
+        <li><a href="#s4">El fundamento del bien</a></li>
+        <li><a href="#s5">La línea recta</a></li>
+        <li><a href="#s6">Los dos rostros del mal</a></li>
+        <li><a href="#s7">El misterio que permanece</a></li>
+        <li><a href="#s8">Una Persona crucificada</a></li>
+        <li><a href="#s9">Sin Dios, el mal es peor</a></li>
+        <li><a href="#s10">El Bien tiene rostro</a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ I · LA FORMULACIÓN CLÁSICA ============ -->
+<section id="s1" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">I</span> La objeción de Epicuro</div>
+    <h2 class="narrow">Si Dios es bueno y todopoderoso, ¿por qué existe el mal?</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2.2em">La formulación clásica del problema
+      suele atribuirse a Epicuro, aunque su transmisión histórica tiene matices. En su forma popular, el
+      argumento dice más o menos así:</p>
+
+    <div class="objection narrow" style="margin:0 auto;font-size:1.14rem">
+      Si Dios quiere impedir el mal pero no puede, entonces no es omnipotente; si puede impedirlo pero no
+      quiere, entonces no es bueno; si puede y quiere, ¿por qué existe el mal?
+      <span style="display:block;margin-top:12px;font-size:.82rem;color:#c9a; font-style:normal;font-family:'Cinzel',serif;letter-spacing:.14em;text-transform:uppercase">El trilema clásico</span>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:44px">
+    <p style="color:#cfc8ba">A primera vista parece una objeción demoledora. Y emocionalmente lo es, porque toca
+      una fibra muy profunda. Nadie puede mirar honestamente el sufrimiento del inocente sin sentir que algo
+      está roto en el mundo. Pero justamente ahí aparece una cuestión fundamental: cuando decimos que algo
+      está mal, <em>¿qué queremos decir?</em></p>
+
+    <p style="color:#cfc8ba">Porque si alguien usa el mal para negar a Dios, parte de una premisa que necesita
+      explicar: <strong>que el mal existe realmente</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ II · ¿QUÉ SIGNIFICA QUE ALGO SEA MALO? ============ -->
+<section id="s2" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">II</span> El mal objetivo</div>
+    <h2 class="narrow">No que algo nos duela: que algo sea <em>injusto</em></h2>
+    <p class="narrow">No me refiero simplemente a que algo nos duela, nos moleste o nos perjudique. Me refiero
+      a que algo sea <strong>objetivamente malo</strong>. A que haya cosas que no deberían ocurrir. A que exista
+      una diferencia real entre justicia e injusticia, entre bien y mal, entre crueldad y misericordia, entre
+      lo noble y lo perverso. Y esa es una afirmación enorme.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:44px">
+    <p>Si Dios no existe y el universo es solamente materia en movimiento, entonces un terremoto no es «malo»
+      en sentido profundo. Es un evento físico. Placas tectónicas liberando energía. Ondas sísmicas
+      propagándose. Edificios colapsando. Cuerpos biológicos dejando de funcionar. Átomos reorganizándose.</p>
+
+    <p>Puede ser doloroso para nosotros, sí. Puede ser contrario a nuestros deseos, sí. Puede ser devastador
+      para nuestra especie, sí. Pero «injusto» en sí mismo, no.</p>
+
+    <div class="quotecard" style="margin:30px 0">
+      La materia no tiene deberes. La gravedad no es culpable. Una placa tectónica no peca. Un virus no es
+      moralmente perverso. Una estrella que explota no comete una injusticia. Si el universo es solamente
+      física, química y biología, entonces las tragedias naturales <em>no son malas en sentido moral</em>:
+      simplemente ocurren.
+    </div>
+
+    <p>Y sin embargo, cuando vemos morir inocentes, no reaccionamos como si estuviéramos viendo una simple
+      reorganización neutral de materia. Nos indignamos. Lloramos. Gritamos: «esto no debería pasar». Sentimos
+      que hay algo profundamente incorrecto en el sufrimiento del inocente.</p>
+  </div>
+</section>
+
+<!-- ============ III · ESTO NO DEBERÍA PASAR ============ -->
+<section id="s3" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">III</span> «Debería» — ¿según quién?</div>
+    <h2 class="narrow">Una frase filosóficamente gigantesca</h2>
+    <p class="narrow">Esa frase —«esto no debería pasar»— es filosóficamente gigantesca. Porque en un universo
+      sin propósito, sin orden moral, sin Creador, ¿qué significa «debería»? ¿Debería según quién? ¿Según mi
+      emoción? ¿Según la opinión de la mayoría? ¿Según la cultura dominante? ¿Según la evolución biológica?
+      ¿Según el Estado? ¿Según el consenso de una época?</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:40px">
+    <p>Si el bien y el mal son solo construcciones humanas, entonces la indignación moral pierde fuerza objetiva.
+      Ya no puedo decir que algo es malo en sí mismo. Solo puedo decir que a mí me parece malo, o que a mi
+      sociedad le parece malo, o que evolutivamente nos conviene llamarlo malo. Pero eso no alcanza.</p>
+
+    <div class="grid g2" style="margin-top:30px">
+      <div class="objection">
+        «Cada sociedad tiene sus gustos: si una cultura aprueba la esclavitud, en su contexto era aceptable.»
+      </div>
+      <div class="answer">
+        <p style="margin:0">No queremos decir eso. Queremos decir: <strong>era injusto, aunque todos lo aprobaran</strong>.
+          Si un poderoso aplasta al débil, no decimos «eso no me gusta»: decimos «eso está mal».</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.8em">Pero para decir eso con verdadera fuerza, necesitamos algo más que preferencias
+      humanas. Necesitamos una <strong>medida objetiva del bien</strong>. Y si existe una medida objetiva del bien,
+      entonces la realidad no es solamente materia. Hay un orden moral. Hay una verdad moral. Hay algo por
+      encima de nuestros gustos, de nuestras leyes y de nuestras épocas.</p>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:48px">
+    <div class="pull narrow" style="margin:0 auto">
+      «Si existe realmente el mal, entonces existe realmente el bien.»
+    </div>
+  </div>
+</section>
+
+<!-- ============ IV · EL FUNDAMENTO DEL BIEN ============ -->
+<section id="s4" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">IV</span> ¿De dónde viene el bien?</div>
+    <h2 class="narrow">El argumento cambia de dirección</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2em">Muchos dicen: «el mal demuestra
+      que Dios no existe». Pero para que esa frase tenga peso, primero tiene que existir realmente el mal. Y si
+      existe realmente el mal, entonces existe realmente el bien. Y si existe realmente el bien, tenemos que
+      preguntarnos de dónde viene, qué lo fundamenta y por qué nos obliga.</p>
+
+    <p class="narrow" style="color:#cfc8ba">Un ateo puede ser moralmente bueno. Eso es evidente. Puede ser justo,
+      generoso, compasivo, valiente y honesto. La cuestión no es si una persona que no cree en Dios puede actuar
+      bien. Claro que puede. La cuestión es mucho más profunda: dentro de una visión puramente materialista de
+      la realidad, <em>¿qué fundamento último tiene el bien?</em></p>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:40px">
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag bad">Las respuestas materialistas</span>
+        <h3 style="color:#e98b8b">Fundamentos que no alcanzan</h3>
+        <p style="color:#d8d1c4"><em>«Porque sentimos empatía.»</em> Pero hay personas que no la sienten:
+          ¿eso las exime?<br>
+          <em>«Porque la cooperación ayuda a sobrevivir.»</em> Pero si la crueldad ayudara más, ¿se vuelve buena?<br>
+          <em>«Porque la sociedad lo decidió.»</em> Pero si la sociedad decide algo monstruoso, ¿se vuelve justo?<br>
+          <em>«Porque hay derechos humanos.»</em> Pero ¿de dónde salen? ¿Existen aunque nadie los reconozca?</p>
+        <p class="note" style="color:#b9988f">Estas preguntas no son retóricas. Son el centro del problema.</p>
+      </div>
+      <div class="card">
+        <span class="tag good">La respuesta de la fe</span>
+        <h3>El bien está arraigado en Dios mismo</h3>
+        <p style="color:#e6e0d2">El bien no es una invención humana, ni una preferencia subjetiva, ni una moda
+          cultural. Dios no es simplemente «un ser que hace cosas buenas»: <strong>Dios es el Bien mismo</strong>.
+          La bondad, la justicia, la verdad, la misericordia y la belleza tienen su fuente última en Él.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:48px">
+    <p style="color:#cfc8ba">Esto evita dos errores. El <strong>primero</strong> sería pensar que algo es bueno solo
+      porque Dios lo manda de manera arbitraria, como si Dios pudiera mandar la crueldad y entonces la crueldad
+      pasara a ser buena. El <strong>segundo</strong> sería pensar que el bien está por encima de Dios, como si Dios
+      estuviera sometido a una ley moral externa.</p>
+
+    <div class="answer" style="margin-top:26px">
+      <p style="margin:0">La respuesta clásica es más profunda: <strong>Dios manda lo bueno porque Él es bueno.</strong>
+        Su voluntad expresa su naturaleza. El bien no es arbitrario, pero tampoco está separado de Dios.
+        El bien existe porque Dios existe.</p>
+    </div>
+
+    <p style="margin-top:1.8em;color:#cfc8ba">Por eso, cuando alguien se indigna ante el sufrimiento inocente, en
+      cierto sentido está dando testimonio de una verdad que apunta más allá del materialismo. Está diciendo,
+      aunque no lo formule así, que el mundo debería estar ordenado al bien, que la vida humana tiene dignidad,
+      que la injusticia no debería tener la última palabra. Esa indignación moral no refuta automáticamente a Dios.
+      Al contrario: <em>puede ser una pista de Dios</em>.</p>
+  </div>
+</section>
+
+<!-- ============ V · LA LÍNEA RECTA ============ -->
+<section id="s5" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">V</span> C. S. Lewis</div>
+    <h2 class="narrow">No se llama torcida a una línea sin conocer la recta</h2>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:36px">
+    <p>C. S. Lewis lo expresó de manera brillante. Él decía que en un tiempo rechazaba a Dios porque el universo
+      le parecía cruel e injusto. Pero después se preguntó: ¿de dónde saqué yo esa idea de justicia? Si todo el
+      universo fuera absurdo e injusto, ¿con qué regla estaba midiendo esa injusticia?</p>
+
+    <div class="quotecard" style="margin:30px 0">
+      Uno no llama torcida a una línea si no tiene alguna noción de línea recta.
+      <span class="who">C. S. Lewis</span>
+    </div>
+
+    <p>Ese punto me parece decisivo. No puedo denunciar el mal como mal real sin presuponer una regla del bien
+      real. Y si esa regla existe, <strong>el materialismo queda corto</strong>.</p>
+
+    <p>Ahora bien, esto no significa que el problema del mal desaparezca. Sería deshonesto decirlo. El problema
+      del mal sigue siendo una pregunta seria. Tal vez la más seria de todas. Especialmente cuando hablamos del
+      sufrimiento inocente.</p>
+  </div>
+</section>
+
+<!-- ============ VI · LOS DOS ROSTROS DEL MAL ============ -->
+<section id="s6" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VI</span> Mal moral y mal natural</div>
+    <h2 class="narrow">Hay que distinguir entre distintos tipos de mal</h2>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:40px">
+    <div class="grid g2">
+      <div class="card">
+        <span class="tag bad">El mal moral</span>
+        <h3 style="color:var(--oxblood)">La libertad usada para destruir</h3>
+        <p>El asesinato, la mentira, el abuso, la traición, la corrupción, la crueldad, la injusticia cometida
+          por personas libres. Si Dios crea seres libres, crea seres capaces de amar, obedecer, entregarse,
+          perdonar y buscar el bien. Pero esa misma libertad puede ser usada para destruir. Un mundo con
+          libertad real implica la posibilidad real del pecado.</p>
+      </div>
+      <div class="card" style="border-color:var(--gold)">
+        <span class="tag good">El mal físico o natural</span>
+        <h3>El mundo estable y sus consecuencias</h3>
+        <p>Terremotos, enfermedades, tsunamis, sequías, accidentes, sufrimiento corporal, muerte. Un terremoto
+          no elige. Un virus no tiene voluntad. Una inundación no comete pecado. Entonces, ¿por qué existe ese
+          tipo de sufrimiento?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:44px">
+    <p>Si Dios interviniera automáticamente para impedir cada acto malo, la libertad quedaría vaciada. Si cada
+      vez que alguien fuera a mentir perdiera la voz, si cada vez que alguien fuera a robar quedara paralizado,
+      si cada vez que alguien fuera a matar el arma desapareciera, entonces no estaríamos en un mundo moral sino
+      en una especie de jaula con sensores divinos. Dios podría crear autómatas incapaces de hacer el mal. Pero
+      los autómatas tampoco aman. <strong>La libertad es peligrosa, pero sin libertad no hay amor verdadero.</strong></p>
+  </div>
+
+  <div class="wrap split reveal" style="margin-top:52px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy"
+          alt="Grabado del gran terremoto de Lisboa de 1755: la ciudad en ruinas, incendios y maremoto"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/1755_Lisbon_earthquake.jpg?width=1000">
+      </div>
+      <figcaption>Grabado anónimo · El gran terremoto de Lisboa (1755)
+        <span>La ruina que durante siglos concentró la pregunta por el mal natural.</span></figcaption>
+    </figure>
+    <div>
+      <h3 style="color:var(--oxblood)">Las mismas leyes que permiten la vida permiten el dolor</h3>
+      <p>Vivimos en un mundo ordenado por leyes naturales estables. Para que haya vida, ciencia, responsabilidad,
+        agricultura, arquitectura, medicina y acción humana coherente, el mundo tiene que tener regularidad. La
+        gravedad tiene que funcionar siempre. El fuego tiene que quemar según su naturaleza. La materia tiene que
+        comportarse de manera estable.</p>
+      <p>Pero esas mismas condiciones que permiten un mundo habitable también permiten el dolor. La gravedad que
+        permite caminar también permite caer. El fuego que calienta también quema. El agua que sostiene la vida
+        también puede ahogar. La tierra que sostiene nuestros hogares también puede temblar.</p>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:44px">
+    <p>Esto no responde todo, pero muestra que no es tan simple como decir: «si Dios fuera bueno, impediría todo
+      daño». Un mundo físico real, estable y ordenado necesariamente tiene consecuencias físicas reales.</p>
+
+    <p>También hay que decir algo más: muchas tragedias naturales se vuelven mucho peores por culpa humana. Un
+      terremoto de la misma magnitud puede matar a pocas personas en una ciudad preparada y a miles en una ciudad
+      marcada por corrupción, pobreza, mala construcción, negligencia política o abandono de los más vulnerables.</p>
+
+    <div class="answer" style="margin-top:26px">
+      <p style="margin:0">En esos casos, no todo el mal es «natural». Hay mucho pecado humano amplificando la
+        catástrofe. Hay edificios mal hechos, controles inexistentes, recursos robados, autoridades negligentes,
+        pobres abandonados, sistemas corruptos. <strong>La naturaleza golpea, pero la injusticia humana muchas
+        veces multiplica la muerte.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VII · EL MISTERIO QUE PERMANECE ============ -->
+<section id="s7" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VII</span> Job y la humildad</div>
+    <h2 class="narrow">Aun así, queda el misterio. Y hay que admitirlo.</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2em">No sabemos por qué Dios permite cada
+      sufrimiento concreto. No sabemos por qué esta persona muere y aquella se salva. No sabemos por qué un niño
+      enferma. No sabemos por qué una familia entera queda destruida. No sabemos por qué algunas oraciones reciben
+      el milagro esperado y otras no. Y conviene decirlo con humildad: <strong>no lo sabemos</strong>.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:8px">
+    <p style="color:#cfc8ba">La fe no consiste en fingir que tenemos una explicación detallada para cada lágrima.
+      La fe consiste en confiar en Dios incluso cuando no entendemos todo.</p>
+
+    <p style="color:#cfc8ba">El libro de Job es una lección durísima sobre esto. Job sufre de manera terrible. Sus
+      amigos intentan explicarlo todo. Le dicen, en el fondo, que si sufre debe ser porque algo hizo mal. Pero esa
+      respuesta es falsa y cruel. Dios no aprueba las explicaciones fáciles de los amigos de Job. No le entrega a
+      Job una planilla de causas y efectos. No le dice: «sufriste exactamente por estas razones». Más bien le
+      muestra que la realidad es inmensamente más grande que la comprensión humana.</p>
+
+    <div class="quotecard" style="margin:32px 0">
+      Eso nos obliga a ser prudentes. Ante el dolor ajeno, no siempre hay que explicar. <em>A veces hay que acompañar.</em>
+    </div>
+
+    <p style="color:#cfc8ba">Cristo mismo lloró ante la tumba de Lázaro. Y eso es impresionante. Él sabía que iba a
+      resucitarlo. Y aun así lloró. No trató la muerte como algo trivial. No dijo: «esto no importa porque después
+      se arregla». Lloró. Eso nos muestra algo profundo: <strong>Dios no es indiferente al sufrimiento humano.</strong></p>
+  </div>
+</section>
+
+<!-- ============ VIII · UNA PERSONA CRUCIFICADA ============ -->
+<section id="s8" class="band light">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">VIII</span> La respuesta cristiana</div>
+    <h2 class="narrow">No es una teoría fría. Es una Persona crucificada.</h2>
+  </div>
+
+  <div class="wrap split rev reveal" style="margin-top:44px">
+    <div>
+      <p>El cristianismo no dice: «el mal no es tan grave». Dice lo contrario: el mal es tan grave que Dios mismo
+        entra en la historia, asume nuestra carne, sufre la traición, la injusticia, la tortura, el abandono y la
+        muerte.</p>
+      <p>Dios no mira el dolor humano desde lejos como un espectador indiferente. En Cristo, Dios se pone del lado
+        de los que sufren. Dios conoce el dolor desde dentro. Conoce la sangre, la angustia, la humillación, el
+        silencio, la muerte.</p>
+      <p>Por eso, cuando alguien pregunta «¿dónde estaba Dios cuando sufrían los inocentes?», la respuesta cristiana
+        no es simplemente «estaba permitiéndolo misteriosamente desde el cielo». La respuesta cristiana también es:
+        <strong>estaba en la cruz</strong>.</p>
+    </div>
+    <figure>
+      <div class="plate">
+        <img loading="lazy"
+          alt="Cristo crucificado, de Diego Velázquez, sobre fondo oscuro"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Cristo_crucificado.jpg?width=760">
+      </div>
+      <figcaption>Diego Velázquez · «Cristo crucificado» (c. 1632)
+        <span>Estaba con el inocente condenado, con el torturado, con el abandonado, con la víctima. Y desde ahí venció.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:52px">
+    <p>La cruz no elimina todas nuestras preguntas, pero cambia radicalmente la forma de mirarlas. Porque si Dios
+      mismo sufrió, entonces el sufrimiento no es un lugar donde Dios está ausente necesariamente. Puede ser,
+      misteriosamente, un lugar donde Dios se hace presente de manera más profunda.</p>
+
+    <p>Esto no significa que el sufrimiento sea bueno en sí mismo. No lo es. La enfermedad no es buena. La muerte
+      no es buena. La injusticia no es buena. El pecado no es bueno. La cruz fue un crimen. Pero <strong>Dios puede
+      sacar bien incluso del mal</strong>. Esa es una de las verdades más grandes de la fe cristiana.</p>
+
+    <div class="quotecard" style="margin:30px 0">
+      La crucifixión de Cristo fue el acto más injusto de la historia: el Inocente absoluto condenado por los
+      culpables. Y, sin embargo, Dios transformó ese horror en redención. No porque el mal se volviera bueno, sino
+      porque Dios es tan poderoso que <em>incluso el mal, sin dejar de ser mal, no puede derrotar su plan</em>.
+    </div>
+
+    <p>Esto es muy distinto de decir «todo pasa por algo» de manera superficial. Hay frases que, dichas en el
+      momento equivocado, pueden ser crueles. Decirle a una madre que acaba de perder a su hijo «Dios sabe por qué»
+      puede ser verdad en un sentido último, pero puede sonar brutal si se dice sin amor, sin lágrimas y sin
+      presencia. La verdad cristiana no debe usarse como piedra. Debe comunicarse con caridad. Pero tampoco debemos
+      renunciar a la verdad: <strong>el mal no tiene la última palabra</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ IX · SIN DIOS, EL MAL ES PEOR ============ -->
+<section id="s9" class="band tint">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">IX</span> Invertir la pregunta</div>
+    <h2 class="narrow">Si Dios no existe, el problema del mal no se resuelve: se vuelve peor</h2>
+    <p class="narrow">Porque si Dios no existe, las víctimas que murieron injustamente no serán finalmente
+      reivindicadas. Los crímenes que quedaron impunes quedarán impunes para siempre. Los niños muertos no
+      resucitarán. Las lágrimas no serán enjugadas. Los verdugos que escaparon de la justicia humana escaparon
+      para siempre. El universo no corregirá nada. No habrá juicio final. No habrá restauración. No habrá sentido
+      último.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:40px">
+    <p>En un universo sin Dios, el mal no es un problema que espera respuesta. Es simplemente parte del
+      funcionamiento ciego de la realidad.</p>
+
+    <ul class="litany">
+      <li>El universo no consuela.</li>
+      <li>El universo no perdona.</li>
+      <li>El universo no juzga.</li>
+      <li>El universo no ama.</li>
+      <li>El universo no escucha el clamor del pobre.</li>
+      <li>El universo no le debe justicia a nadie.</li>
+    </ul>
+  </div>
+
+  <div class="wrap reveal" style="margin-top:48px">
+    <div class="pull narrow" style="margin:0 auto">
+      «Con Dios, el mal es un misterio doloroso. Sin Dios, el mal es una brutalidad definitiva.»
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:52px">
+    <p>Por eso me parece que muchas veces el argumento contra Dios desde el mal termina apoyándose, sin querer, en
+      una visión cristiana de la realidad. Quien se indigna contra Dios por el sufrimiento de los inocentes está
+      presuponiendo que los inocentes tienen dignidad, que la justicia debería triunfar, que el mal debería ser
+      derrotado, que la realidad debería estar ordenada al bien. Pero todas esas intuiciones encajan mucho mejor
+      en un mundo creado por Dios que en un mundo accidental y sin propósito.</p>
+
+    <p>Ahora bien, también hay que evitar una simplificación: no todo ateo es relativista moral de manera
+      consciente. Hay ateos que creen en valores morales objetivos. Hay filósofos ateos que defienden un realismo
+      moral sin Dios. No conviene caricaturizarlos. Pero esa postura deja preguntas difíciles: ¿qué son esos
+      valores morales? ¿Dónde existen? ¿Por qué obligan? ¿Por qué una realidad material debería estar sometida a
+      principios morales inmateriales? ¿Por qué esos principios tendrían autoridad sobre mí?</p>
+
+    <div class="answer" style="margin-top:26px">
+      <p style="margin:0">El cristianismo responde con mayor coherencia: <strong>la ley moral existe porque hay un
+        Legislador moral; el bien existe porque Dios es el Bien; la justicia existe porque Dios es justo; la verdad
+        existe porque Dios es la Verdad.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ X · EL BIEN TIENE ROSTRO ============ -->
+<section id="s10" class="band dark">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="num">X</span> La dignidad y la esperanza</div>
+    <h2 class="narrow">Nos duele el mal porque no fuimos hechos para el mal</h2>
+    <p class="narrow" style="color:#cfc8ba;font-size:1.12rem;margin-bottom:2em">La objeción del mal no debe
+      responderse negando el dolor. Debe responderse mostrando que el dolor mismo revela algo de nuestra condición.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:0">
+    <ul class="litany">
+      <li>Nos duele el mal porque no fuimos hechos para el mal.</li>
+      <li>Nos escandaliza la muerte porque no fuimos hechos para la muerte.</li>
+      <li>Nos indigna la injusticia porque fuimos hechos para la justicia.</li>
+      <li>Nos hiere la pérdida porque fuimos hechos para la comunión.</li>
+      <li>Nos rebela el sufrimiento inocente porque en el fondo sabemos que el mundo está herido, no que el mundo es normal.</li>
+    </ul>
+
+    <p style="color:#cfc8ba;margin-top:2em">El cristianismo no mira este mundo y dice: «todo está perfecto». Dice:
+      el mundo fue creado bueno, pero está caído. Dice: el pecado entró en la historia y con él la muerte. Dice: la
+      creación entera gime esperando redención. Dice: Cristo vino, murió y resucitó. Dice: el mal ya fue vencido en
+      principio, aunque todavía no haya sido eliminado en plenitud. Dice: habrá juicio. Dice: habrá resurrección.
+      <strong>Dios enjugará toda lágrima.</strong></p>
+
+    <div class="quotecard" style="margin:32px 0">
+      Si Cristo resucitó, entonces la muerte no tiene la última palabra. Si Cristo resucitó, entonces el sufrimiento
+      puede ser redimido. Si Cristo resucitó, entonces la injusticia será juzgada. Si Cristo resucitó, entonces el
+      cuerpo importa. <em>Si Cristo resucitó, entonces la historia no termina en el sepulcro.</em>
+    </div>
+
+    <p style="color:#cfc8ba">Ahí está la raíz de la dignidad humana. Por eso un niño bajo los escombros vale
+      infinitamente más que los escombros, aunque tanto el niño como las piedras estén hechos de átomos. Por eso una
+      persona enferma vale aunque no produzca. Por eso un anciano abandonado vale aunque el mundo lo considere inútil.
+      Por eso el débil tiene dignidad aunque el fuerte lo desprecie. No porque nosotros lo hayamos decidido, no porque
+      el Estado lo conceda, no porque la mayoría lo vote, no porque sea útil para la especie, sino porque el ser humano
+      fue creado a imagen de Dios.</p>
+
+    <div class="rule" style="margin:44px auto">
+      <span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#d3ad4e" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span>
+    </div>
+
+    <p style="color:#cfc8ba">Cuando alguien usa una tragedia para negar a Dios, entiendo el dolor de la pregunta.
+      Lo respeto. No lo desprecio. Pero también veo que esa indignación moral está mucho más cerca de Dios de lo que
+      parece. Porque si el mal nos escandaliza de verdad, si sentimos que algo en el mundo está profundamente torcido,
+      si creemos que la muerte del inocente clama por justicia, entonces estamos reconociendo que existe una línea
+      recta contra la cual medimos lo torcido.</p>
+
+    <div class="pull" style="margin:40px auto 0;max-width:720px">
+      Esa línea recta es el Bien. Y el Bien no es una idea flotando en el vacío. El Bien tiene rostro. El Bien tiene
+      nombre.
+      <span class="by">El Bien es Dios</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    <g opacity=".8"><circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/><circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/></g>
+  </svg>
+  <p class="big">«Y Dios enjugará toda lágrima de sus ojos, y ya no habrá muerte.»<br><span style="font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-family:'Cinzel',serif;color:#a8997d">Apocalipsis 21, 4</span></p>
+  <p>Lumen Fidei · biblioteca de páginas devocionales y apologéticas.</p>
+  <p class="credit">Imágenes de dominio público vía Wikimedia Commons: grabado del terremoto de Lisboa (1755)
+    y «Cristo crucificado» de Diego Velázquez (Museo del Prado). Ad maiorem Dei gloriam.</p>
+</footer>
+
+<script>
+  // starfield
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  let w,hh,stars;
+  function init(){w=c.width=innerWidth;hh=c.height=Math.max(innerHeight,600);
+    stars=Array.from({length:Math.min(220,Math.floor(w/6))},()=>({
+      x:Math.random()*w,y:Math.random()*hh,r:Math.random()*1.4+.2,
+      a:Math.random(),s:Math.random()*.018+.004}));}
+  function draw(){x.clearRect(0,0,w,hh);
+    for(const st of stars){st.a+=st.s;const o=.35+Math.abs(Math.sin(st.a))*.65;
+      x.beginPath();x.arc(st.x,st.y,st.r,0,7);
+      x.fillStyle='rgba(231,224,255,'+o+')';x.fill();}
+    requestAnimationFrame(draw);}
+  init();draw();addEventListener('resize',init);
+
+  // progress bar
+  const pb=document.getElementById('progress');
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    pb.style.width=(window.scrollY/h*100)+'%';
+  });
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
