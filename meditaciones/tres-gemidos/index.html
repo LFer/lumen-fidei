@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los tres gemidos y la esperanza de la gloria · Meditación sobre Romanos 8</title>
+<meta name="description" content="Meditación católica sobre Romanos 8, 19-27: gime la creación, gemimos nosotros, gime el Espíritu en nosotros — y la esperanza de la gloria de los hijos de Dios.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211b12;
+    --ink-soft:#574a37;
+    --parchment:#f4ecda;
+    --parchment-2:#ece1c8;
+    --card:#fbf5e7;
+    --gold:#a9842a;
+    --gold-bright:#d3ad4e;
+    --gold-pale:#e7d39a;
+    --oxblood:#7a2230;
+    --oxblood-deep:#581621;
+    --cosmos:#0a0d1d;
+    --cosmos-2:#121833;
+    --cosmos-3:#1b2347;
+    --star:#ede9ff;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond',serif;
+    font-size:20px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ---------- progress bar ---------- */
+  #progress{position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    z-index:999;box-shadow:0 0 8px rgba(211,173,78,.6)}
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,.eyebrow{font-family:'Cinzel',serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.32rem;line-height:1.7}
+  em{color:var(--oxblood);font-style:italic}
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--oxblood)}
+
+  /* ---------- layout ---------- */
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .eyebrow .num{font-family:'Cinzel',serif;color:var(--oxblood)}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+
+  h2{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:600;line-height:1.06;
+    letter-spacing:.01em;margin-bottom:.55em;color:var(--ink)}
+  h3{font-size:1.18rem;letter-spacing:.06em;color:var(--oxblood);margin-bottom:.4em}
+
+  /* ---------- section rhythm ---------- */
+  .band{padding:96px 0}
+  .band.light{background:var(--parchment)}
+  .band.tint{background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(169,132,42,.10),transparent 60%),
+      var(--parchment-2)}
+  .band.dark{background:
+      radial-gradient(900px 600px at 15% 0%,rgba(60,75,150,.35),transparent 55%),
+      radial-gradient(700px 500px at 90% 100%,rgba(122,34,48,.28),transparent 60%),
+      linear-gradient(180deg,var(--cosmos),#0c1124 60%,var(--cosmos));
+    color:#e9e4d6}
+  .band.dark h2{color:#f6f0e2}
+  .band.dark h3{color:var(--gold-bright)}
+  .band.dark strong{color:#fff}
+  .band.dark em{color:var(--gold-bright)}
+  .band.dark .eyebrow{color:var(--gold-bright)}
+  .band.dark .eyebrow::before{background:var(--gold-bright)}
+  .band.dark .eyebrow .num{color:#e7c97a}
+
+  /* paper grain */
+  .band.light::after,.band.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#f3edde;overflow:hidden;
+    background:radial-gradient(1100px 700px at 50% 18%,#1a2147,transparent 60%),
+      radial-gradient(900px 600px at 50% 120%,#3a1622,transparent 55%),
+      linear-gradient(180deg,#070914,#0a0d1d 55%,#0b0f22)}
+  #stars{position:absolute;inset:0;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .rosette{margin:0 auto 30px;width:96px;height:96px;animation:spin 90s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .kicker{font-family:'Cinzel',serif;letter-spacing:.4em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-bright);margin-bottom:26px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(3rem,11vw,7rem);line-height:.95;letter-spacing:.01em;
+    text-shadow:0 2px 40px rgba(0,0,0,.5)}
+  .hero h1 .small{display:block;font-size:.42em;letter-spacing:.04em;color:var(--gold-pale);margin-top:.4em;font-weight:500}
+  .hero .sub{max-width:640px;margin:30px auto 0;font-size:1.2rem;color:#cdc6bb;line-height:1.7}
+  .hero .lat{font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--gold-pale);font-size:1.18rem;margin-top:30px}
+  .hero .lat .tr{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.62rem;
+    letter-spacing:.28em;text-transform:uppercase;color:#b7b0a2;margin-top:8px}
+  .hero .rule{margin-top:34px}
+  .hero .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--gold-bright);font-family:'Cinzel',serif;font-size:.65rem;
+    letter-spacing:.3em;text-transform:uppercase;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ornamental divider ---------- */
+  .rule{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;max-width:340px}
+  .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule svg{width:26px;height:26px;flex:none}
+
+  /* ---------- drop cap ---------- */
+  .dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:4.6rem;line-height:.78;padding:6px 14px 0 0;color:var(--oxblood);font-weight:600}
+
+  /* ---------- cards ---------- */
+  .card{background:var(--card);border:1px solid rgba(169,132,42,.32);
+    border-radius:4px;padding:26px 28px;
+    box-shadow:0 18px 40px -28px rgba(33,27,18,.55);position:relative}
+  .band.dark .card{background:rgba(255,255,255,.04);border-color:rgba(211,173,78,.28);
+    box-shadow:0 18px 50px -30px rgba(0,0,0,.7);color:#e9e4d6}
+  .grid{display:grid;gap:22px}
+  @media(min-width:760px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+
+  .tag{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+    display:inline-block;margin-bottom:8px;font-weight:600}
+  .tag.good{color:var(--gold)}
+
+  /* ---------- figures ---------- */
+  figure{margin:0}
+  .plate{background:#0c0f1f;border:1px solid rgba(211,173,78,.35);padding:10px;
+    border-radius:3px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);position:relative}
+  .plate img{display:block;width:100%;height:auto;border-radius:2px}
+  figcaption{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold);margin-top:12px;text-align:center;line-height:1.6}
+  .band.dark figcaption{color:var(--gold-bright)}
+  figcaption span{display:block;font-family:'EB Garamond',serif;text-transform:none;
+    letter-spacing:0;font-size:.82rem;color:inherit;opacity:.75;margin-top:3px}
+  .plate .fallback{display:none;padding:70px 24px;text-align:center;color:var(--gold-pale)}
+  .plate .fallback.show{display:block}
+  .plate .fallback .ft{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;
+    text-transform:uppercase;line-height:2.1}
+
+  /* portrait split */
+  .split{display:grid;gap:40px;align-items:center}
+  @media(min-width:880px){.split{grid-template-columns:0.9fr 1.1fr}.split.rev{grid-template-columns:1.1fr 0.9fr}}
+
+  /* ---------- índice ---------- */
+  .toc{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:6px;
+    padding:34px 30px;box-shadow:0 20px 50px -34px rgba(33,27,18,.5)}
+  .toc ol{list-style:none;counter-reset:t;display:grid;gap:2px}
+  @media(min-width:680px){.toc ol{grid-template-columns:1fr 1fr;column-gap:34px}}
+  .toc li{counter-increment:t;border-bottom:1px dotted rgba(169,132,42,.4)}
+  .toc a{display:flex;gap:14px;align-items:baseline;padding:11px 4px;text-decoration:none;
+    color:var(--ink);transition:.25s;font-size:1.05rem}
+  .toc a:hover{color:var(--oxblood);padding-left:10px}
+  .toc a::before{content:counter(t,upper-roman) ".";font-family:'Cinzel',serif;
+    color:var(--gold);font-size:.82rem;min-width:40px;font-weight:600}
+
+  /* ---------- lectio (perícopa solemne) ---------- */
+  .lectio{background:var(--card);border:1px solid rgba(169,132,42,.4);
+    outline:1px solid rgba(169,132,42,.18);outline-offset:6px;border-radius:3px;
+    padding:48px 46px 38px;margin:38px 2px 0;position:relative;
+    box-shadow:0 24px 55px -34px rgba(33,27,18,.55)}
+  .lectio::before{content:"✝";position:absolute;top:-17px;left:50%;transform:translateX(-50%);
+    background:var(--card);padding:0 14px;color:var(--oxblood);font-size:1.1rem;line-height:1}
+  .lectio p{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.34rem;line-height:1.62;color:var(--ink);margin:0 0 1em}
+  .lectio p:first-of-type::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:4.2rem;line-height:.8;padding:6px 12px 0 0;color:var(--oxblood);font-weight:600;font-style:normal}
+  .lectio .vnum{font-family:'Cinzel',serif;font-style:normal;font-size:.56rem;
+    color:var(--gold);vertical-align:super;letter-spacing:.05em;margin:0 3px 0 2px;font-weight:600}
+  .lectio .ref{font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.26em;
+    text-transform:uppercase;color:var(--gold);text-align:center;margin-top:26px;font-weight:600}
+  .lectio .ref::before{content:"✦";margin-right:12px;font-size:.58rem}
+  @media(max-width:600px){.lectio{padding:36px 22px 30px}.lectio p{font-size:1.16rem}}
+
+  /* ---------- cita bíblica ---------- */
+  .sc{border-left:3px solid var(--gold);background:rgba(169,132,42,.08);
+    border-radius:0 4px 4px 0;padding:20px 26px 16px;margin:28px 0}
+  .sc p{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.24rem;line-height:1.45;color:var(--ink);margin:0}
+  .sc-ref{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--gold);margin-top:10px;font-weight:600}
+  .band.dark .sc{background:rgba(211,173,78,.10);border-color:var(--gold-bright)}
+  .band.dark .sc p{color:#f0e9da}
+  .band.dark .sc-ref{color:var(--gold-bright)}
+
+  /* ---------- caja teológica ---------- */
+  .tb{background:rgba(122,34,48,.06);border:1px solid rgba(122,34,48,.22);
+    border-top:3px solid var(--oxblood);border-radius:0 0 4px 4px;padding:24px 28px;margin:30px 0}
+  .tbt{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--oxblood);font-weight:600;margin-bottom:10px}
+  .tbt::before{content:"✝";margin-right:10px}
+  .tb p{margin:0;font-size:1rem;color:var(--ink)}
+  .band.dark .tb{background:rgba(122,34,48,.18);border-color:rgba(198,102,102,.35);border-top-color:#c66}
+  .band.dark .tbt{color:#d98c8c}
+  .band.dark .tb p{color:#e9e4d6}
+
+  /* ---------- subtítulo de capítulo ---------- */
+  .chapsub{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.3rem;color:var(--ink-soft);margin:-4px 0 26px}
+  .band.dark .chapsub{color:#cfc8ba}
+
+  /* ---------- cita / quote ---------- */
+  .pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);
+    line-height:1.18;font-weight:500;font-style:italic;text-align:center;color:var(--ink)}
+  .band.dark .pull{color:#f4eddd}
+  .pull .by{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+  .band.dark .pull .by{color:var(--gold-bright)}
+
+  .quotecard{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:4px;
+    padding:24px 26px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;
+    font-style:italic;line-height:1.34;position:relative;color:var(--ink)}
+  .quotecard::before{content:"\201C";position:absolute;top:-6px;left:14px;
+    font-size:4rem;color:var(--gold);opacity:.35;font-family:'Cormorant Garamond',serif}
+  .quotecard .who{display:block;font-family:'Cinzel',serif;font-style:normal;
+    font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .band.dark .quotecard{background:rgba(255,255,255,.05);border-color:rgba(211,173,78,.3);color:#efe8d8}
+  .band.dark .quotecard .who{color:var(--gold-bright)}
+
+  /* ---------- oración final ---------- */
+  .prayer{background:var(--card);border:1px solid rgba(169,132,42,.35);
+    border-top:2px solid var(--gold);border-radius:4px;padding:54px 40px 44px;
+    margin-top:44px;position:relative;text-align:center;
+    box-shadow:0 24px 55px -34px rgba(33,27,18,.5)}
+  .prayer::before{content:"✦ ORACIÓN ✦";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+    background:var(--parchment);padding:0 16px;font-family:'Cinzel',serif;font-size:.62rem;
+    letter-spacing:.38em;color:var(--gold);font-weight:600;white-space:nowrap}
+  .prayer p{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.32rem;line-height:1.55;color:var(--ink);max-width:580px;margin:0 auto 1.1em}
+  .prayer .amen{font-family:'Cinzel',serif;font-size:.8rem;letter-spacing:.4em;
+    text-transform:uppercase;color:var(--gold);margin-top:28px;font-weight:600}
+  @media(max-width:600px){.prayer{padding:46px 22px 36px}.prayer p{font-size:1.16rem}}
+
+  .note{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+  .band.dark .note{color:#b9b2a4}
+
+  footer{background:linear-gradient(180deg,#0b0f22,#070914);color:#c9c2b6;
+    text-align:center;padding:70px 26px}
+  footer .rosette{width:60px;height:60px;margin:0 auto 22px;opacity:.8}
+  footer p{font-size:.95rem;color:#9d978c;margin:0}
+  footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#e7d39a;margin-bottom:14px}
+  footer .lat{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+    color:#7c7669;margin-top:18px}
+
+  ::selection{background:var(--gold);color:#1a140a}
+
+  /* ---------- back-to-home link ---------- */
+  .home-link{
+    position:fixed;top:20px;left:22px;z-index:1000;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--gold-bright);
+    padding:8px 14px;border:1px solid rgba(211,173,78,.35);border-radius:2px;
+    background:rgba(10,13,29,.55);backdrop-filter:blur(8px);
+    transition:color .25s,border-color .25s,background .25s,transform .25s;
+  }
+  .home-link:hover{color:#fff;border-color:var(--gold-bright);background:rgba(10,13,29,.85);transform:translateX(-2px)}
+  .home-link svg{width:12px;height:12px}
+  @media(max-width:600px){.home-link{font-size:.58rem;padding:6px 10px;top:14px;left:14px}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a class="home-link" href="../../" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Lumen Fidei
+</a>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap">
+    <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="50" r="34" opacity=".7"/>
+      <g opacity=".9">
+        <circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/>
+        <circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/>
+        <circle cx="29" cy="29" r="14"/><circle cx="71" cy="29" r="14"/>
+        <circle cx="29" cy="71" r="14"/><circle cx="71" cy="71" r="14"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    </svg>
+    <div class="kicker">Meditaciones · San Pablo a los Romanos</div>
+    <h1 class="display">Los tres gemidos
+      <span class="small">y la esperanza de la gloria</span>
+    </h1>
+    <p class="sub">Meditación sobre Romanos 8, 19-27 — para leer despacio,
+      con el corazón en silencio. Gime la creación, gemimos nosotros,
+      gime el Espíritu en nosotros.</p>
+    <p class="lat">Spe salvi facti sumus.
+      <span class="tr">«En esperanza fuimos salvados» · Romanos 8, 24</span></p>
+  </div>
+  <div class="scroll">Desplazá para meditar</div>
+</header>
+
+<!-- ============ LECTIO + ÍNDICE ============ -->
+<section id="lectio" class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> Lectio · La Palabra</div>
+    <h2>Romanos 8, 19-27</h2>
+    <p class="chapsub">Antes de meditar, escuchar. Leé el texto dos veces: primero con los ojos, después con el corazón.</p>
+    <div class="lectio">
+      <p><span class="vnum">19</span>Porque el anhelo ardiente de la creación espera la manifestación
+        de los hijos de Dios. <span class="vnum">20</span>Pues la creación fue sometida a la vanidad,
+        no de grado, sino por causa de aquel que la sometió, con la esperanza
+        <span class="vnum">21</span>de que también la creación misma será liberada de la servidumbre
+        de la corrupción, para participar en la libertad gloriosa de los hijos de Dios.
+        <span class="vnum">22</span>Sabemos, en efecto, que la creación entera gime y sufre dolores
+        de parto hasta el presente.</p>
+      <p><span class="vnum">23</span>Y no sólo ella: también nosotros, que poseemos las primicias
+        del Espíritu, gemimos en nuestro interior, anhelando la adopción filial, la redención de
+        nuestro cuerpo. <span class="vnum">24</span>Porque en esperanza fuimos salvados; y una
+        esperanza que se ve, ya no es esperanza: pues lo que uno ve, ¿cómo esperarlo?
+        <span class="vnum">25</span>Pero si esperamos lo que no vemos, con paciencia lo aguardamos.</p>
+      <p><span class="vnum">26</span>De igual manera, también el Espíritu viene en ayuda de nuestra
+        flaqueza; porque no sabemos pedir lo que conviene, pero el Espíritu mismo intercede por
+        nosotros con gemidos inefables. <span class="vnum">27</span>Y el que escudriña los corazones
+        sabe cuál es el deseo del Espíritu: que intercede por los santos según Dios.</p>
+      <div class="ref">San Pablo · Carta a los Romanos 8, 19-27</div>
+    </div>
+    <p class="note" style="text-align:center;margin-top:22px">La meditación que sigue no reemplaza
+      al texto sagrado: solo lo escolta.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#a9842a" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <nav class="toc" style="margin-top:34px">
+      <ol>
+        <li><a href="#c1">La creación gime</a></li>
+        <li><a href="#c2">Nosotros también gemimos</a></li>
+        <li><a href="#c3">Salvados en esperanza</a></li>
+        <li><a href="#c4">El Espíritu en nuestra debilidad</a></li>
+        <li><a href="#c5">Dolores de parto: la redención del cuerpo</a></li>
+        <li><a href="#c6">La gloria futura de los hijos de Dios</a></li>
+        <li><a href="#aplicacion">Aplicación espiritual</a></li>
+        <li><a href="#oracion">Oración final</a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ I · LA CREACIÓN GIME ============ -->
+<section id="c1" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">I</span> El primer gemido</div>
+    <h2>La creación gime</h2>
+    <p class="chapsub">El anhelo ardiente de todo lo creado — vv. 19-22</p>
+    <p class="dropcap">En medio de la carta más densa que jamás escribió, San Pablo se detiene y hace
+      algo inaudito: presta su voz al universo entero. La creación —dice— aguarda con <em>anhelo
+      ardiente</em> la manifestación de los hijos de Dios. La palabra griega que usa,
+      <em>apokaradokía</em>, pinta a alguien que estira el cuello para ver lo que
+      viene por el camino: la creación está de puntillas. Los ríos y los montes, los animales y los
+      astros, toda la inmensa fábrica del mundo está en vilo, asomada al borde de la historia,
+      esperando algo que todavía no se ve.</p>
+    <p>¿Por qué espera? Porque está herida. Fue <strong>sometida a la vanidad</strong> —a la
+      caducidad, a la corrupción, a la muerte— y no por culpa propia: <em>«no de grado»</em>. La
+      creación no pecó; fue arrastrada. Cuando Adán cayó, no cayó solo: con él se oscureció el mundo
+      que le había sido confiado como un jardín.</p>
+    <div class="sc"><p>Maldito sea el suelo por tu causa; con fatiga comerás de él todos los días de
+      tu vida. Espinas y abrojos te producirá.</p><div class="sc-ref">Génesis 3, 17-18 — La tierra herida por el pecado del hombre</div></div>
+    <p>El pecado original no fue un episodio privado: fue una catástrofe cósmica. El hombre era el
+      sacerdote de la creación, el que debía recogerla toda y ofrecerla a Dios; al apartarse él, todo
+      lo que estaba a su cuidado quedó descolocado, como una casa cuando falta el padre. Por eso el
+      mundo entero lleva, junto a su hermosura, una cicatriz: la belleza de un atardecer y la
+      crueldad de la enfermedad, la fecundidad de la tierra y el temblor que la sacude. Todo lo
+      creado es bueno —Dios lo vio y era <em>muy bueno</em>— pero gime bajo una servidumbre que no
+      eligió.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/01-paraiso.jpg"
+          alt="El Paraíso terrenal con la caída de Adán y Eva — Jan Brueghel el Viejo y Rubens"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">El Paraíso terrenal<br>Brueghel y Rubens · c. 1615</div></div>
+      </div>
+      <figcaption>Jan Brueghel el Viejo y P. P. Rubens · “El Paraíso terrenal con la caída de Adán y Eva” (c. 1615), Mauritshuis, La Haya
+        <span>El esplendor de lo creado, en la hora misma en que va a ser herido.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="quotecard">Como los profetas hacen llorar a las viñas y exultar a los montes, así el
+      Apóstol da voz a la creación: no porque los cielos giman con gemido sensible, sino para que
+      aprendas que el mundo entero está implicado en el drama del hombre — y que por causa del
+      hombre será también transformado.
+      <span class="who">San Juan Crisóstomo · Homilía XIV sobre la Carta a los Romanos</span></div>
+    <div class="tb"><div class="tbt">La creación no es decorado</div>
+      <p>Contra todo desprecio gnóstico de la materia, la fe católica confiesa que el mundo visible
+      es obra de Dios y es bueno. La creación no es un escenario provisorio que será arrojado al
+      fuego como utilería vieja: es un compañero de destino, que será <strong>liberado de la
+      corrupción</strong> para participar de la libertad gloriosa de los hijos de Dios. El
+      cristianismo no enseña la fuga del mundo, sino su transfiguración.</p></div>
+    <div class="sc"><p>Esperamos, según su promesa, unos cielos nuevos y una tierra nueva, en los que
+      habite la justicia.</p><div class="sc-ref">2 Pedro 3, 13</div></div>
+    <p>El gemido de la creación no es, pues, un estertor de agonía: es la queja paciente de lo que
+      espera ser rehecho. El universo no camina hacia el vacío, sino hacia una liberación.</p>
+  </div>
+</section>
+
+<!-- ============ II · NOSOTROS TAMBIÉN GEMIMOS ============ -->
+<section id="c2" class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">II</span> El segundo gemido</div>
+    <h2>Nosotros también gemimos</h2>
+    <p class="chapsub">Las primicias del Espíritu y la nostalgia de la casa del Padre — v. 23</p>
+    <p class="dropcap">Y no sólo ella. San Pablo estrecha el círculo: del cosmos pasa al corazón.
+      También nosotros gemimos, <em>«nosotros, que poseemos las primicias del Espíritu»</em>. Nótese
+      la paradoja: no gimen menos los que ya han recibido el Espíritu Santo, sino más. El Bautismo
+      nos hizo realmente hijos de Dios; la gracia habita en nosotros como en un templo. Y sin
+      embargo, precisamente por eso, gemimos: quien ha probado las primicias conoce, por su dulzura,
+      cuánto falta todavía para la cosecha entera.</p>
+    <p>Es el <em>ya, pero todavía no</em> de la vida cristiana. Ya somos hijos; todavía no se ha
+      manifestado lo que seremos. Ya fuimos redimidos; todavía aguardamos <strong>la redención de
+      nuestro cuerpo</strong>. Por eso el gemido del cristiano no es la queja del descontento, sino
+      la nostalgia del que está de camino: se gime por la patria cuando ya se conoce su nombre.</p>
+  </div>
+
+  <div class="wrap split reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/02-job.jpg" alt="Job — Léon Bonnat"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">Job<br>Léon Bonnat · 1880</div></div>
+      </div>
+      <figcaption>Léon Bonnat · “Job” (1880), Musée Bonnat-Helleu, Bayona
+        <span>El justo que gime hacia Dios — no lejos de Él.</span></figcaption>
+    </figure>
+    <div>
+      <div class="sc"><p>Yo sé que mi Redentor vive, y que al fin se alzará sobre el polvo; y en mi
+        propia carne veré a Dios.</p><div class="sc-ref">Job 19, 25-26</div></div>
+      <p>Job es la figura de este segundo gemido. Despojado de todo, cubierto de llagas, no
+        blasfema ni se resigna: <em>gime hacia Dios</em>. Su queja es una oración con los huesos a
+        la vista. Y en el fondo de su noche pronuncia una de las profecías más luminosas del Antiguo
+        Testamento: en su propia carne verá a Dios.</p>
+      <div class="tb"><div class="tbt">El gemido de Job</div>
+        <p>Hay dos maneras de gemir: lejos de Dios, como quien escupe al cielo, o hacia Dios, como
+        quien golpea la puerta del Padre. El gemido del justo no es falta de fe: es la fe misma con
+        voz de dolor. Quien gime hacia Dios ya está orando.</p></div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="sc"><p>Gemimos en esta tienda de campaña, anhelando revestirnos de nuestra morada
+      celestial... para que lo mortal sea absorbido por la vida.</p><div class="sc-ref">2 Corintios 5, 2. 4</div></div>
+    <p>El cuerpo presente es una tienda de campaña: digna, amada, pero provisoria. No la
+      despreciamos —fue creada por Dios y será glorificada— pero tampoco la confundimos con la casa
+      definitiva. Y mientras dura el camino, el deseo mismo nos va ensanchando el alma:</p>
+    <div class="quotecard">Toda la vida del buen cristiano es un santo deseo. Lo que deseas todavía
+      no lo ves; pero deseándolo te haces capaz de ser colmado cuando llegue lo que has de ver.
+      Dios, haciéndonos esperar, ensancha el deseo; con el deseo, ensancha el alma, y ensanchándola
+      la hace capaz de recibir.
+      <span class="who">San Agustín · Tratados sobre la Primera Carta de San Juan, IV, 6</span></div>
+  </div>
+</section>
+
+<!-- ============ III · SALVADOS EN ESPERANZA ============ -->
+<section id="c3" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">III</span> La espera cierta</div>
+    <h2>Salvados en esperanza</h2>
+    <p class="chapsub">La virtud que mira lo que todavía no ve — vv. 24-25</p>
+    <p class="dropcap">«Porque en esperanza fuimos salvados.» En el centro de la perícopa, San Pablo
+      deja caer esta sentencia que la Iglesia repite desde hace veinte siglos. La salvación es real
+      —fuimos salvados, en pasado— y sin embargo su plenitud se posee al modo de la esperanza: como
+      el heredero posee la herencia prometida, como el sembrador posee la cosecha. Y el Apóstol
+      añade la paradoja: <em>«una esperanza que se ve, ya no es esperanza»</em>. La esperanza vive
+      precisamente de no ver.</p>
+    <p>Aquí conviene la precisión: la esperanza cristiana no es un temperamento optimista ni un
+      cálculo de probabilidades. Es una <strong>virtud teologal</strong>: infundida por Dios en el
+      Bautismo, tiene por objeto la bienaventuranza eterna y por apoyo, no nuestras fuerzas, sino
+      el auxilio omnipotente y la fidelidad de Dios que promete. El optimista confía en que las
+      cosas saldrán bien; el que espera confía en Alguien.</p>
+  </div>
+
+  <div class="wrap split rev reveal" style="margin-top:46px">
+    <div>
+      <div class="sc"><p>Tenemos la esperanza como ancla del alma, segura y firme, que penetra hasta
+        más allá del velo.</p><div class="sc-ref">Hebreos 6, 19</div></div>
+      <div class="quotecard">La esperanza tiende a su fin con certeza, como participando de la
+        certeza de la fe. No se apoya principalmente en la gracia ya recibida, sino en la
+        omnipotencia y la misericordia divinas, por las cuales aun quien no tiene la gracia puede
+        alcanzarla. Por eso el que espera no presume de sí: se apoya en Dios.
+        <span class="who">Santo Tomás de Aquino · Suma Teológica, II-II, q. 18, a. 4</span></div>
+      <div class="tb"><div class="tbt">Esperanza no es optimismo</div>
+        <p>Contra la esperanza pecan dos: el que <strong>presume</strong>, dando por poseído lo que
+        aún es promesa, y el que <strong>desespera</strong>, dando por perdido lo que Dios ha
+        jurado dar. Ambos se niegan a esperar: uno porque cree que ya llegó, otro porque cree que
+        nunca llegará. La esperanza camina entre ambos abismos, con los ojos fijos en la fidelidad
+        de Dios.</p></div>
+    </div>
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/03-esperanza.jpg" alt="Hope (La Esperanza) — George Frederic Watts"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">La Esperanza<br>G. F. Watts · 1886</div></div>
+      </div>
+      <figcaption>George Frederic Watts · “Hope” (1886), Tate Britain, Londres
+        <span>Vendada, sobre el mundo, sigue tocando la única cuerda que le queda — imagen de quien espera sin ver.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>«Pero si esperamos lo que no vemos, <em>con paciencia lo aguardamos</em>.» La palabra griega
+      es <em>hypomoné</em>: constancia, aguante, la virtud de quedarse debajo del
+      peso sin soltarlo. La esperanza no es un sentimiento de los días buenos: es una fidelidad de
+      todos los días, hecha de oración perseverante, de deberes cumplidos, de esperas que no se
+      apuran. Los santos no fueron optimistas: fueron constantes.</p>
+    <div class="sc"><p>Bueno es el Señor para quien en Él espera, para el alma que le busca. Bueno es
+      aguardar en silencio la salvación del Señor.</p><div class="sc-ref">Lamentaciones 3, 25-26</div></div>
+  </div>
+</section>
+
+<!-- ============ IV · EL ESPÍRITU EN NUESTRA DEBILIDAD ============ -->
+<section id="c4" class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">IV</span> El tercer gemido</div>
+    <h2 style="font-size:clamp(1.9rem,5vw,3rem)">El Espíritu viene en ayuda de nuestra debilidad</h2>
+    <p class="chapsub">Los gemidos inefables del Espíritu Santo — vv. 26-27</p>
+    <p class="dropcap">Queda el tercer gemido, el más misterioso de todos. Gime la creación, gemimos
+      nosotros — y gime Dios mismo en nosotros: <em>«el Espíritu intercede por nosotros con gemidos
+      inefables»</em>. San Pablo parte de una confesión que nos alcanza a todos:
+      <strong>no sabemos pedir lo que conviene</strong>. Ni siquiera orar sabemos. Pedimos salud y
+      quizá convenía la cruz; pedimos que pase el cáliz y convenía beberlo. Nuestra oración nace
+      ciega, como nace ciego todo lo nuestro.</p>
+    <p>Y aquí, donde esperaríamos un reproche, la Escritura pone una ternura: esa incapacidad no es
+      un obstáculo para Dios, sino la puerta por donde entra. El Espíritu Santo no espera que
+      sepamos orar: <em>viene en ayuda de nuestra flaqueza</em>, se une a nuestro gemido torpe y lo
+      convierte en intercesión divina. La oración más honda del cristiano no es la que él fabrica:
+      es la que el Espíritu gime en él.</p>
+  </div>
+
+  <div class="wrap split reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/04-pentecostes.jpg" alt="Pentecostés — El Greco"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">Pentecostés<br>El Greco · c. 1600</div></div>
+      </div>
+      <figcaption>El Greco · “Pentecostés” (c. 1600), Museo del Prado, Madrid
+        <span>El fuego que desciende y hace de cada corazón un orante.</span></figcaption>
+    </figure>
+    <div>
+      <div class="sc"><p>Y porque sois hijos, Dios envió a vuestros corazones el Espíritu de su Hijo,
+        que clama: ¡Abbá, Padre!</p><div class="sc-ref">Gálatas 4, 6</div></div>
+      <div class="quotecard">Hay en nosotros, por así decirlo, una docta ignorancia: no sabemos qué
+        pedir como conviene; pero el Espíritu socorre nuestra flaqueza y pide por nosotros,
+        suscitando en el corazón el deseo de aquello que Dios quiere darnos. No gime Él en sí mismo:
+        nos hace gemir a nosotros, y ese gemido no se pierde.
+        <span class="who">San Agustín · Carta 130, a Proba, sobre la oración</span></div>
+      <div class="tb"><div class="tbt">Cómo gime el Espíritu — Santo Tomás</div>
+        <p>Se dice que el Espíritu «pide gimiendo» no porque padezca necesidad, sino porque
+        <strong>nos hace pedir</strong>: Él suscita en nosotros los deseos rectos y los gemidos del
+        amor. Y el Padre, «que escudriña los corazones», reconoce en nuestro gemido el deseo de su
+        propio Espíritu — por eso esa oración es siempre escuchada: pide según Dios.</p></div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Toda oración cristiana es, así, trinitaria: el Espíritu gime en nosotros, por el Hijo,
+      hacia el Padre. Cuando no salgan las palabras, cuando la sequedad parezca vencer, cuando lo
+      único que quede sea un suspiro sin forma — no hemos fracasado en la oración: hemos llegado a
+      su fondo. Allí donde termina nuestra elocuencia empieza la suya.</p>
+    <div class="sc"><p>Derramaré sobre ellos un espíritu de gracia y de súplica.</p>
+      <div class="sc-ref">Zacarías 12, 10</div></div>
+  </div>
+</section>
+
+<!-- ============ V · DOLORES DE PARTO ============ -->
+<section id="c5" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">V</span> La síntesis</div>
+    <h2 style="font-size:clamp(1.9rem,5vw,3rem)">Dolores de parto: la redención de nuestro cuerpo</h2>
+    <p class="chapsub">Los tres gemidos son una sola música</p>
+    <p class="dropcap">Ahora los tres gemidos pueden oírse juntos: el de la creación, el nuestro, el
+      del Espíritu. Y se descubre que no son tres lamentos, sino una sola música con tres voces. San
+      Pablo eligió la imagen con precisión de teólogo y delicadeza de padre: <em>dolores de
+      parto</em>. No son los dolores del que agoniza, sino los de la que da a luz: un dolor con
+      dirección, un dolor que trabaja, un dolor del que va a nacer algo.</p>
+    <div class="sc"><p>La mujer, cuando da a luz, está triste, porque le ha llegado su hora; pero
+      cuando ha dado a luz al niño, ya no se acuerda de la tribulación, por el gozo de que ha nacido
+      un hombre al mundo.</p><div class="sc-ref">Juan 16, 21 — La imagen elegida por el mismo Señor</div></div>
+    <p>¿Y qué es lo que está por nacer? San Pablo lo dice sin rodeos: <strong>la redención de
+      nuestro cuerpo</strong>. No la liberación <em>del</em> cuerpo, como soñaron todos los
+      gnosticismos antiguos y modernos, sino la redención <em>de</em> nuestro cuerpo: su rescate,
+      su glorificación. El cristianismo es la religión del Verbo hecho carne; no desprecia la
+      materia que Dios asumió. Creemos en la resurrección de la carne.</p>
+  </div>
+
+  <div class="wrap split rev reveal" style="margin-top:46px">
+    <div>
+      <div class="sc"><p>Nuestra ciudadanía está en los cielos, de donde esperamos como Salvador al
+        Señor Jesucristo, que transformará nuestro pobre cuerpo conforme a su cuerpo glorioso.</p>
+        <div class="sc-ref">Filipenses 3, 20-21</div></div>
+      <div class="quotecard">Caro salutis est cardo: la carne es el quicio de la salvación. Sobre
+        ella gira la obra de Dios: la carne es lavada para que el alma sea purificada; la carne es
+        ungida para que el alma sea consagrada; la carne se alimenta del Cuerpo de Cristo para que
+        el alma se sacie de Dios.
+        <span class="who">Tertuliano · Sobre la resurrección de la carne, 8</span></div>
+      <div class="tb"><div class="tbt">La carne, capaz de gloria — San Ireneo</div>
+        <p>«La gloria de Dios es el hombre viviente; y la vida del hombre es la visión de Dios.»
+        La carne que las manos de Dios plasmaron del barro no fue hecha para el polvo eterno:
+        es capaz de incorrupción. Lo que ocurrió en Cristo resucitado —<em>primicias de los que
+        durmieron</em>— ocurrirá en los suyos.</p></div>
+    </div>
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/05-resurreccion.jpg" alt="La Resurrección — Piero della Francesca"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">La Resurrección<br>Piero della Francesca · c. 1463</div></div>
+      </div>
+      <figcaption>Piero della Francesca · “La Resurrección” (c. 1463-1465), Museo Civico, Sansepolcro
+        <span>El Resucitado planta el estandarte sobre el sepulcro: la primicia de la nueva creación.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Por eso el sufrimiento cristiano tiene dirección. El mundo conoce el dolor; sólo la fe conoce
+      el parto. Quien mira la historia sin Cristo oye un gemido sin sentido; quien la mira con
+      Cristo oye el trabajo de una creación nueva que pugna por nacer. La diferencia no está en el
+      dolor, que es el mismo: está en la esperanza, que lo transfigura.</p>
+  </div>
+</section>
+
+<!-- ============ VI · LA GLORIA FUTURA ============ -->
+<section id="c6" class="band dark">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">VI</span> La meta</div>
+    <h2>La gloria futura de los hijos de Dios</h2>
+    <p class="chapsub">Lo que espera al final de todos los gemidos</p>
+    <p class="dropcap">Un versículo antes de nuestra perícopa, San Pablo había puesto la balanza:
+      en un platillo, los padecimientos del tiempo presente —y él sabía de qué hablaba: azotes,
+      naufragios, cárceles—; en el otro, <em>la gloria que se ha de manifestar en nosotros</em>.
+      Y la balanza ni siquiera oscila. No porque el dolor sea poco, sino porque la gloria es
+      desmesurada: ser <strong>conformes a la imagen del Hijo</strong>, ver a Dios cara a cara,
+      vivir de su misma vida para siempre.</p>
+    <div class="sc"><p>Ahora somos hijos de Dios, y aún no se ha manifestado lo que seremos. Sabemos
+      que, cuando se manifieste, seremos semejantes a Él, porque le veremos tal cual es.</p>
+      <div class="sc-ref">1 Juan 3, 2</div></div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/06-cordero.jpg" alt="La Adoración del Cordero Místico — Hermanos Van Eyck"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">La Adoración del Cordero Místico<br>Van Eyck · 1432</div></div>
+      </div>
+      <figcaption>Hubert y Jan van Eyck · “La Adoración del Cordero Místico” (1432), Catedral de San Bavón, Gante
+        <span>La creación entera, por fin liberada, convertida en liturgia alrededor del Cordero.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Miren el retablo de Gante: praderas, árboles, ciudades al fondo — la creación entera está
+      ahí, no abolida sino transfigurada, convertida en liturgia alrededor del Cordero. Es la
+      respuesta visual al gemido de Romanos 8: la tierra que gemía, hecha altar; los cuerpos que
+      esperaban su redención, vestidos de gloria; y en el centro, Aquel que fue inmolado. Entonces
+      los tres gemidos —el de la creación, el nuestro, el del Espíritu— se revelarán como lo que
+      siempre fueron: las tres voces de un solo canto que todavía no sabíamos cantar.</p>
+    <div class="sc"><p>Enjugará toda lágrima de sus ojos, y no habrá ya muerte, ni llanto, ni
+      gemido, ni dolor, porque las primeras cosas pasaron. Y dijo el que estaba sentado en el trono:
+      He aquí que hago nuevas todas las cosas.</p><div class="sc-ref">Apocalipsis 21, 4-5</div></div>
+    <div class="quotecard">Allí descansaremos y veremos; veremos y amaremos; amaremos y alabaremos.
+      He aquí lo que será al fin, sin fin. Pues ¿qué otro fin tenemos, sino llegar al Reino que no
+      tiene fin?
+      <span class="who">San Agustín · La Ciudad de Dios, XXII, 30</span></div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:60px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#d3ad4e" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <p class="pull" style="margin-top:36px">Tengo por cierto que los padecimientos del tiempo
+      presente no son comparables con la gloria que se ha de manifestar en nosotros.
+      <span class="by">Romanos 8, 18</span></p>
+  </div>
+</section>
+
+<!-- ============ VII · APLICACIÓN ESPIRITUAL ============ -->
+<section id="aplicacion" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">VII</span> Para la vida</div>
+    <h2>Vivir esperando</h2>
+    <p class="chapsub">Aplicación espiritual de los tres gemidos</p>
+    <p>La meditación que no baja a la vida se queda en literatura. Cuatro resoluciones concretas,
+      una por cada movimiento de esta página del Apóstol:</p>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:26px">
+    <div class="grid g2">
+      <div class="card"><div class="tag good">Vivir el sufrimiento</div>
+        <p style="margin:0">Cuando llegue el dolor —el propio o el del mundo—, unirlo al gemido de
+        la creación y a la Cruz de Cristo. El sufrimiento del cristiano no es un callejón sin
+        salida: es un pasaje. Nada de lo que se padece con Él se pierde; todo está gestando
+        gloria.</p></div>
+      <div class="card"><div class="tag good">Perseverar sin ver</div>
+        <p style="margin:0">La fidelidad se prueba en lo oculto: la oración árida, el deber de cada
+        día, la caridad que nadie aplaude. La fe probada es «más preciosa que el oro» (1 Pedro 1,
+        7). No hace falta ver para seguir sembrando.</p></div>
+      <div class="card"><div class="tag good">Esperar con constancia</div>
+        <p style="margin:0">Ni la presunción que da todo por ganado, ni la desesperación que da
+        todo por perdido: la <em>hypomoné</em>, la paciencia de quien sabe a Quién ha creído.
+        Esperar también es una obra — quizá la más callada de todas.</p></div>
+      <div class="card"><div class="tag good">Dejar orar al Espíritu</div>
+        <p style="margin:0">Cuando no salgan las palabras, no salir de la presencia. El silencio
+        dócil, ofrecido, ya es oración: el Espíritu gime en él según Dios. Bastan cinco minutos
+        diarios de ese silencio para que Él trabaje.</p></div>
+    </div>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:60px">
+    <p class="pull">La creación entera está en vísperas; el cristiano es quien ya escucha,
+      dentro del gemido del mundo, la música de la gloria.</p>
+  </div>
+</section>
+
+<!-- ============ VIII · ORACIÓN FINAL ============ -->
+<section id="oracion" class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">VIII</span> Cierre contemplativo</div>
+    <h2>Oración final</h2>
+    <div class="prayer">
+      <p>Espíritu Santo, Dios de los gemidos inefables:
+        no sabemos pedir lo que conviene;
+        ven en ayuda de nuestra flaqueza y ora Tú en nosotros.</p>
+      <p>Cuando la creación gima a nuestro alrededor
+        y el dolor nos doble,
+        enseñanos a escuchar, dentro del gemido,
+        los dolores de un parto y no los de una agonía.</p>
+      <p>Concédenos esperar lo que no vemos:
+        la redención de nuestro cuerpo,
+        la libertad gloriosa de los hijos de Dios,
+        el día en que será enjugada toda lágrima.</p>
+      <p>Que aguardemos con paciencia, sin presunción y sin desesperación,
+        fijos los ojos en Cristo resucitado,
+        primicia de los que duermen.</p>
+      <p>Y cuando no tengamos palabras,
+        que nos baste tu gemido,
+        que es más hondo que nuestro silencio.
+        Por Jesucristo nuestro Señor.</p>
+      <div class="amen">Amén</div>
+    </div>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:56px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="#a9842a"><circle cx="12" cy="12" r="3"/><g stroke="#a9842a" stroke-width="1.2"><path d="M12 1v4M12 19v4M1 12h4M19 12h4M4 4l3 3M17 17l3 3M20 4l-3 3M7 17l-3 3"/></g></svg>
+      <span class="line r"></span></div>
+  </div>
+</section>
+
+<footer>
+  <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    <g opacity=".8"><circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/><circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/></g>
+  </svg>
+  <p class="big">“Spe salvi facti sumus — en esperanza fuimos salvados.”</p>
+  <p>Meditación sobre Romanos 8, 19-27 · para orar, estudiar y compartir.<br>
+  Obras de dominio público (Brueghel y Rubens, Bonnat, Watts, El Greco, Piero della Francesca, Van Eyck · vía Wikimedia Commons).</p>
+  <p class="lat">Ad maiorem Dei gloriam</p>
+</footer>
+
+<script>
+  // reading progress
+  const bar=document.getElementById('progress');
+  addEventListener('scroll',()=>{const h=document.documentElement;
+    const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;bar.style.width=p+'%';});
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // starfield
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  let w,hh,stars;
+  function init(){w=c.width=innerWidth;hh=c.height=Math.max(innerHeight,600);
+    stars=Array.from({length:Math.min(220,Math.floor(w/6))},()=>({
+      x:Math.random()*w,y:Math.random()*hh,r:Math.random()*1.4+.2,
+      a:Math.random(),s:Math.random()*.018+.004}));}
+  function draw(){x.clearRect(0,0,w,hh);
+    for(const st of stars){st.a+=st.s;const o=.35+Math.abs(Math.sin(st.a))*.65;
+      x.beginPath();x.arc(st.x,st.y,st.r,0,7);
+      x.fillStyle='rgba(231,224,255,'+o+')';x.fill();}
+    requestAnimationFrame(draw);}
+  init();draw();addEventListener('resize',init);
+</script>
+</body>
+</html>

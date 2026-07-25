@@ -293,14 +293,15 @@
             <span>La Noche del Señor <em style="font-style:italic;color:var(--ink-soft);font-size:.92em">— meditación sobre la Pasión</em></span>
             <span class="arr">→</span>
           </a></li>
+<<<<<<< HEAD
           <li><a href="meditaciones/novena-dolores/">
             <span class="num">II.</span>
             <span>Novena a Nuestra Señora de los Dolores <em style="font-style:italic;color:var(--ink-soft);font-size:.92em">— para conocer y llorar los propios pecados</em></span>
-            <span class="arr">→</span>
-          </a></li>
+=======
           <li><a href="meditaciones/tres-gemidos/">
             <span class="num">II.</span>
             <span>Los tres gemidos <em style="font-style:italic;color:var(--ink-soft);font-size:.92em">— la esperanza de la gloria · Romanos 8</em></span>
+>>>>>>> feat/meditacion-tres-gemidos
             <span class="arr">→</span>
           </a></li>
         </ul>
