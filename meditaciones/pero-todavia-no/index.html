@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>«Pero todavía no» · Meditación sobre el corazón dividido · San Agustín</title>
+<meta name="description" content="Ensayo sobre la oración de san Agustín «Dame castidad y continencia, pero todavía no». Prólogo y primer capítulo: el corazón dividido, la voluntad enferma y la paciencia de la gracia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211b12;
+    --ink-soft:#574a37;
+    --parchment:#f4ecda;
+    --parchment-2:#ece1c8;
+    --card:#fbf5e7;
+    --gold:#a9842a;
+    --gold-bright:#d3ad4e;
+    --gold-pale:#e7d39a;
+    --oxblood:#7a2230;
+    --oxblood-deep:#581621;
+    --cosmos:#0a0d1d;
+    --cosmos-2:#121833;
+    --cosmos-3:#1b2347;
+    --star:#ede9ff;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'EB Garamond',serif;
+    font-size:20px;
+    line-height:1.72;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ---------- progress bar ---------- */
+  #progress{position:fixed;top:0;left:0;height:4px;width:0%;
+    background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+    z-index:999;box-shadow:0 0 8px rgba(211,173,78,.6)}
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,.eyebrow{font-family:'Cinzel',serif}
+  .display{font-family:'Cormorant Garamond',serif}
+  p{margin:0 0 1.1em}
+  .lead{font-size:1.32rem;line-height:1.7}
+  em{color:var(--oxblood);font-style:italic}
+  strong{font-weight:600;color:var(--ink)}
+  a{color:var(--oxblood)}
+
+  /* ---------- layout ---------- */
+  section{position:relative}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .narrow{max-width:760px}
+
+  .eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .eyebrow .num{font-family:'Cinzel',serif;color:var(--oxblood)}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
+
+  h2{font-size:clamp(2rem,5.2vw,3.3rem);font-weight:600;line-height:1.06;
+    letter-spacing:.01em;margin-bottom:.55em;color:var(--ink)}
+  h3{font-size:1.18rem;letter-spacing:.06em;color:var(--oxblood);margin-bottom:.4em}
+
+  /* ---------- section rhythm ---------- */
+  .band{padding:96px 0}
+  .band.light{background:var(--parchment)}
+  .band.tint{background:
+      radial-gradient(1200px 500px at 80% -10%,rgba(169,132,42,.10),transparent 60%),
+      var(--parchment-2)}
+  .band.dark{background:
+      radial-gradient(900px 600px at 15% 0%,rgba(60,75,150,.35),transparent 55%),
+      radial-gradient(700px 500px at 90% 100%,rgba(122,34,48,.28),transparent 60%),
+      linear-gradient(180deg,var(--cosmos),#0c1124 60%,var(--cosmos));
+    color:#e9e4d6}
+  .band.dark h2{color:#f6f0e2}
+  .band.dark h3{color:var(--gold-bright)}
+  .band.dark strong{color:#fff}
+  .band.dark em{color:var(--gold-bright)}
+  .band.dark .eyebrow{color:var(--gold-bright)}
+  .band.dark .eyebrow::before{background:var(--gold-bright)}
+  .band.dark .eyebrow .num{color:#e7c97a}
+
+  /* paper grain */
+  .band.light::after,.band.tint::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E")}
+
+  /* ---------- hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#f3edde;overflow:hidden;
+    background:radial-gradient(1100px 700px at 50% 18%,#1a2147,transparent 60%),
+      radial-gradient(900px 600px at 50% 120%,#3a1622,transparent 55%),
+      linear-gradient(180deg,#070914,#0a0d1d 55%,#0b0f22)}
+  #stars{position:absolute;inset:0;z-index:0}
+  .hero .wrap{position:relative;z-index:2}
+  .hero .rosette{margin:0 auto 30px;width:96px;height:96px;animation:spin 90s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .hero .kicker{font-family:'Cinzel',serif;letter-spacing:.4em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold-bright);margin-bottom:26px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:600;
+    font-size:clamp(2.6rem,10vw,6.4rem);line-height:.98;letter-spacing:.01em;
+    text-shadow:0 2px 40px rgba(0,0,0,.5)}
+  .hero h1 .small{display:block;font-size:.42em;letter-spacing:.04em;color:var(--gold-pale);margin-top:.4em;font-weight:500}
+  .hero .sub{max-width:640px;margin:30px auto 0;font-size:1.2rem;color:#cdc6bb;line-height:1.7}
+  .hero .lat{font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--gold-pale);font-size:1.18rem;margin-top:30px}
+  .hero .lat .tr{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.62rem;
+    letter-spacing:.28em;text-transform:uppercase;color:#b7b0a2;margin-top:8px}
+  .hero .rule{margin-top:34px}
+  .hero .scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    z-index:2;color:var(--gold-bright);font-family:'Cinzel',serif;font-size:.65rem;
+    letter-spacing:.3em;text-transform:uppercase;opacity:.8;animation:bob 2.4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- ornamental divider ---------- */
+  .rule{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto;max-width:340px}
+  .rule .line{height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+  .rule svg{width:26px;height:26px;flex:none}
+
+  /* ---------- drop cap ---------- */
+  .dropcap::first-letter{font-family:'Cormorant Garamond',serif;float:left;
+    font-size:4.6rem;line-height:.78;padding:6px 14px 0 0;color:var(--oxblood);font-weight:600}
+
+  /* ---------- figures ---------- */
+  figure{margin:0}
+  .plate{background:#0c0f1f;border:1px solid rgba(211,173,78,.35);padding:10px;
+    border-radius:3px;box-shadow:0 30px 60px -30px rgba(0,0,0,.7);position:relative}
+  .plate img{display:block;width:100%;height:auto;border-radius:2px}
+  figcaption{font-family:'Cinzel',serif;font-size:.62rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold);margin-top:12px;text-align:center;line-height:1.6}
+  .band.dark figcaption{color:var(--gold-bright)}
+  figcaption span{display:block;font-family:'EB Garamond',serif;text-transform:none;
+    letter-spacing:0;font-size:.82rem;color:inherit;opacity:.75;margin-top:3px}
+  .plate .fallback{display:none;padding:70px 24px;text-align:center;color:var(--gold-pale)}
+  .plate .fallback.show{display:block}
+  .plate .fallback .ft{font-family:'Cinzel',serif;font-size:.72rem;letter-spacing:.2em;
+    text-transform:uppercase;line-height:2.1}
+
+  /* portrait split */
+  .split{display:grid;gap:40px;align-items:center}
+  @media(min-width:880px){.split{grid-template-columns:0.9fr 1.1fr}.split.rev{grid-template-columns:1.1fr 0.9fr}}
+
+  /* ---------- índice ---------- */
+  .toc{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:6px;
+    padding:34px 30px;box-shadow:0 20px 50px -34px rgba(33,27,18,.5)}
+  .toc ol{list-style:none;display:grid;gap:2px}
+  .toc li{border-bottom:1px dotted rgba(169,132,42,.4)}
+  .toc a{display:flex;gap:14px;align-items:baseline;padding:11px 4px;text-decoration:none;
+    color:var(--ink);transition:.25s;font-size:1.05rem}
+  .toc a:hover{color:var(--oxblood);padding-left:10px}
+  .toc .n{font-family:'Cinzel',serif;color:var(--gold);font-size:.82rem;min-width:64px;font-weight:600}
+  .toc .soon{display:flex;gap:14px;align-items:baseline;padding:11px 4px;
+    font-size:1.05rem;color:var(--ink-soft);font-style:italic;opacity:.75}
+
+  /* ---------- cita bíblica ---------- */
+  .sc{border-left:3px solid var(--gold);background:rgba(169,132,42,.08);
+    border-radius:0 4px 4px 0;padding:20px 26px 16px;margin:28px 0}
+  .sc p{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.24rem;line-height:1.45;color:var(--ink);margin:0}
+  .sc-ref{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--gold);margin-top:10px;font-weight:600}
+  .band.dark .sc{background:rgba(211,173,78,.10);border-color:var(--gold-bright)}
+  .band.dark .sc p{color:#f0e9da}
+  .band.dark .sc-ref{color:var(--gold-bright)}
+
+  /* ---------- caja teológica ---------- */
+  .tb{background:rgba(122,34,48,.06);border:1px solid rgba(122,34,48,.22);
+    border-top:3px solid var(--oxblood);border-radius:0 0 4px 4px;padding:24px 28px;margin:30px 0}
+  .tbt{font-family:'Cinzel',serif;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;
+    color:var(--oxblood);font-weight:600;margin-bottom:10px}
+  .tbt::before{content:"✝";margin-right:10px}
+  .tb p{margin:0;font-size:1rem;color:var(--ink)}
+  .band.dark .tb{background:rgba(122,34,48,.18);border-color:rgba(198,102,102,.35);border-top-color:#c66}
+  .band.dark .tbt{color:#d98c8c}
+  .band.dark .tb p{color:#e9e4d6}
+
+  /* ---------- subtítulo de capítulo ---------- */
+  .chapsub{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.3rem;color:var(--ink-soft);margin:-4px 0 26px}
+  .band.dark .chapsub{color:#cfc8ba}
+
+  /* ---------- cita / quote ---------- */
+  .pull{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.4vw,2.7rem);
+    line-height:1.18;font-weight:500;font-style:italic;text-align:center;color:var(--ink)}
+  .band.dark .pull{color:#f4eddd}
+  .pull .by{display:block;font-family:'Cinzel',serif;font-style:normal;font-size:.7rem;
+    letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:20px}
+  .band.dark .pull .by{color:var(--gold-bright)}
+
+  .quotecard{background:var(--card);border:1px solid rgba(169,132,42,.3);border-radius:4px;
+    padding:24px 26px;font-family:'Cormorant Garamond',serif;font-size:1.45rem;
+    font-style:italic;line-height:1.34;position:relative;color:var(--ink);margin:28px 0}
+  .quotecard::before{content:"\201C";position:absolute;top:-6px;left:14px;
+    font-size:4rem;color:var(--gold);opacity:.35;font-family:'Cormorant Garamond',serif}
+  .quotecard .who{display:block;font-family:'Cinzel',serif;font-style:normal;
+    font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:14px}
+  .band.dark .quotecard{background:rgba(255,255,255,.05);border-color:rgba(211,173,78,.3);color:#efe8d8}
+  .band.dark .quotecard .who{color:var(--gold-bright)}
+
+  /* ---------- silencio final ---------- */
+  .silence{background:var(--card);border:1px solid rgba(169,132,42,.35);
+    border-top:2px solid var(--gold);border-radius:4px;padding:54px 40px 44px;
+    margin-top:44px;position:relative;text-align:center;
+    box-shadow:0 24px 55px -34px rgba(33,27,18,.5)}
+  .silence::before{content:"✦ SILENCIO ✦";position:absolute;top:-9px;left:50%;transform:translateX(-50%);
+    background:var(--parchment-2);padding:0 16px;font-family:'Cinzel',serif;font-size:.62rem;
+    letter-spacing:.38em;color:var(--gold);font-weight:600;white-space:nowrap}
+  .silence p{font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:1.32rem;line-height:1.55;color:var(--ink);max-width:580px;margin:0 auto 1.1em}
+  @media(max-width:600px){.silence{padding:46px 22px 36px}.silence p{font-size:1.16rem}}
+
+  .note{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+  .band.dark .note{color:#b9b2a4}
+
+  footer{background:linear-gradient(180deg,#0b0f22,#070914);color:#c9c2b6;
+    text-align:center;padding:70px 26px}
+  footer .rosette{width:60px;height:60px;margin:0 auto 22px;opacity:.8}
+  footer p{font-size:.95rem;color:#9d978c;margin:0}
+  footer .big{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.5rem;color:#e7d39a;margin-bottom:14px}
+  footer .lat{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+    color:#7c7669;margin-top:18px}
+
+  ::selection{background:var(--gold);color:#1a140a}
+
+  /* ---------- back-to-home link ---------- */
+  .home-link{
+    position:fixed;top:20px;left:22px;z-index:1000;
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Cinzel',serif;font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;text-decoration:none;color:var(--gold-bright);
+    padding:8px 14px;border:1px solid rgba(211,173,78,.35);border-radius:2px;
+    background:rgba(10,13,29,.55);backdrop-filter:blur(8px);
+    transition:color .25s,border-color .25s,background .25s,transform .25s;
+  }
+  .home-link:hover{color:#fff;border-color:var(--gold-bright);background:rgba(10,13,29,.85);transform:translateX(-2px)}
+  .home-link svg{width:12px;height:12px}
+  @media(max-width:600px){.home-link{font-size:.58rem;padding:6px 10px;top:14px;left:14px}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<a class="home-link" href="../../" title="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  Lumen Fidei
+</a>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <canvas id="stars"></canvas>
+  <div class="wrap">
+    <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+      <circle cx="50" cy="50" r="46"/>
+      <circle cx="50" cy="50" r="34" opacity=".7"/>
+      <g opacity=".9">
+        <circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/>
+        <circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/>
+        <circle cx="29" cy="29" r="14"/><circle cx="71" cy="29" r="14"/>
+        <circle cx="29" cy="71" r="14"/><circle cx="71" cy="71" r="14"/>
+      </g>
+      <circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    </svg>
+    <div class="kicker">Ensayo · Las Confesiones de San Agustín</div>
+    <h1 class="display">«Pero todavía no»
+      <span class="small">una meditación sobre el corazón dividido</span>
+    </h1>
+    <p class="sub">Sobre la célebre oración de san Agustín, la voluntad enferma
+      y la paciencia de la gracia. Para leer despacio
+      y con el corazón en silencio.</p>
+    <p class="lat">Da mihi castitatem et continentiam, sed noli modo.
+      <span class="tr">«Dame castidad y continencia, pero todavía no» · Confesiones VIII, 7</span></p>
+  </div>
+  <div class="scroll">Desplazá para meditar</div>
+</header>
+
+<!-- ============ PRÓLOGO ============ -->
+<section id="prologo" class="band light">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> Prólogo</div>
+    <h2>Una oración que todavía rezamos</h2>
+    <p class="chapsub">La frase más honesta de las Confesiones</p>
+    <p class="dropcap">Hay frases que atraviesan los siglos porque describen algo que nunca
+      envejece. No importa cuánto cambien las ciudades, los idiomas o las costumbres. Hay
+      batallas que pertenecen al corazón humano y, mientras exista un hombre sobre la tierra,
+      seguirán librándose.</p>
+    <p>La oración de san Agustín es una de ellas.</p>
+    <p>A primera vista parece casi una ironía. Muchos la citan con una sonrisa, como si el
+      obispo de Hipona hubiera hecho un comentario ingenioso sobre su juventud. Pero basta
+      detenerse unos instantes para descubrir que detrás de esas pocas palabras hay lágrimas,
+      noches sin descanso y un alma desgarrada entre dos amores.</p>
+    <p>No estaba burlándose de Dios.</p>
+    <p>Estaba confesando una derrota.</p>
+    <p>Quería ser santo. Pero todavía quería conservar aquello que le impedía serlo.</p>
+    <p>Y, si somos sinceros, esa confesión también podría brotar de nuestros labios.</p>
+    <p>Quizá ninguno de nosotros pronunciaría exactamente la misma oración. Tal vez nuestro
+      pecado no sea el mismo. Sin embargo, casi todos conocemos ese extraño lugar donde el
+      alma comienza a amar a Dios con sinceridad y, al mismo tiempo, se resiste a entregarse
+      por completo.</p>
+    <p>Es un lugar incómodo. Allí la conciencia ya no permite vivir tranquila, pero el corazón
+      todavía no encuentra el valor para romper las cadenas.</p>
+    <p>Se sabe cuál es el camino. Se admira a quienes lo recorren. Se desea llegar.</p>
+    <p>Solo falta comenzar.</p>
+    <p>Y ese <em>todavía no</em> puede prolongarse durante años.</p>
+    <p>No siempre se presenta con palabras. A veces toma la forma de una excusa razonable.
+      «Cuando termine esta etapa.» «Cuando tenga más tiempo.» «Cuando desaparezca esta
+      tentación.» «Cuando cambien las circunstancias.» Siempre parece existir un momento mejor
+      para convertirse. Como si la santidad pudiera comenzar mañana sin depender de la
+      fidelidad de hoy.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>La historia de la salvación está llena de hombres que fueron llamados en medio de sus
+      ocupaciones. Abraham recibió una orden cuando todavía habitaba entre los suyos. Moisés
+      fue sorprendido mientras cuidaba el rebaño. Mateo estaba sentado en la mesa de los
+      impuestos. Pedro remendaba sus redes. Ninguno escuchó que Dios le dijera que lo esperara
+      unos años más.</p>
+    <p>La voz del Señor siempre habla en presente.</p>
+    <div class="sc"><p>Sígueme.</p><div class="sc-ref">Mateo 9, 9</div></div>
+    <p>No mañana. Ahora.</p>
+    <p>Y quizá esa sea una de las razones por las que la frase de Agustín continúa
+      inquietándonos después de tantos siglos. Porque pone nombre a la distancia que suele
+      existir entre lo que sabemos y lo que hacemos.</p>
+    <p>Con frecuencia creemos que el gran enemigo de la conversión es la ignorancia. No lo es.
+      El mayor enemigo suele ser la demora. No rechazamos a Dios. Simplemente lo posponemos.
+      No le decimos que no. Le pedimos que espere.</p>
+    <p>Y mientras Él llama con paciencia, nosotros tratamos de conservar, aunque sea por un
+      poco más, aquello mismo que nos hace infelices.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Hay algo profundamente consolador en descubrir que uno de los más grandes doctores de
+      la Iglesia conoció esa lucha desde dentro.</p>
+    <p>Con demasiada frecuencia imaginamos a los santos como hombres que avanzaron hacia Dios
+      con una serenidad ininterrumpida, casi sin resistencias. Sus vidas terminan pareciendo
+      tan luminosas que olvidamos la oscuridad desde la cual comenzaron a caminar.</p>
+    <p>Agustín nos devuelve la esperanza precisamente porque no oculta ninguna de sus heridas.
+      No intenta parecer mejor de lo que fue. No escribe para construir una reputación.
+      Escribe para glorificar la misericordia de Dios.</p>
+    <p>Por eso las <em>Confesiones</em> no son una autobiografía en el sentido moderno. No
+      cuentan la historia de un hombre extraordinario. Cuentan la historia de un Dios
+      extraordinariamente paciente.</p>
+    <p>Y quizá esa sea la razón por la que seguimos regresando a ellas. Porque, mientras las
+      leemos, comenzamos a sospechar que la historia de Agustín no habla solamente de Agustín.
+      Habla de nosotros. Habla de ese rincón del corazón donde todavía pronunciamos, a veces
+      casi sin darnos cuenta, aquella oración que desearíamos no haber dicho nunca.</p>
+    <p class="pull" style="margin-top:36px">Señor... pero todavía no.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#a9842a" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <nav class="toc" style="margin-top:34px">
+      <ol>
+        <li><a href="#prologo"><span class="n">Prólogo</span><span>Una oración que todavía rezamos</span></a></li>
+        <li><a href="#c1"><span class="n">I</span><span>El corazón dividido</span></a></li>
+        <li><a href="#silencio"><span class="n">·</span><span>Silencio</span></a></li>
+        <li><div class="soon"><span class="n">II</span><span>El huerto de Milán · en preparación</span></div></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ I · EL CORAZÓN DIVIDIDO ============ -->
+<section id="c1" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">I</span> Capítulo primero</div>
+    <h2>El corazón dividido</h2>
+    <p class="chapsub">Las dos voluntades · Confesiones, libro octavo</p>
+    <div class="quotecard">Mis dos voluntades, la vieja y la nueva, la carnal y la espiritual,
+      luchaban entre sí, y con su discordia me desgarraban el alma.
+      <span class="who">San Agustín · Confesiones VIII, 5</span></div>
+    <p class="dropcap">Todos hemos conocido esa hora de la mañana en que ya sonó la llamada y
+      el cuerpo pide seguir durmiendo. Nadie, en ese momento, decide quedarse dormido para
+      siempre. Sería absurdo. Lo único que se pide es un poco más. Un instante. El instante
+      que se concede a sí mismo el que ya sabe que tiene que levantarse.</p>
+    <p>Agustín usó esa imagen para describir los años más extraños de su vida. Cuenta que
+      respondía a Dios como se responde al que nos despierta. «Ahora. Ya voy. Un poco más.»
+      Y que ese poco más no tenía término.</p>
+    <p>La comparación parece demasiado doméstica para un asunto tan grave. Precisamente por
+      eso es exacta. Los grandes dramas del alma casi nunca parecen dramas. Se parecen a un
+      hombre que no se levanta.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Conviene mirar despacio a ese hombre.</p>
+    <p>Tiene poco más de treinta años y vive en Milán. Es profesor de retórica de la ciudad
+      imperial, lo que en su mundo equivale a haber llegado. Pronuncia los discursos
+      oficiales, los poderosos lo escuchan, los jóvenes pagan por aprender de su boca el arte
+      de persuadir. Su madre, que lo siguió desde África llorando por él como se llora por un
+      muerto, empieza por fin a concebir esperanzas.</p>
+    <p>Y él está cansado.</p>
+    <p>No del trabajo, aunque también. Está cansado de sí mismo. Lo confiesa con una
+      franqueza que todavía sorprende. Vendía palabras, dice, y mientras preparaba un elogio
+      del emperador, lleno de mentiras que todos aplaudirían sabiendo que eran mentiras,
+      envidió a un mendigo borracho que había visto reírse en una calle de Milán. El mendigo,
+      al menos, había comprado su alegría con unas monedas. Él no era alegre a ningún
+      precio.</p>
+    <p>Lo más extraño de esos años no es su tristeza. Es que la cuestión de la verdad ya
+      estaba resuelta.</p>
+    <p>Agustín había buscado la verdad durante casi veinte años con una pasión que pocos
+      hombres han puesto en buscarla. Había atravesado sectas, filosofías y desengaños. Ahora
+      había leído a los platónicos, había escuchado predicar a Ambrosio, y las viejas
+      objeciones que lo mantenían lejos de la fe se habían ido deshaciendo una tras otra. Él
+      mismo lo reconoce. Ya no deseaba mayores certezas acerca de Dios. Deseaba mayor firmeza
+      en Dios.</p>
+    <p>Es un momento que merece contemplarse, porque desmiente una de nuestras excusas
+      favoritas.</p>
+    <p>Solemos pensar que si viéramos claro, obedeceríamos. Que el problema es la falta de
+      luz. Agustín tuvo la luz, toda la luz que un entendimiento puede pedir, y descubrió que
+      la luz no basta. Se puede ver el camino con perfecta claridad y permanecer sentado.</p>
+    <p>Lo que lo retenía ya no estaba en la inteligencia.</p>
+    <p>Estaba en la voluntad.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/01-agustin.jpg"
+          alt="San Agustín — Philippe de Champaigne"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">San Agustín<br>Philippe de Champaigne · c. 1645</div></div>
+      </div>
+      <figcaption>Philippe de Champaigne · “San Agustín” (c. 1645-1650), Los Angeles County Museum of Art
+        <span>El corazón en llamas y los ojos en la Veritas. Ya la ve. Todavía no descansa en ella.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ LA CADENA ============ -->
+<section class="band light">
+  <div class="wrap narrow reveal">
+    <p class="dropcap">Aquí el obispo de Hipona, escribiendo muchos años después, se detiene y
+      examina su propia esclavitud con una lucidez casi quirúrgica.</p>
+    <p>No lo ataba nadie desde afuera. Lo ataba, dice, el hierro de su propia voluntad. Y
+      describe cómo se había forjado esa cadena, eslabón por eslabón. De la voluntad torcida
+      había nacido la pasión. De la pasión servida, la costumbre. De la costumbre no
+      resistida, la necesidad. Anillos pequeños, enlazados unos con otros, ninguno decisivo
+      por sí solo. Con ellos, escribe, «me tenía sujeto una dura servidumbre».</p>
+    <p>Nadie se despierta un día encadenado. La cadena se teje de a un consentimiento por
+      vez, y cada consentimiento parece libre, revocable, sin importancia. Hasta que una
+      mañana el alma quiere moverse y descubre que no puede.</p>
+    <p>El Señor lo había dicho en el templo con una frase que no admite excepciones.</p>
+    <div class="sc"><p>Todo el que comete pecado es esclavo del pecado.</p>
+      <div class="sc-ref">Juan 8, 34</div></div>
+    <p>No dijo que fuera malvado. Dijo que era esclavo. Es un diagnóstico, no un insulto.</p>
+    <p>Cada uno conoce el nombre de sus propios eslabones. No hace falta que sean
+      escandalosos. Basta que sean queridos.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Y sin embargo, lo que Agustín encontró al fondo de sí mismo fue algo más
+      desconcertante que una cadena.</p>
+    <p>Encontró que él mismo era dos.</p>
+    <p>Quería levantarse y quería quedarse. Quería a Dios y quería lo que lo apartaba de
+      Dios. No sucesivamente, como quien cambia de opinión, sino al mismo tiempo, con el
+      mismo corazón. Dos voluntades, la vieja y la nueva, luchando dentro de una sola alma,
+      desgarrándola con su discordia.</p>
+    <p>En su juventud, los maniqueos le habían ofrecido una explicación cómoda para ese
+      desgarro. Habría en nosotros dos almas, decían, una buena y una mala, dos naturalezas
+      enemigas. El mal sería siempre obra de la otra. Agustín conocía bien la doctrina porque
+      la había profesado nueve años, y en el momento de su combate la rechaza con todas sus
+      fuerzas. La rechaza porque es falsa, y porque es una coartada. Si el que peca en mí es
+      otro, yo no tengo nada que llorar.</p>
+    <p>Su confesión va en la dirección contraria, y es una de las frases más honradas que se
+      hayan escrito.</p>
+    <div class="quotecard">Yo era el que quería, yo el que no quería. Yo era yo.
+      <span class="who">San Agustín · Confesiones VIII, 10</span></div>
+    <div class="tb"><div class="tbt">No hay dos almas</div>
+      <p>Contra el dualismo maniqueo, la fe católica confiesa una sola alma en cada hombre,
+      creada buena por Dios y herida por el pecado. La división que experimentamos no es la
+      guerra de dos naturalezas, sino la enfermedad de una sola libertad, que no logra
+      reunirse en un único amor.</p></div>
+    <p>No hay enemigo interior al que culpar. Hay una sola alma enferma, que no miente cuando
+      ama a Dios y no miente cuando se resiste a Él. Eso es lo que la fe llama un corazón
+      herido, y lo que cada uno de nosotros encuentra, tarde o temprano, cuando se atreve a
+      mirarse sin retórica.</p>
+    <p>Ya lo había visto Jeremías, siglos antes, con espanto.</p>
+    <div class="sc"><p>Nada hay tan engañoso como el corazón, ni tan enfermo. ¿Quién lo
+      conocerá?</p><div class="sc-ref">Jeremías 17, 9</div></div>
+    <p>El profeta no responde con un método. Responde con una súplica, unas líneas más abajo,
+      que es quizá la oración más corta de la Escritura. «Sáname, Señor, y quedaré sano»
+      (Jeremías 17, 14).</p>
+    <p>No dice ayúdame a sanarme.</p>
+    <p>Dice sáname.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Hay una pregunta que suele hacerse ante estas descripciones, y conviene no esquivarla.
+      Si el pecado lo hacía infeliz, y él lo sabía, y lo escribía, ¿por qué seguía?</p>
+    <p>Cualquiera que haya arrastrado una costumbre mala conoce la respuesta por dentro,
+      aunque nunca la haya formulado. El pecado deja de dar alegría mucho antes de dejar de
+      atraer. El placer se va gastando y la necesidad va creciendo, hasta que un día el alma
+      ya no busca gozo en su pecado. Busca alivio. Vuelve a él como el enfermo vuelve a
+      rascarse la herida, sabiendo que después será peor.</p>
+    <p>Agustín ya no defendía su vida vieja. Ya no la disfrutaba. La sufría. Pero cuando
+      pensaba en dejarla del todo, en aquel <em>nunca más</em> definitivo que la conversión
+      le pedía, algo en él retrocedía. Escribirá después que sus viejas vanidades lo
+      tironeaban de su vestido de carne y le susurraban bajito. «¿Nos despides? ¿Desde este
+      instante, nunca más?»</p>
+    <p>Nunca más. Ese susurro es el arma más antigua de la costumbre. No promete felicidad,
+      porque ya no puede. Amenaza con el vacío.</p>
+    <p>Y el alma, que ya no ama sus cadenas, todavía no se imagina viviendo sin su peso.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/02-adultera.jpg"
+          alt="Cristo y la mujer adúltera — Pieter Bruegel el Viejo"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">Cristo y la mujer adúltera<br>Pieter Bruegel el Viejo · 1565</div></div>
+      </div>
+      <figcaption>Pieter Bruegel el Viejo · “Cristo y la mujer adúltera” (1565), Courtauld Gallery, Londres
+        <span>El único sin pecado se inclina y escribe en el polvo. No condena. Tampoco dice que no haya nada que perdonar.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ ROMANOS 7 Y GETSEMANÍ ============ -->
+<section class="band tint">
+  <div class="wrap narrow reveal">
+    <p class="dropcap">En aquellos meses Agustín leía a san Pablo. Sabemos incluso dónde
+      tenía el libro, porque un día un visitante llamado Ponticiano, funcionario de la corte
+      y cristiano, encontró un códice sobre la mesa de juego de su casa, lo abrió esperando
+      cualquier cosa y descubrió con asombro que eran las cartas del Apóstol.</p>
+    <p>En esas cartas Agustín se estaba encontrando a sí mismo, versículo por versículo.
+      Porque el combate que él creía suyo ya había sido descrito, tres siglos antes, por un
+      hombre que no era un principiante en la fe sino el apóstol de las naciones.</p>
+    <div class="sc"><p>No hago el bien que quiero, sino el mal que no quiero. Me deleito en la
+      ley de Dios según el hombre interior, pero siento otra ley en mis miembros que lucha
+      contra la ley de mi mente y me encadena. ¡Desdichado de mí! ¿Quién me librará de este
+      cuerpo de muerte?</p><div class="sc-ref">Romanos 7, 19-24</div></div>
+    <p>Pocas páginas de la Escritura han consolado a tantos hombres, y es bueno preguntarse
+      por qué consuela un texto tan sombrío. Consuela porque quita la soledad. El que lucha
+      cree siempre que su guerra es una vergüenza privada, una anomalía que los demás no
+      conocen. Y aquí está Pablo, columna de la Iglesia, describiendo esa guerra en primera
+      persona y en tiempo presente.</p>
+    <p>La pregunta con que termina el pasaje no es retórica. Es un grito. Y Pablo conoce la
+      respuesta, que resplandece en la línea siguiente y llena todo el capítulo octavo, donde
+      ya no hay condenación para los que están en Cristo Jesús y el Espíritu viene en ayuda
+      de nuestra flaqueza.</p>
+    <p>Agustín tenía esa respuesta en la mesa de su casa, a una página de distancia.</p>
+    <p>Pero una cosa es leer la respuesta y otra que se vuelva propia. Entre el capítulo
+      séptimo y el octavo de la carta a los Romanos hay apenas un renglón en blanco. Hay
+      hombres que tardan años en cruzarlo.</p>
+  </div>
+
+  <div class="wrap split reveal" style="margin-top:46px">
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/03-huerto.jpg"
+          alt="La oración del huerto — El Greco"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">La oración del huerto<br>El Greco · c. 1590</div></div>
+      </div>
+      <figcaption>El Greco · “La oración del huerto” (c. 1590), National Gallery, Londres
+        <span>El Señor vela y los suyos duermen. La carne de los amigos no acompaña al espíritu, y Él lo sabe, y los ama así.</span></figcaption>
+    </figure>
+    <div>
+      <p>El Señor conocía esta debilidad nuestra desde antes, y la había mirado de cerca una
+        noche, en un huerto.</p>
+      <p>Getsemaní guarda el misterio del combate de Cristo, que no es el tema de esta página
+        y ante el cual conviene descalzarse. Pero guarda también una escena pequeña, casi
+        escondida en el borde del drama. Jesús vuelve de orar, con el sudor convertido en
+        sangre, y encuentra a sus tres amigos más queridos durmiendo. Los había llamado a
+        velar con Él una sola hora. No pudieron.</p>
+      <p>Lo que dice entonces no es un reproche, o es el reproche más suave que se haya
+        pronunciado.</p>
+      <div class="sc"><p>Velad y orad para no caer en tentación; el espíritu está pronto, pero
+        la carne es débil.</p><div class="sc-ref">Mateo 26, 41</div></div>
+    </div>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>El espíritu está pronto. El Señor empieza por reconocer lo que hay de verdadero en el
+      amor de sus discípulos. Querían velar. Lo querían de verdad, como Pedro quería de
+      verdad morir por Él. Y la carne, esa carne que el Hijo de Dios había tomado y que en
+      ese mismo momento le temblaba a Él también, no acompañó.</p>
+    <p>Quien haya sentido la distancia entre lo que promete de rodillas y lo que cumple de
+      pie, sabe que esa frase lo describe. Fue dicha con los ojos puestos en hombres
+      concretos, dormidos sobre la hierba de un huerto, y alcanza a todos los que vinimos
+      después.</p>
+  </div>
+</section>
+
+<!-- ============ DAVID Y EL MISERERE ============ -->
+<section class="band light">
+  <div class="wrap narrow reveal">
+    <p class="dropcap">También David conoció esta guerra, y la perdió, y de su derrota nos
+      quedó una oración que la Iglesia no ha dejado de rezar ni una sola mañana en mil
+      quinientos años.</p>
+    <p>Lo notable del pecado de David no es su gravedad, con ser gravísimo. Es el año de
+      silencio que lo siguió. Durante meses el rey vivió con su culpa instalada en el
+      palacio, organizada, casi respetable. La conciencia no estaba muerta. Los salmos hablan
+      de huesos que se consumían y de un rugido interior que no cesaba. Pero la voluntad no
+      se movía. Hizo falta que Dios le enviara al profeta Natán con una parábola sobre una
+      oveja robada, y que el rey, indignado contra el ladrón del cuento, escuchara las tres
+      palabras que lo partieron en dos. «Tú eres ese hombre.»</p>
+    <p>De ese instante nació el Miserere.</p>
+    <p>Y en el centro del Miserere hay una petición que un hombre solo no haría, porque pide
+      algo que ningún hombre puede darse.</p>
+    <div class="sc"><p>Oh Dios, crea en mí un corazón puro.</p>
+      <div class="sc-ref">Salmo 51, 12</div></div>
+    <p>El verbo que usa el salmo en hebreo es el mismo del primer versículo del Génesis, el
+      verbo que la Escritura reserva para Dios solo, el crear de la nada. David no pide que
+      le arreglen el corazón. Sabe que no tiene arreglo. Pide uno nuevo, sacado de donde Dios
+      saca las cosas que no existían.</p>
+    <p>La conciencia despierta antes que la voluntad sane. Casi siempre es así, y es la etapa
+      más dolorosa del camino, porque el alma ya ve y todavía no puede. Ese intervalo tiene
+      un aspecto de fracaso. La Escritura sugiere otra lectura. Que Natán llegue, que los
+      huesos duelan, que el pecador ya no pueda vivir tranquilo en su pecado, nada de eso es
+      el fracaso de la gracia.</p>
+    <p>Es su primera obra.</p>
+  </div>
+
+  <div class="wrap split rev reveal" style="margin-top:46px">
+    <div>
+      <p>Agustín, examinando su parálisis, tropezó con un enigma que lo dejó atónito y que
+        formuló mejor que nadie.</p>
+      <p>El alma manda al cuerpo, y el cuerpo obedece al instante. Decide la mano moverse, y
+        la mano se mueve, con una prontitud tal que apenas se distingue la orden de la
+        ejecución. El alma se manda a sí misma, y encuentra resistencia. Manda querer, ella
+        sola a ella sola, y no es obedecida.</p>
+      <p>¿De dónde viene esta monstruosidad, se pregunta, de que un cuerpo ajeno a mi
+        voluntad la obedezca mejor que mi propia voluntad a sí misma?</p>
+      <p>Su respuesta es de una honestidad que duele. La voluntad no obedece entera porque no
+        manda entera. Si mandara del todo, ya estaría hecho, porque en la voluntad mandar
+        querer y querer son lo mismo. El alma ordena a medias porque quiere a medias. Su
+        enfermedad consiste exactamente en eso, en no poder reunirse.</p>
+    </div>
+    <figure>
+      <div class="plate">
+        <img loading="lazy" src="img/04-david.jpg"
+          alt="El rey David en oración — Pieter de Grebber"
+          onerror="this.style.display='none';this.nextElementSibling.classList.add('show')">
+        <div class="fallback"><div class="ft">El rey David en oración<br>Pieter de Grebber · c. 1635</div></div>
+      </div>
+      <figcaption>Pieter de Grebber · “El rey David en oración” (c. 1635-1640), Museum Catharijneconvent, Utrecht
+        <span>El rey viejo, sin corona ni arpa, con las manos juntas de cualquier penitente. Pide un corazón que no puede fabricarse.</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Santo Tomás, que leyó estas páginas con veneración, puso el análisis en orden siglos
+      después. Enseña que la pasión y la costumbre no destruyen el conocimiento del bien,
+      pero lo encadenan en el momento concreto, de modo que el hombre sabe en general lo que
+      debe y, aquí y ahora, su juicio queda como vendado por aquello que ama
+      desordenadamente. Por eso el que cae no suele caer por ignorancia. Cae sabiendo.</p>
+    <div class="tb"><div class="tbt">Herida, no muerta</div>
+      <p>El Catecismo describe con sobriedad exacta esta miseria de nuestra condición. Por el
+      pecado de origen, la naturaleza humana no está totalmente corrompida, pero sí
+      <strong>«herida en sus propias fuerzas naturales»</strong> e inclinada al pecado, con
+      esa inclinación que la tradición llama concupiscencia (n. 405). Herida, no muerta.
+      Inclinada, no condenada. Sobre esa distinción descansa toda la esperanza de este
+      libro.</p></div>
+  </div>
+</section>
+
+<!-- ============ LA GRACIA YA TRABAJA ============ -->
+<section class="band dark">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> La gracia ya trabaja</div>
+    <h2 style="font-size:clamp(1.9rem,5vw,3rem)">Los muertos no luchan</h2>
+    <p class="chapsub">Lo que la noche esconde</p>
+    <p class="dropcap">Porque hay algo que el lector atento ya habrá notado en medio de tanta
+      sombra.</p>
+    <p>Este hombre que no puede levantarse, sin embargo, ya no duerme en paz. Llora sin saber
+      por qué. Envidia a los sencillos. Lee a Pablo. Interroga a los que han encontrado la
+      paz, como un enfermo interroga a los curados. Su malestar crece de año en año, y crece
+      precisamente en la medida en que Dios se le acerca.</p>
+    <div class="sc"><p>Dios, rico en misericordia, por el gran amor con que nos amó, estando
+      nosotros muertos por los pecados, nos hizo revivir con Cristo.</p>
+      <div class="sc-ref">Efesios 2, 4-5</div></div>
+    <p>Los muertos no luchan. El combate mismo, con toda su humillación, es señal de que la
+      vida ya entró y está disputándole el terreno a la muerte, palmo a palmo.</p>
+    <p>San Bernardo, predicando sobre el Cantar de los Cantares, se atrevió a decir que nadie
+      puede buscar a Dios si Dios no lo ha encontrado ya, porque toda búsqueda nuestra es
+      respuesta a una búsqueda anterior y más paciente. Aquella inquietud que Agustín padecía
+      como una enfermedad era, vista desde el cielo, un cortejo. Benedicto XVI, que amó a
+      Agustín toda su vida, gustaba recordar que su conversión no fue el asunto de un
+      instante prodigioso sino un largo camino, y que por eso este africano sigue siendo el
+      hermano mayor de todos los conversos lentos.</p>
+    <p>Dios no le ahorró el combate.</p>
+    <p>Se lo fue volviendo insoportable. Que es otra manera, más severa y más misericordiosa,
+      de sacar a un hombre de la cama.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:46px">
+    <p>Una tarde de agosto, en Milán, todo esto llegó a su punto de madurez.</p>
+    <p>Fue el día de la visita de Ponticiano. El funcionario que había encontrado a Pablo
+      sobre la mesa de juego se quedó conversando, y contó una historia que Agustín no
+      conocía, la de Antonio, un campesino egipcio que un siglo antes había escuchado el
+      Evangelio en la iglesia y lo había hecho, sencillamente, al pie de la letra. Contó
+      también la de dos colegas suyos, agentes del emperador, que en Tréveris habían hallado
+      por azar la vida de Antonio en la cabaña de unos monjes, y uno de ellos, leyéndola, se
+      volvió hacia su amigo y le preguntó qué buscaban en realidad con todos sus trabajos y
+      sus ambiciones de palacio. Amigos del emperador podrían llegar a ser, quizá, algún día,
+      con cuánto riesgo. Y añadió que amigo de Dios, si quería, podía serlo en ese mismo
+      instante.</p>
+    <p>Mientras Ponticiano hablaba, Agustín sintió que Dios lo tomaba y lo daba vuelta hacia
+      sí mismo.</p>
+    <div class="quotecard">Tú, Señor, mientras él hablaba, me hacías volver hacia mí mismo y
+      me ponías delante de mi propio rostro, para que viera qué torcido estaba, qué deforme y
+      sucio, lleno de manchas y de úlceras.
+      <span class="who">San Agustín · Confesiones VIII, 7</span></div>
+    <p>Cada palabra del visitante era una mano que lo sujetaba allí, sin permitirle apartar
+      los ojos.</p>
+    <p>Cuando Ponticiano se fue, Agustín se volvió hacia su amigo Alipio con una frase que
+      era mitad grito y mitad sollozo. ¿Qué nos pasa? Los ignorantes se levantan y arrebatan
+      el cielo, y nosotros, con toda nuestra ciencia y sin corazón, seguimos revolcándonos en
+      la carne y en la sangre.</p>
+    <p>Los ignorantes se levantan.</p>
+    <p>Ahí está otra vez, al final como al principio, la imagen del hombre que sigue
+      acostado. Solo que ahora ya no puede seguir durmiendo. Hay demasiada luz en la
+      habitación.</p>
+    <p>Cerca de la casa había un huerto pequeño. Lo que sucedió en él pertenece a otra
+      página, y no hay que apurarse a llegar. Esta noche del alma todavía dura, y en ella
+      seguimos escuchando a Agustín repetir su vieja oración, cada vez con menos fuerza, cada
+      vez con menos convicción, con la voz de un hombre que ya empieza a no creerse a sí
+      mismo.</p>
+  </div>
+
+  <div class="wrap narrow reveal" style="margin-top:60px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#d3ad4e" stroke-width="1.4"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="line r"></span></div>
+    <p class="pull" style="margin-top:36px">«Todavía no.»</p>
+  </div>
+</section>
+
+<!-- ============ SILENCIO ============ -->
+<section id="silencio" class="band tint">
+  <div class="wrap narrow reveal">
+    <div class="eyebrow"><span class="num">·</span> Antes de pasar la página</div>
+    <h2>Silencio</h2>
+    <div class="silence">
+      <p>Quedate un momento en silencio.</p>
+      <p>La pregunta de este capítulo no era para Agustín.
+        ¿Cuál es tu «todavía no»?
+        ¿Con qué palabras se lo decís a Dios?</p>
+      <p>Y si el combate te humilla, recordá lo que viste aquí.</p>
+      <p>Los muertos no luchan.</p>
+    </div>
+    <p class="note" style="text-align:center;margin-top:22px">El ensayo continúa.
+      El huerto de Milán pertenece al próximo capítulo.</p>
+  </div>
+  <div class="wrap narrow reveal" style="margin-top:56px">
+    <div class="rule"><span class="line"></span>
+      <svg viewBox="0 0 24 24" fill="#a9842a"><circle cx="12" cy="12" r="3"/><g stroke="#a9842a" stroke-width="1.2"><path d="M12 1v4M12 19v4M1 12h4M19 12h4M4 4l3 3M17 17l3 3M20 4l-3 3M7 17l-3 3"/></g></svg>
+      <span class="line r"></span></div>
+  </div>
+</section>
+
+<footer>
+  <svg class="rosette" viewBox="0 0 100 100" fill="none" stroke="#d3ad4e" stroke-width="1">
+    <circle cx="50" cy="50" r="46"/><circle cx="50" cy="50" r="6" fill="#d3ad4e" stroke="none"/>
+    <g opacity=".8"><circle cx="50" cy="20" r="14"/><circle cx="50" cy="80" r="14"/><circle cx="20" cy="50" r="14"/><circle cx="80" cy="50" r="14"/></g>
+  </svg>
+  <p class="big">“Yo era el que quería, yo el que no quería. Yo era yo.”</p>
+  <p>Ensayo sobre las Confesiones de san Agustín · para orar, estudiar y compartir.<br>
+  Obras de dominio público (Philippe de Champaigne, Pieter Bruegel el Viejo, El Greco, Pieter de Grebber · vía Wikimedia Commons).</p>
+  <p class="lat">Ad maiorem Dei gloriam</p>
+</footer>
+
+<script>
+  // reading progress
+  const bar=document.getElementById('progress');
+  addEventListener('scroll',()=>{const h=document.documentElement;
+    const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;bar.style.width=p+'%';});
+
+  // reveal on scroll
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // starfield
+  const c=document.getElementById('stars'),x=c.getContext('2d');
+  let w,hh,stars;
+  function init(){w=c.width=innerWidth;hh=c.height=Math.max(innerHeight,600);
+    stars=Array.from({length:Math.min(220,Math.floor(w/6))},()=>({
+      x:Math.random()*w,y:Math.random()*hh,r:Math.random()*1.4+.2,
+      a:Math.random(),s:Math.random()*.018+.004}));}
+  function draw(){x.clearRect(0,0,w,hh);
+    for(const st of stars){st.a+=st.s;const o=.35+Math.abs(Math.sin(st.a))*.65;
+      x.beginPath();x.arc(st.x,st.y,st.r,0,7);
+      x.fillStyle='rgba(231,224,255,'+o+')';x.fill();}
+    requestAnimationFrame(draw);}
+  init();draw();addEventListener('resize',init);
+</script>
+</body>
+</html>
