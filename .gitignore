@@ -30,5 +30,6 @@ build/
 *.tmp
 *.temp
 
-# Local AI/editor state
-.claude/
+# Local AI/editor state (pero las skills del proyecto sí se versionan)
+.claude/*
+!.claude/skills/
